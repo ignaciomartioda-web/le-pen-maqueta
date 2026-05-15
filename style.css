@@ -319,7 +319,62 @@ h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
     color: white;
     border-color: var(--tac-card);
 }
+/* Estilos para Formularios Colapsables (Acordeón) */
+.collapsible-container {
+    background: var(--bg-card);
+    border: 1px solid var(--bg-surface);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
 
+.collapsible-header {
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.collapsible-header:hover {
+    background: #f1f3f5;
+}
+
+.collapsible-header h4 {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    color: var(--primary-dark);
+}
+
+.collapse-indicator {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-cyan);
+}
+
+.collapsible-content {
+    max-height: 5000px;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s;
+    opacity: 1;
+    padding: 1.5rem;
+}
+
+.collapsible-container.collapsed .collapsible-content {
+    max-height: 0;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+}
+
+.collapsible-container.collapsed {
+    border-color: #ddd;
+}
 .form-section-block {
     background: var(--bg-card);
     border-radius: 4px;

@@ -20,7 +20,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Form Submission Feedback & Persistence
+    // 2. Triple Tab Logic (Plan de Vida / Social)
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const parentSection = btn.closest('.view-section');
+            const sectionBtns = parentSection.querySelectorAll('.tab-btn');
+            const sectionContents = parentSection.querySelectorAll('.tab-content');
+
+            // Remove active from all in this section
+            sectionBtns.forEach(t => t.classList.remove('active'));
+            sectionContents.forEach(c => c.classList.remove('active'));
+
+            // Set specific active
+            btn.classList.add('active');
+            const targetContentId = btn.getAttribute('data-tab');
+            const target = parentSection.querySelector(`#${targetContentId}`) || document.getElementById(targetContentId);
+            if (target) target.classList.add('active');
+        });
+    });
+
+    // 3. Collapsible Forms Logic
+    const collapsibleHeaders = document.querySelectorAll('.collapsible-header');
+    collapsibleHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const container = header.parentElement;
+            container.classList.toggle('collapsed');
+            
+            // Update icon/text if needed
+            const indicator = header.querySelector('.collapse-indicator');
+            if (indicator) {
+                indicator.textContent = container.classList.contains('collapsed') ? '➕ Abrir Formulario' : '➖ Cerrar Formulario';
+            }
+        });
+    });
+
+    // 4. Form Submission Feedback & Persistence
     const forms = document.querySelectorAll('.instrument-form');
     
     // Load saved data on startup
@@ -29,21 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedData = localStorage.getItem(`edp_data_${sectionId}`);
         
         if (savedData) {
-            const data = JSON.parse(savedData);
-            Object.keys(data).forEach(key => {
-                const input = form.querySelector(`[name="${key}"]`);
-                if (input) {
-                    if (input.type === 'radio' || input.type === 'checkbox') {
-                        const specificInput = form.querySelector(`[name="${key}"][value="${data[key]}"]`);
-                        if (specificInput) specificInput.checked = true;
-                    } else {
-                        input.value = data[key];
+            try {
+                const data = JSON.parse(savedData);
+                Object.keys(data).forEach(key => {
+                    const input = form.querySelector(`[name="${key}"]`);
+                    if (input) {
+                        if (input.type === 'radio' || input.type === 'checkbox') {
+                            const specificInput = form.querySelector(`[name="${key}"][value="${data[key]}"]`);
+                            if (specificInput) specificInput.checked = true;
+                        } else {
+                            input.value = data[key];
+                        }
                     }
-                } else {
-                    // Try by placeholder or label if name is missing (for textareas/inputs without name)
-                    // This is a fallback since some inputs might not have names yet
-                }
-            });
+                });
+            } catch (e) { console.error("Error loading saved data", e); }
         }
 
         form.addEventListener('submit', (e) => {

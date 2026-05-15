@@ -84,7 +84,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento Técnico de Ingreso</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -216,7 +222,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento de Ingreso</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- PLAN DE VIDA -->
@@ -227,23 +235,23 @@
                 <!-- Columna Izquierda: Fases -->
                 <div style="flex: 2;">
                     <div class="tabs-header">
-                        <button class="tab-btn active" data-tab="obs">Observación</button>
-                        <button class="tab-btn" data-tab="trat">Tratamiento</button>
-                        <button class="tab-btn" data-tab="pru">Prueba</button>
+                        <button class="tab-btn active" data-tab="pv-obs">Observación</button>
+                        <button class="tab-btn" data-tab="pv-trat">Tratamiento</button>
+                        <button class="tab-btn" data-tab="pv-pru">Prueba</button>
                     </div>
-                    <div id="obs" class="tab-content active">
+                    <div id="pv-obs" class="tab-content active">
                         <div class="surface-container">
                             <h3>Informes Base</h3>
                             <p style="margin-top:0.5rem; font-size:0.9rem;">Seguridad: <span class="badge green">OK</span> | Social: <span class="badge green">OK</span> | Médica: <span class="badge green">OK</span></p>
                         </div>
                     </div>
-                    <div id="trat" class="tab-content">
+                    <div id="pv-trat" class="tab-content">
                         <div class="surface-container">
                             <h3>Evolución Trimestral</h3>
                             <p style="font-size:0.9rem;">Pendiente de evaluación del próximo ciclo.</p>
                         </div>
                     </div>
-                    <div id="pru" class="tab-content">
+                    <div id="pv-pru" class="tab-content">
                         <div class="surface-container" style="background:#fff3f3; color:#c62828;">
                             <h3>Acceso Restringido</h3>
                             <p style="font-size:0.9rem;">Fases previas incompletas.</p>
@@ -263,7 +271,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Plan de Vida</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -305,7 +319,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- PSICOLOGÍA -->
@@ -322,7 +338,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Evaluación Psicológica</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -387,7 +409,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento de Psicología</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- SOCIAL -->
@@ -396,28 +420,28 @@
 
             <div class="card" style="margin-bottom: 2.5rem;">
                 <div class="tabs-header">
-                    <button class="tab-btn active" data-tab="familiares">Familiares</button>
-                    <button class="tab-btn" data-tab="allegados">Allegados</button>
-                    <button class="tab-btn" data-tab="dias-visitas">Días Visitas</button>
-                    <button class="tab-btn" data-tab="alertas-soc" style="color:var(--status-yellow);">Necesidades Esp.</button>
+                    <button class="tab-btn active" data-tab="soc-familiares">Familiares</button>
+                    <button class="tab-btn" data-tab="soc-allegados">Allegados</button>
+                    <button class="tab-btn" data-tab="soc-dias-visitas">Días Visitas</button>
+                    <button class="tab-btn" data-tab="soc-alertas-soc" style="color:var(--status-yellow);">Necesidades Esp.</button>
                 </div>
 
-                <div id="familiares" class="tab-content active">
+                <div id="soc-familiares" class="tab-content active">
                     <div class="surface-container" style="font-size: 0.9rem;">
                         <p><strong>Madre:</strong> Maria P. | <strong>Hijo:</strong> Pedro P. (Menor)</p>
                     </div>
                 </div>
-                <div id="allegados" class="tab-content">
+                <div id="soc-allegados" class="tab-content">
                     <div class="surface-container" style="font-size: 0.9rem;">
                         <p>Sin allegados registrados actualmente.</p>
                     </div>
                 </div>
-                <div id="dias-visitas" class="tab-content">
+                <div id="soc-dias-visitas" class="tab-content">
                     <div class="surface-container" style="font-size: 0.9rem;">
                         <p>Domingos de 09:00 a 13:00hs.</p>
                     </div>
                 </div>
-                <div id="alertas-soc" class="tab-content">
+                <div id="soc-alertas-soc" class="tab-content">
                     <div class="surface-container" style="border-left: 3px solid var(--status-yellow); font-size: 0.9rem;">
                         <p>Requerimiento de intérprete para entrevistas familiares (Dialecto específico).</p>
                     </div>
@@ -426,7 +450,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Abordaje Social</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -490,7 +520,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento Social</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- 5. VISTA: EDUCACIÓN -->
@@ -510,7 +542,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Educación</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -611,7 +649,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- 6. VISTA: TRABAJO -->
@@ -628,7 +668,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Trabajo</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -742,7 +788,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
 
@@ -762,7 +810,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin: 2rem 0 1rem 0;">Actualización de Instrumento Judicial</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Operador Jurídico</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -794,7 +848,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Situación Judicial</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <section id="seguridad" class="view-section">
@@ -819,7 +875,13 @@
 
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento de Seguridad</h3>
 
-            <form class="instrument-form">
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Cargar Instrumento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
@@ -868,7 +930,9 @@
                 <div class="form-actions">
                     <button type="button" class="btn-primary">💾 Guardar Instrumento de Seguridad</button>
                 </div>
-            </form>
+                    </form>
+                </div>
+            </div>
         </section>
 
         <!-- 7. VISTA: CONFIGURACIÓN -->
