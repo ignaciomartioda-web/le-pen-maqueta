@@ -56,16 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3.5 Shortcut Navigation Logic
-    const shortcuts = document.querySelectorAll('.nav-shortcut');
-    shortcuts.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-target');
-            const navItem = document.querySelector(`.nav-item[data-target="${target}"]`);
-            if (navItem) navItem.click();
-        });
-    });
-
     // 4. Form Submission Feedback & Persistence
     const forms = document.querySelectorAll('.instrument-form');
     

@@ -27,11 +27,6 @@
         <div class="nav-item" data-target="ingreso">Ingreso y evaluación inicial</div>
         <div class="nav-item" data-target="situacion">Situación Judicial</div>
         <div class="nav-item" data-target="plan-vida">Plan de Vida</div>
-        <div class="nav-item" data-target="psicologia">Psicología</div>
-        <div class="nav-item" data-target="social">Social</div>
-        <div class="nav-item" data-target="seguridad">Seguridad</div>
-        <div class="nav-item" data-target="educacion">Educación</div>
-        <div class="nav-item" data-target="trabajo">Trabajo y Talleres</div>
         <div class="nav-item" data-target="configuracion">Configuración</div>
     </nav>
 
@@ -195,14 +190,97 @@
                     </div>
                     <div id="pv-obs" class="tab-content active">
                         <div class="surface-container">
-                            <h3>Apertura de Instrumentos de Diagnóstico</h3>
-                            <p style="margin-top:0.5rem; font-size:0.9rem; color: #666;">Seleccione el área para completar el diagnóstico inicial de la etapa de observación.</p>
-                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
-                                <button class="btn-tactical nav-shortcut" data-target="psicologia">🧠 Psicología</button>
-                                <button class="btn-tactical nav-shortcut" data-target="social">👥 Social</button>
-                                <button class="btn-tactical nav-shortcut" data-target="seguridad">🛡️ Seguridad</button>
-                                <button class="btn-tactical nav-shortcut" data-target="educacion">🎓 Educación</button>
-                                <button class="btn-tactical nav-shortcut" data-target="trabajo">🛠️ Trabajo y Talleres</button>
+                            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Diagnósticos Técnicos de Observación</h3>
+                            
+                            <!-- INSTRUMENTO PSICOLOGÍA -->
+                            <div class="collapsible-container collapsed" style="border-left: 4px solid #9c27b0;">
+                                <div class="collapsible-header">
+                                    <h4>Área de Psicología / Salud</h4>
+                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <form class="instrument-form">
+                                        <div class="form-section-block">
+                                            <h4 class="form-section-title">Evaluación Psicológica de Ingreso</h4>
+                                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="—"></div>
+                                            <div class="form-field"><label>Relación con grupo familiar</label><textarea placeholder="—"></textarea></div>
+                                            <div class="form-field"><label>Antecedentes de tratamiento</label><textarea placeholder="—"></textarea></div>
+                                        </div>
+                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Psicología</button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- INSTRUMENTO SOCIAL -->
+                            <div class="collapsible-container collapsed" style="border-left: 4px solid #4caf50;">
+                                <div class="collapsible-header">
+                                    <h4>Área Social y Vínculos</h4>
+                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <form class="instrument-form">
+                                        <div class="form-section-block">
+                                            <h4 class="form-section-title">Abordaje Social</h4>
+                                            <div class="form-field"><label>Situación habitacional</label><textarea placeholder="—"></textarea></div>
+                                            <div class="form-field"><label>Grupo familiar de apoyo</label><textarea placeholder="—"></textarea></div>
+                                        </div>
+                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Social</button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- INSTRUMENTO EDUCACIÓN -->
+                            <div class="collapsible-container collapsed" style="border-left: 4px solid #2196f3;">
+                                <div class="collapsible-header">
+                                    <h4>Seguimiento Educativo</h4>
+                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <form class="instrument-form">
+                                        <div class="form-section-block">
+                                            <h4 class="form-section-title">Nivel de Instrucción</h4>
+                                            <div class="form-field"><label>Último nivel alcanzado</label><input type="text" placeholder="—"></div>
+                                            <div class="form-field"><label>Interés educativo</label><textarea placeholder="—"></textarea></div>
+                                        </div>
+                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Educación</button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- INSTRUMENTO TRABAJO -->
+                            <div class="collapsible-container collapsed" style="border-left: 4px solid #ff9800;">
+                                <div class="collapsible-header">
+                                    <h4>Talleres y Formación Laboral</h4>
+                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <form class="instrument-form">
+                                        <div class="form-section-block">
+                                            <h4 class="form-section-title">Antecedentes Laborales</h4>
+                                            <div class="form-field"><label>Oficio / Habilidades</label><input type="text" placeholder="—"></div>
+                                            <div class="form-field"><label>Experiencia previa</label><textarea placeholder="—"></textarea></div>
+                                        </div>
+                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Trabajo</button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- INSTRUMENTO SEGURIDAD -->
+                            <div class="collapsible-container collapsed" style="border-left: 4px solid #f44336;">
+                                <div class="collapsible-header">
+                                    <h4>Seguridad y Disciplina</h4>
+                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                </div>
+                                <div class="collapsible-content">
+                                    <form class="instrument-form">
+                                        <div class="form-section-block">
+                                            <h4 class="form-section-title">Evaluación de Riesgo Inicial</h4>
+                                            <div class="form-field"><label>Conducta observada</label><textarea placeholder="—"></textarea></div>
+                                            <div class="form-field"><label>Concepto sugerido</label><input type="text" placeholder="—"></div>
+                                        </div>
+                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Seguridad</button></div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,7 +317,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumentos de la Etapa</h3>
 
             <!-- INSTRUMENTO: PLAN DE VIDA (Movido a Tratamiento lógicamente) -->
@@ -395,469 +473,6 @@
             </div>
         </section>
 
-        <!-- PSICOLOGÍA -->
-        <section id="psicologia" class="view-section">
-            <h1 class="bebas">Área de Psicología / Salud</h1>
-            
-            <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--primary-cyan);">
-                <h3 style="color:var(--primary-dark)">Atenciones Recientes</h3>
-                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
-                    <p><strong>12/05/2026:</strong> Control de rutina. Presión normal. Sin medicación asignada.</p>
-                    <p><strong>18/09/2026:</strong> Evaluación psicológica de ingreso completada.</p>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Evaluación Psicológica</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Relación con el grupo familiar de origen</h4>
-                    <div class="form-field"><label>Nombre y Apellido / Vínculo</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Relación con el grupo familiar de elección</h4>
-                    <div class="form-field"><label>Nombre y Apellido / Vínculo</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Referente de crianza</h4>
-                    <div class="radio-group">
-                        <label><input type="checkbox" value="madre"> Madre</label>
-                        <label><input type="checkbox" value="padre"> Padre</label>
-                        <label><input type="checkbox" value="hermanos"> Hermanos/as</label>
-                        <label><input type="checkbox" value="abuelos"> Abuelos/as</label>
-                        <label><input type="checkbox" value="otro"> Otro</label>
-                    </div>
-                    <div class="form-field"><label>¿Quién/es?</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">4 — Padres separados</h4>
-                    <div class="radio-group"><label><input type="radio" name="sep" value="si"> Sí</label><label><input type="radio" name="sep" value="no"> No</label></div>
-                    <div class="form-field"><label>Edad cuando se separaron</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">5 — Fugas del hogar durante infancia o adolescencia</h4>
-                    <div class="radio-group"><label><input type="radio" name="fugas" value="si"> Sí</label><label><input type="radio" name="fugas" value="no"> No</label></div>
-                    <div class="form-field"><label>Motivo</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">6 — Antecedentes de problemas de conducta en la escuela</h4>
-                    <div class="radio-group"><label><input type="radio" name="conducta-esc" value="si"> Sí</label><label><input type="radio" name="conducta-esc" value="no"> No</label></div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">7 — Antecedentes de problemas para relacionarse con personas</h4>
-                    <div class="radio-group"><label><input type="radio" name="relaciones" value="si"> Sí</label><label><input type="radio" name="relaciones" value="no"> No</label></div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">8 — Antecedentes de relaciones de pareja/familiares violentas</h4>
-                    <div class="radio-group"><label><input type="radio" name="violencia" value="si"> Sí</label><label><input type="radio" name="violencia" value="no"> No</label></div>
-                    <div class="form-field"><label>¿Con la actual pareja?</label>
-                        <div class="radio-group"><label><input type="radio" name="violencia-actual" value="si"> Sí</label><label><input type="radio" name="violencia-actual" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">9 — ¿Ha realizado tratamiento psicológico?</h4>
-                    <div class="radio-group"><label><input type="radio" name="trat-psico" value="si"> Sí</label><label><input type="radio" name="trat-psico" value="no"> No</label></div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Firma del profesional interviniente</h4>
-                    <div class="form-field"><label>Nombre / Matrícula</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Psicología</button>
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- SOCIAL -->
-        <section id="social" class="view-section">
-            <h1 class="bebas">Área Social y Vínculos</h1>
-
-            <div class="card" style="margin-bottom: 2.5rem;">
-                <div class="tabs-header">
-                    <button class="tab-btn active" data-tab="soc-familiares">Familiares</button>
-                    <button class="tab-btn" data-tab="soc-allegados">Allegados</button>
-                    <button class="tab-btn" data-tab="soc-dias-visitas">Días Visitas</button>
-                    <button class="tab-btn" data-tab="soc-alertas-soc" style="color:var(--status-yellow);">Necesidades Esp.</button>
-                </div>
-
-                <div id="soc-familiares" class="tab-content active">
-                    <div class="surface-container" style="font-size: 0.9rem;">
-                        <p><strong>Madre:</strong> Maria P. | <strong>Hijo:</strong> Pedro P. (Menor)</p>
-                    </div>
-                </div>
-                <div id="soc-allegados" class="tab-content">
-                    <div class="surface-container" style="font-size: 0.9rem;">
-                        <p>Sin allegados registrados actualmente.</p>
-                    </div>
-                </div>
-                <div id="soc-dias-visitas" class="tab-content">
-                    <div class="surface-container" style="font-size: 0.9rem;">
-                        <p>Domingos de 09:00 a 13:00hs.</p>
-                    </div>
-                </div>
-                <div id="soc-alertas-soc" class="tab-content">
-                    <div class="surface-container" style="border-left: 3px solid var(--status-yellow); font-size: 0.9rem;">
-                        <p>Requerimiento de intérprete para entrevistas familiares (Dialecto específico).</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Abordaje Social</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Situación de calle y estrategias</h4>
-                    <div class="form-field"><label>Describir</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Acceso a servicios básicos de infraestructura social</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>¿Agua potable?</label><div class="radio-group inline"><label><input type="radio" name="agua" value="si"> Sí</label><label><input type="radio" name="agua" value="no"> No</label></div></div>
-                        <div class="form-field"><label>¿Red de gas?</label><div class="radio-group inline"><label><input type="radio" name="gas" value="si"> Sí</label><label><input type="radio" name="gas" value="no"> No</label></div></div>
-                        <div class="form-field"><label>¿Red cloacal?</label><div class="radio-group inline"><label><input type="radio" name="cloaca" value="si"> Sí</label><label><input type="radio" name="cloaca" value="no"> No</label></div></div>
-                        <div class="form-field"><label>Servicios eléctricos</label><div class="radio-group inline"><label><input type="radio" name="electr" value="si"> Sí</label><label><input type="radio" name="electr" value="no"> No</label></div></div>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Identificación del grupo familiar y/o socioafectivo</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Padres biológicos</label><input type="text" placeholder="Nombre y vínculo"></div>
-                        <div class="form-field"><label>Hermanos</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Cónyuge / Pareja</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>Hijos/as a cargo</label><textarea placeholder="Nombre, edad, a cargo de quién quedó..."></textarea></div>
-                    <div class="form-field"><label>Personas de apoyo o sostén</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">5 — Egreso del hogar de origen</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="egreso-hogar" value="expulsion"> Por expulsión</label>
-                        <label><input type="radio" name="egreso-hogar" value="fuga"> Por fuga</label>
-                        <label><input type="radio" name="egreso-hogar" value="voluntario"> Voluntario</label>
-                        <label><input type="radio" name="egreso-hogar" value="na"> No aplica</label>
-                    </div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">6 y 7 — Interrupción de vínculos con progenitores</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>¿Interrupción vínculo con progenitor?</label><div class="radio-group inline"><label><input type="radio" name="vinc-padre" value="si"> Sí</label><label><input type="radio" name="vinc-padre" value="no"> No</label></div></div>
-                        <div class="form-field"><label>¿Interrupción vínculo con progenitora?</label><div class="radio-group inline"><label><input type="radio" name="vinc-madre" value="si"> Sí</label><label><input type="radio" name="vinc-madre" value="no"> No</label></div></div>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">8 — Antecedentes de institucionalización</h4>
-                    <div class="radio-group"><label><input type="radio" name="inst" value="si"> Sí</label><label><input type="radio" name="inst" value="no"> No</label></div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">9 — Antecedentes de violencia familiar</h4>
-                    <div class="radio-group"><label><input type="radio" name="viol-fam" value="si"> Sí</label><label><input type="radio" name="viol-fam" value="no"> No</label></div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Firma del profesional interviniente</h4>
-                    <div class="form-field"><label>Nombre / Matrícula</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento Social</button>
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. VISTA: EDUCACIÓN -->
-        <section id="educacion" class="view-section">
-            <h1 class="bebas">Seguimiento Educativo</h1>
-            
-            <div class="card" style="margin-bottom: 2rem;">
-                <h3>Estado Académico</h3>
-                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <p><strong>Nivel:</strong> Primaria (Ciclo Básico)</p>
-                        <p><strong>Curso:</strong> Alfabetización Digital</p>
-                    </div>
-                    <div class="badge green">Regular</div>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Educación</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — ¿Lee y escribe?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="lectoescritura" value="si"> Sí</label>
-                        <label><input type="radio" name="lectoescritura" value="no"> No</label>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Estudios Primarios</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="primaria" value="completos"> Completos</label>
-                        <label><input type="radio" name="primaria" value="incompletos"> Incompletos</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Última escuela</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Estudios Secundarios</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="secundaria" value="completos"> Completos</label>
-                        <label><input type="radio" name="secundaria" value="incompletos"> Incompletos</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Última escuela</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">4 — Estudios Terciarios / Universitarios</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="terciaria" value="completos"> Completos</label>
-                        <label><input type="radio" name="terciaria" value="incompletos"> Incompletos</label>
-                        <label><input type="radio" name="terciaria" value="ninguno"> Ninguno</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">6 — Interrupción de estudios</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>¿En qué nivel?</label><input type="text" placeholder="—"></div>
-                        <div class="form-field" style="flex:2"><label>Motivo</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">7 — Cursos / Certificaciones</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="cursos" value="si"> Sí</label>
-                        <label><input type="radio" name="cursos" value="no"> No</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Título</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Institución</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">8 — Diagnóstico psicopedagógico que afecte el aprendizaje</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="diagnostico-ped" value="si"> Sí</label>
-                        <label><input type="radio" name="diagnostico-ped" value="no"> No</label>
-                    </div>
-                    <div class="form-field"><label>¿Qué apoyos/ajustes necesita?</label><textarea placeholder="Describir..."></textarea></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">9 — Interés en continuar estudios</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="interes-estudio" value="si"> Sí</label>
-                        <label><input type="radio" name="interes-estudio" value="no"> No</label>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Ampliación de información</h4>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Notas adicionales del profesional..."></textarea></div>
-                    <div class="form-field"><label>Firma del profesional interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. VISTA: TRABAJO -->
-        <section id="trabajo" class="view-section">
-            <h1 class="bebas">Talleres y Formación Laboral</h1>
-            
-            <div class="card" style="margin-bottom: 2rem;">
-                <h3>Actividad Laboral Actual</h3>
-                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
-                    <p><strong>Taller:</strong> Carpintería I</p>
-                    <p><strong>Asistencia:</strong> 95% (Mes actual)</p>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Trabajo</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Ocupado al momento del ingreso</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="ocupado" value="si"> Sí</label>
-                        <label><input type="radio" name="ocupado" value="no"> No</label>
-                    </div>
-                    <div class="form-field"><label>Actividad</label><input type="text" placeholder="—"></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Actividad remunerada al ingreso</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="remunerada" value="si"> Sí</label>
-                        <label><input type="radio" name="remunerada" value="no"> No</label>
-                    </div>
-                    <div class="form-field"><label>¿Cuál?</label><input type="text" placeholder="—"></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Modalidad de la actividad</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="modalidad" value="presencial"> Presencial</label>
-                        <label><input type="radio" name="modalidad" value="remota"> Remota</label>
-                    </div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Indagar si tiene posibilidad y medios para continuar con la actividad..."></textarea></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">4 — Tiempo de permanencia en el último empleo</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="tiempo-empleo" value="menos-6m"> Menos de 6 meses</label>
-                        <label><input type="radio" name="tiempo-empleo" value="6m-1a"> Entre 6 meses y 1 año</label>
-                        <label><input type="radio" name="tiempo-empleo" value="1a-3a"> Entre 1 y 3 años</label>
-                        <label><input type="radio" name="tiempo-empleo" value="mas-3a"> Más de 3 años</label>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">5 — Actividades laborales realizadas</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Actividad 1</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Empresa / Lugar</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Desde</label><input type="text" placeholder="MM/AAAA"></div>
-                        <div class="form-field"><label>Hasta</label><input type="text" placeholder="MM/AAAA"></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Actividad 2</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Empresa / Lugar</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Desde</label><input type="text" placeholder="MM/AAAA"></div>
-                        <div class="form-field"><label>Hasta</label><input type="text" placeholder="MM/AAAA"></div>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">6 — ¿Cuenta con herramientas/materiales para continuar con la actividad?</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="herramientas" value="si"> Sí</label>
-                        <label><input type="radio" name="herramientas" value="no"> No</label>
-                    </div>
-                    <div class="form-field"><label>¿Qué herramientas necesita?</label><input type="text" placeholder="—"></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">7 — Tiempo en situación de desempleo</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="desempleo" value="menos-6m"> Menos de 6 meses</label>
-                        <label><input type="radio" name="desempleo" value="6m-1a"> Entre 6 meses y 1 año</label>
-                        <label><input type="radio" name="desempleo" value="1a-3a"> Entre 1 y 3 años</label>
-                        <label><input type="radio" name="desempleo" value="mas-3a"> Más de 3 años</label>
-                    </div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">8 — Antecedentes de formación profesional</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="formacion-prof" value="si"> Sí</label>
-                        <label><input type="radio" name="formacion-prof" value="no"> No</label>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>¿Cuál?</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>¿En medio libre?</label>
-                            <div class="radio-group inline"><label><input type="radio" name="medio-libre" value="si"> Sí</label><label><input type="radio" name="medio-libre" value="no"> No</label></div>
-                        </div>
-                        <div class="form-field"><label>¿En contexto de encierro?</label>
-                            <div class="radio-group inline"><label><input type="radio" name="encierro-form" value="si"> Sí</label><label><input type="radio" name="encierro-form" value="no"> No</label></div>
-                        </div>
-                        <div class="form-field"><label>¿Tiene certificación?</label>
-                            <div class="radio-group inline"><label><input type="radio" name="cert" value="si"> Sí</label><label><input type="radio" name="cert" value="no"> No</label></div>
-                        </div>
-                    </div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">9 — Conocimientos específicos relacionados a alguna actividad laboral</h4>
-                    <div class="form-field"><label>¿Cuáles?</label><textarea placeholder="Describir..."></textarea></div>
-                </div>
-
-                <div class="form-section-block">
-                    <h4 class="form-section-title">10 — Antecedentes de actividad laboral en contexto de encierro</h4>
-                    <div class="form-field"><label>Actividad</label><input type="text" placeholder="—"></div>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
                 </div>
                     </form>
                 </div>
