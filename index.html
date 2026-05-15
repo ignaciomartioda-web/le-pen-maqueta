@@ -72,7 +72,18 @@
 
         <!-- INSTRUMENTO DE INGRESO -->
         <section id="ingreso" class="view-section">
-            <h1 class="bebas">Instrumento de Ingreso</h1>
+            <h1 class="bebas">Admisión e Ingreso Táctico</h1>
+            
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3>Estado del Trámite de Ingreso</h3>
+                <div class="surface-container" style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem;">
+                    <span class="badge yellow">🟡 Pendiente de Validación</span>
+                    <p style="font-size: 0.9rem; color: #666;">El instrumento técnico ha sido iniciado. Falta firma de autoridad de admisión.</p>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento Técnico de Ingreso</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -210,7 +221,48 @@
 
         <!-- PLAN DE VIDA -->
         <section id="plan-vida" class="view-section">
-            <h1 class="bebas">Instrumento Plan de Vida</h1>
+            <h1 class="bebas">Gestión del Plan de Vida</h1>
+            
+            <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem;">
+                <!-- Columna Izquierda: Fases -->
+                <div style="flex: 2;">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="obs">Observación</button>
+                        <button class="tab-btn" data-tab="trat">Tratamiento</button>
+                        <button class="tab-btn" data-tab="pru">Prueba</button>
+                    </div>
+                    <div id="obs" class="tab-content active">
+                        <div class="surface-container">
+                            <h3>Informes Base</h3>
+                            <p style="margin-top:0.5rem; font-size:0.9rem;">Seguridad: <span class="badge green">OK</span> | Social: <span class="badge green">OK</span> | Médica: <span class="badge green">OK</span></p>
+                        </div>
+                    </div>
+                    <div id="trat" class="tab-content">
+                        <div class="surface-container">
+                            <h3>Evolución Trimestral</h3>
+                            <p style="font-size:0.9rem;">Pendiente de evaluación del próximo ciclo.</p>
+                        </div>
+                    </div>
+                    <div id="pru" class="tab-content">
+                        <div class="surface-container" style="background:#fff3f3; color:#c62828;">
+                            <h3>Acceso Restringido</h3>
+                            <p style="font-size:0.9rem;">Fases previas incompletas.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Gabinete -->
+                <div style="flex: 1; border-left: 2px solid var(--bg-surface); padding-left: 2rem;">
+                    <h3 style="color:var(--primary-dark); font-size: 1rem;">Gabinete Criminológico</h3>
+                    <div class="surface-container" style="margin-top:1rem; border-left: 3px solid var(--primary-cyan); font-size:0.85rem;">
+                        <strong>Dictamen Interdisciplinario</strong><br>
+                        <span style="color:#666;">Emitido: 20 Oct 2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Plan de Vida</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -258,7 +310,18 @@
 
         <!-- PSICOLOGÍA -->
         <section id="psicologia" class="view-section">
-            <h1 class="bebas">Instrumento de Psicología</h1>
+            <h1 class="bebas">Área de Psicología / Salud</h1>
+            
+            <div class="card" style="margin-bottom: 2rem; border-left: 5px solid var(--primary-cyan);">
+                <h3 style="color:var(--primary-dark)">Atenciones Recientes</h3>
+                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
+                    <p><strong>12/05/2026:</strong> Control de rutina. Presión normal. Sin medicación asignada.</p>
+                    <p><strong>18/09/2026:</strong> Evaluación psicológica de ingreso completada.</p>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Evaluación Psicológica</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -329,7 +392,40 @@
 
         <!-- SOCIAL -->
         <section id="social" class="view-section">
-            <h1 class="bebas">Instrumento Social</h1>
+            <h1 class="bebas">Área Social y Vínculos</h1>
+
+            <div class="card" style="margin-bottom: 2.5rem;">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="familiares">Familiares</button>
+                    <button class="tab-btn" data-tab="allegados">Allegados</button>
+                    <button class="tab-btn" data-tab="dias-visitas">Días Visitas</button>
+                    <button class="tab-btn" data-tab="alertas-soc" style="color:var(--status-yellow);">Necesidades Esp.</button>
+                </div>
+
+                <div id="familiares" class="tab-content active">
+                    <div class="surface-container" style="font-size: 0.9rem;">
+                        <p><strong>Madre:</strong> Maria P. | <strong>Hijo:</strong> Pedro P. (Menor)</p>
+                    </div>
+                </div>
+                <div id="allegados" class="tab-content">
+                    <div class="surface-container" style="font-size: 0.9rem;">
+                        <p>Sin allegados registrados actualmente.</p>
+                    </div>
+                </div>
+                <div id="dias-visitas" class="tab-content">
+                    <div class="surface-container" style="font-size: 0.9rem;">
+                        <p>Domingos de 09:00 a 13:00hs.</p>
+                    </div>
+                </div>
+                <div id="alertas-soc" class="tab-content">
+                    <div class="surface-container" style="border-left: 3px solid var(--status-yellow); font-size: 0.9rem;">
+                        <p>Requerimiento de intérprete para entrevistas familiares (Dialecto específico).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento de Abordaje Social</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -399,7 +495,21 @@
 
         <!-- 5. VISTA: EDUCACIÓN -->
         <section id="educacion" class="view-section">
-            <h1 class="bebas">Instrumento de Educación</h1>
+            <h1 class="bebas">Seguimiento Educativo</h1>
+            
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3>Estado Académico</h3>
+                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <p><strong>Nivel:</strong> Primaria (Ciclo Básico)</p>
+                        <p><strong>Curso:</strong> Alfabetización Digital</p>
+                    </div>
+                    <div class="badge green">Regular</div>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Educación</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -506,7 +616,18 @@
 
         <!-- 6. VISTA: TRABAJO -->
         <section id="trabajo" class="view-section">
-            <h1 class="bebas">Instrumento de Trabajo</h1>
+            <h1 class="bebas">Talleres y Formación Laboral</h1>
+            
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3>Actividad Laboral Actual</h3>
+                <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
+                    <p><strong>Taller:</strong> Carpintería I</p>
+                    <p><strong>Asistencia:</strong> 95% (Mes actual)</p>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Trabajo</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -625,9 +746,22 @@
         </section>
 
 
-        <!-- SITUACIÓN JUDICIAL -->
         <section id="situacion" class="view-section">
-            <h1 class="bebas">Situación Judicial</h1>
+            <h1 class="bebas">Intervención Área Jurídica</h1>
+            
+            <div class="card" style="margin-bottom: 2rem;">
+                <h3 style="color:var(--primary-dark)">Informes y Progresividad (Resumen Operativo)</h3>
+                <div class="surface-container" style="margin-top: 1rem;">
+                    <ul style="line-height:1.8; font-size: 0.9rem;">
+                        <li><strong>15/10/2026:</strong> Oficio N° 102 - Informe de Concepto Inicial <span class="badge green">Enviado</span></li>
+                        <li><strong>02/10/2026:</strong> <span class="badge red">Notificado</span> Elevación parte disciplinario (Exp. 22941).</li>
+                        <li><strong>18/10/2026:</strong> Solicitud de Cómputo Actualizado <span class="badge yellow">Pendiente Resolución</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin: 2rem 0 1rem 0;">Actualización de Instrumento Judicial</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Operador Jurídico</label><input type="text" placeholder="Nombre y apellido"></div>
@@ -663,9 +797,28 @@
             </form>
         </section>
 
-        <!-- SEGURIDAD -->
         <section id="seguridad" class="view-section">
-            <h1 class="bebas">Instrumento de Seguridad</h1>
+            <h1 class="bebas">Control de Seguridad y Disciplina</h1>
+            
+            <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
+                <div class="card" style="flex:1">
+                    <h3>Situación Disciplinaria</h3>
+                    <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
+                        <p><strong>Concepto:</strong> Bueno (5)</p>
+                        <p><strong>Última Sanción:</strong> 01/10/2026</p>
+                    </div>
+                </div>
+                <div class="card" style="flex:1">
+                    <h3>Ubicación Actual</h3>
+                    <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
+                        <p><strong>Unidad:</strong> 4 - Sector A</p>
+                        <p><strong>Pabellón:</strong> 12 (Baja Conflictividad)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento de Seguridad</h3>
+
             <form class="instrument-form">
                 <div class="form-header">
                     <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
