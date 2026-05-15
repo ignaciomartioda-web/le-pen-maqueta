@@ -20,31 +20,60 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Triple Tab Logic (Plan de Vida)
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+    // 3. Form Submission Feedback & Persistence
+    const forms = document.querySelectorAll('.instrument-form');
+    
+    // Load saved data on startup
+    forms.forEach(form => {
+        const sectionId = form.closest('.view-section').id;
+        const savedData = localStorage.getItem(`edp_data_${sectionId}`);
+        
+        if (savedData) {
+            const data = JSON.parse(savedData);
+            Object.keys(data).forEach(key => {
+                const input = form.querySelector(`[name="${key}"]`);
+                if (input) {
+                    if (input.type === 'radio' || input.type === 'checkbox') {
+                        const specificInput = form.querySelector(`[name="${key}"][value="${data[key]}"]`);
+                        if (specificInput) specificInput.checked = true;
+                    } else {
+                        input.value = data[key];
+                    }
+                } else {
+                    // Try by placeholder or label if name is missing (for textareas/inputs without name)
+                    // This is a fallback since some inputs might not have names yet
+                }
+            });
+        }
 
-    tabBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Check Lock Status (Progresividad)
-            if(btn.classList.contains('locked')) {
-                console.log("Restricción de Progresividad: Vista en modo Sólo Lectura/Bloqueada.");
-                // We no longer block navigation so the user can see the "Acceso Denegado" panel
-            }
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const sectionId = form.closest('.view-section').id;
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => { data[key] = value; });
+            
+            // Save to localStorage
+            localStorage.setItem(`edp_data_${sectionId}`, JSON.stringify(data));
 
-            // Scope to parent view-section to avoid hiding tabs in other sections
-            const parentSection = btn.closest('.view-section');
-            const sectionBtns = parentSection.querySelectorAll('.tab-btn');
-            const sectionContents = parentSection.querySelectorAll('.tab-content');
-
-            // Remove active from all in this section
-            sectionBtns.forEach(t => t.classList.remove('active'));
-            sectionContents.forEach(c => c.classList.remove('active'));
-
-            // Set specific active
-            btn.classList.add('active');
-            const targetContentId = btn.getAttribute('data-tab');
-            document.getElementById(targetContentId).classList.add('active');
+            // Show Feedback
+            const btn = form.querySelector('.btn-primary');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✅ ¡Guardado con éxito!';
+            btn.style.background = 'var(--status-green)';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 3000);
         });
+
+        // Make the "Guardar" buttons actually trigger submit if they are type="button"
+        const saveBtn = form.querySelector('.btn-primary');
+        if (saveBtn && saveBtn.type === 'button') {
+            saveBtn.addEventListener('click', () => {
+                form.dispatchEvent(new Event('submit'));
+            });
+        }
     });
 });

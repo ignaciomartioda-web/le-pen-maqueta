@@ -24,22 +24,14 @@
         </div>
 
         <div class="nav-item active" data-target="resumen">Inicio / Resumen</div>
+        <div class="nav-item" data-target="ingreso">Instrumento Ingreso</div>
         <div class="nav-item" data-target="situacion">Situación Judicial</div>
-        <div class="nav-item" data-target="clasificacion">Clasificación</div>
         <div class="nav-item" data-target="plan-vida">Plan de Vida</div>
-
-        <!-- NUEVO: MÓDULO VÍNCULOS / VISITAS -->
-        <div class="nav-item" data-target="vinculos-visitas">Vínculos / Visitas</div>
-
-        <!-- NUEVO: MÓDULO SEGURIDAD -->
+        <div class="nav-item" data-target="psicologia">Psicología</div>
+        <div class="nav-item" data-target="social">Social</div>
         <div class="nav-item" data-target="seguridad">Seguridad</div>
-
-        <div class="nav-item" data-target="salud">Salud</div>
         <div class="nav-item" data-target="educacion">Educación</div>
         <div class="nav-item" data-target="trabajo">Trabajo y Talleres</div>
-        <div class="nav-item" data-target="instrumentos-repo" style="color: var(--primary-cyan); border-top: 1px solid var(--tac-surface); margin-top: 1rem;">
-            <span style="font-size: 0.8rem;">📦 REPOSITORIO</span><br>Instrumentos
-        </div>
         <div class="nav-item" data-target="configuracion">Configuración</div>
     </nav>
 
@@ -48,30 +40,25 @@
         
         <!-- 0. VISTA: RESUMEN / INICIO -->
         <section id="resumen" class="view-section active">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
-                <h1 class="bebas">Panel General y Eventos</h1>
-                <a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" class="btn-tactical" download>📄 VER INSTRUMENTO INGRESO</a>
-            </div>
-            
+            <h1 class="bebas">Panel General y Eventos</h1>
             <div class="card" style="margin-bottom: 2rem;">
                 <h3>Línea de Tiempo Operacional del Interno</h3>
                 <div class="surface-container" style="margin-top: 1.5rem; padding: 2rem;">
-                    
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="time-date">HOY - 14:30hs</div>
                             <div class="time-title">Educación: Finalización de Ciclo</div>
-                            <div class="time-desc">Aprobación del módulo de "Alfabetización Digital". Se adjunta informe de progreso.</div>
+                            <div class="time-desc">Aprobación del módulo de "Alfabetización Digital".</div>
                         </div>
                         <div class="timeline-item">
                             <div class="time-date">10 OCT 2026 - 09:15hs</div>
                             <div class="time-title">Atención Médica (Rutina)</div>
-                            <div class="time-desc">Control general de signos vitales en dispensario. Sin novedades.</div>
+                            <div class="time-desc">Control general de signos vitales. Sin novedades.</div>
                         </div>
                         <div class="timeline-item">
                             <div class="time-date">01 OCT 2026 - 11:00hs</div>
-                            <div class="time-title" style="color: var(--status-red)">Infracción Disciplinaria Resolutiva (Grado 2)</div>
-                            <div class="time-desc">Altercado en sector comedor de la Unidad 4. Parte elevado al director. Restricción temporal aplicada.</div>
+                            <div class="time-title" style="color: var(--status-red)">Infracción Disciplinaria (Grado 2)</div>
+                            <div class="time-desc">Altercado en sector comedor de la Unidad 4. Parte elevado al director.</div>
                         </div>
                         <div class="timeline-item">
                             <div class="time-date">15 SEP 2026 - 08:00hs</div>
@@ -79,156 +66,335 @@
                             <div class="time-desc">Recepción central desde alcaldía. Toma de biometría y dictamen de riesgo elevado al Gabinete.</div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- 1. VISTA: SITUACIÓN JUDICIAL -->
-        <section id="situacion" class="view-section">
-            <h1 class="bebas">Intervención Área Jurídica</h1>
-            
-            <div class="card">
-                <h3 style="color:var(--primary-dark)">Informes Remitidos al Juez</h3>
-                <div class="surface-container" style="margin-top: 1rem;">
-                    <ul style="line-height:2.2;">
-                        <li><strong>15/10/2026:</strong> Oficio N° 102 - Informe de Concepto Inicial <span class="badge green">Enviado</span></li>
-                        <li><strong>22/09/2026:</strong> Contestación de Oficio N° 458-B (Aptitud Médica) <span class="badge green">Enviado</span></li>
-                    </ul>
+        <!-- INSTRUMENTO DE INGRESO -->
+        <section id="ingreso" class="view-section">
+            <h1 class="bebas">Instrumento de Ingreso</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                    <div class="form-field"><label>Fecha</label><input type="date"></div>
                 </div>
-            </div>
-
-            <div class="card">
-                <h3 style="color:var(--status-red)">Incidentes de Conducta Comunicados</h3>
-                <div class="surface-container" style="margin-top: 1rem;">
-                    <ul style="line-height:2.2;">
-                        <li><strong>02/10/2026:</strong> <span class="badge red">Notificado a Juez</span> Elevación parte disciplinario (Altercado zona común). Expediente N° 22941.</li>
-                    </ul>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Datos personales</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Apellido y nombre</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Fecha de nacimiento</label><input type="date"></div>
+                        <div class="form-field"><label>Edad</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Nacionalidad</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>DNI</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>CUIL</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Estado civil</label><input type="text" placeholder="—"></div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card">
-                <h3 style="color:var(--primary-dark)">Gestión de Progresividad de la Pena</h3>
-                <div class="surface-container" style="margin-top: 1rem;">
-                    <p style="margin-bottom: 0.5rem; color:#5d5e5f;"><em>Registro de todas las acciones originadas en el área jurídica hacia la progresividad del interno.</em></p>
-                    <ul style="line-height:2.2;">
-                        <li><strong>18/10/2026:</strong> Solicitud de Cómputo Actualizado al Juez de Ejecución en base a Informes del Gabinete. <span class="badge yellow">Pendiente Resolución</span></li>
-                        <li><strong>16/09/2026:</strong> Carga de carátulas y consolidación de causa madre. <span class="badge green">Documentado</span></li>
-                    </ul>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Nivel de instrucción</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="instruccion" value="sin"> Sin instrucción</label>
+                        <label><input type="radio" name="instruccion" value="prim-inc"> Primaria incompleta</label>
+                        <label><input type="radio" name="instruccion" value="prim-comp"> Primaria completa</label>
+                        <label><input type="radio" name="instruccion" value="sec-inc"> Secundaria incompleta</label>
+                        <label><input type="radio" name="instruccion" value="sec-comp"> Secundaria completa</label>
+                        <label><input type="radio" name="instruccion" value="sup"> Superior</label>
+                    </div>
                 </div>
-            </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Identidad de género</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="genero" value="varon"> Varón cis</label>
+                        <label><input type="radio" name="genero" value="mujer"> Mujer cis</label>
+                        <label><input type="radio" name="genero" value="varon-trans"> Varón trans</label>
+                        <label><input type="radio" name="genero" value="mujer-trans"> Mujer trans</label>
+                        <label><input type="radio" name="genero" value="nb"> No binarie</label>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">9 — Situación habitacional</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="habitacional" value="calle"> Situación de calle</label>
+                        <label><input type="radio" name="habitacional" value="domicilio"> Posee domicilio</label>
+                    </div>
+                    <div class="form-field"><label>Domicilio (en caso de poseer)</label><input type="text" placeholder="—"></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">11 — Causa detención actual</h4>
+                    <div class="form-field"><label>Causa</label><textarea placeholder="Describir..."></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">12 — Asistencia jurídica</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Tipo</label>
+                            <div class="radio-group"><label><input type="radio" name="asist-jur" value="oficial"> Defensor Oficial</label><label><input type="radio" name="asist-jur" value="particular"> Particular</label></div>
+                        </div>
+                        <div class="form-field"><label>Nombre del abogado</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">13 — Procedencia</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="procedencia" value="directo"> Ingreso directo</label>
+                        <label><input type="radio" name="procedencia" value="alcaidia"> Alcaidía</label>
+                        <label><input type="radio" name="procedencia" value="comisaria"> Comisaría/CAD</label>
+                        <label><input type="radio" name="procedencia" value="otro-complejo"> Complejo/Unidad otra jurisdicción</label>
+                        <label><input type="radio" name="procedencia" value="arresto"> Arresto domiciliario</label>
+                        <label><input type="radio" name="procedencia" value="reingreso"> Reingreso por evasión</label>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">14 — Referente que sepa de su detención</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Nombre y apellido</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Domicilio</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>¿Desea dar aviso de su detención?</label>
+                        <div class="radio-group"><label><input type="radio" name="aviso" value="si"> Sí</label><label><input type="radio" name="aviso" value="no"> No</label></div>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">15 — Discapacidad</h4>
+                    <div class="radio-group">
+                        <label><input type="checkbox" name="discapacidad" value="motora"> Motora</label>
+                        <label><input type="checkbox" name="discapacidad" value="intelectual"> Intelectual</label>
+                        <label><input type="checkbox" name="discapacidad" value="ninguna"> Ninguna</label>
+                    </div>
+                    <div class="form-field"><label>¿Posee CUD?</label>
+                        <div class="radio-group"><label><input type="radio" name="cud" value="si"> Sí</label><label><input type="radio" name="cud" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>Necesidades de adecuación espacial</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block" style="border-left-color: var(--status-red);">
+                    <h4 class="form-section-title" style="color:var(--status-red);">Salud Mental — Condición observada al ingreso</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Estado de conciencia</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Orientación temporoespacial</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Afecto y ánimo</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>¿Tuvo autolesiones?</label>
+                        <div class="radio-group"><label><input type="radio" name="autolesiones" value="si"> Sí</label><label><input type="radio" name="autolesiones" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>¿Tuvo intentos de suicidio?</label>
+                        <div class="radio-group"><label><input type="radio" name="suicidio" value="si"> Sí</label><label><input type="radio" name="suicidio" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>Observaciones conducta/apariencia</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block" style="border-left-color: var(--status-yellow);">
+                    <h4 class="form-section-title" style="color:var(--status-yellow);">Indicadores de consumo problemático</h4>
+                    <div class="form-field"><label>¿Refiere consumo reciente de sustancias?</label>
+                        <div class="radio-group"><label><input type="radio" name="consumo" value="si"> Sí</label><label><input type="radio" name="consumo" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>Sustancias (marcar todas)</label>
+                        <div class="radio-group">
+                            <label><input type="checkbox" value="alcohol"> Alcohol</label>
+                            <label><input type="checkbox" value="pb"> Pasta base</label>
+                            <label><input type="checkbox" value="cocaina"> Cocaína</label>
+                            <label><input type="checkbox" value="marihuana"> Marihuana</label>
+                        </div>
+                    </div>
+                    <div class="form-field"><label>Frecuencia habitual referida</label>
+                        <div class="radio-group"><label><input type="radio" name="frecuencia" value="diario"> Diario</label><label><input type="radio" name="frecuencia" value="frecuente"> Frecuente</label><label><input type="radio" name="frecuencia" value="ocasional"> Ocasional</label><label><input type="radio" name="frecuencia" value="esporadico"> Esporádico</label></div>
+                    </div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Ingreso</button>
+                </div>
+            </form>
         </section>
 
-        <!-- 2. VISTA: CLASIFICACIÓN -->
-        <section id="clasificacion" class="view-section">
-            <h1 class="bebas">Clasificación / Admisión</h1>
-            <div style="display:flex; gap: 1rem;">
-                <div class="card" style="flex:1">
-                    <h3>Vista A: Asignación Inicial</h3>
-                    <div class="surface-container" style="margin-top: 1rem">
-                        <p><strong>Nivel de Seguridad:</strong> Alto</p>
-                        <p><strong>Espacio Asignado:</strong> Pabellón C</p>
-                    </div>
+        <!-- PLAN DE VIDA -->
+        <section id="plan-vida" class="view-section">
+            <h1 class="bebas">Instrumento Plan de Vida</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
                 </div>
-                <div class="card" style="flex:1">
-                    <h3>Vista B: Necesidades Abordaje</h3>
-                    <div class="surface-container" style="margin-top: 1rem">
-                        <span class="badge yellow">🟡 Pendiente de Carga</span>
-                        <p style="margin-top:0.5rem">Falta Diagnóstico Tratamental Inicial.</p>
-                        <div style="margin-top: 1rem; border-top: 1px solid #ddd; padding-top: 1rem;">
-                            <a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" style="font-size: 0.85rem; color: var(--primary-dark); text-decoration: none; font-weight: 600;" download>
-                                📥 Descargar Instrumento de Ingreso
-                            </a>
-                        </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Área Salud</h4>
+                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Condiciones de salud física, accesibilidad al sistema sanitario, tratamientos en curso..."></textarea></div>
+                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
                     </div>
+                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
                 </div>
-            </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Área Psicológica</h4>
+                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Funcionamiento psicoemocional, recursos personales, adaptación institucional..."></textarea></div>
+                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">5 — Área Educación</h4>
+                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Nivel educativo alcanzado, alfabetización, continuidad escolar..."></textarea></div>
+                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">7 — Dimensión Restaurativa</h4>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
+                </div>
+            </form>
         </section>
 
-        <!-- 3. VISTA: PLAN DE VIDA (Con lógica interna) -->
-        <section id="plan-vida" class="view-section" style="background:var(--bg-card); padding: 2rem; border-radius: 4px;">
-            <h1 class="bebas" style="color:#000; margin-bottom: 2rem;">Plan de Vida</h1>
-            
-            <div style="display: flex; gap: 2.5rem;">
-                <!-- Columna Izquierda: Fases del Plan de Vida -->
-                <div style="flex: 2;">
-                    <div class="tabs-header">
-                        <button class="tab-btn active" data-tab="obs">Observación</button>
-                        <button class="tab-btn" data-tab="trat">Tratamiento</button>
-                        <button class="tab-btn" data-tab="pru">Prueba</button>
-                    </div>
-
-                    <div id="obs" class="tab-content active">
-                        <div class="surface-container">
-                            <h3>Informes Base</h3>
-                            <ul style="margin-top:1rem; line-height:2;">
-                                <li>Área Seguridad: <span class="badge green">Disponible</span></li>
-                                <li>Área Social: <span class="badge green">Disponible</span></li>
-                                <li>Área Médica: <span class="badge green">Disponible</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div id="trat" class="tab-content">
-                        <div class="surface-container">
-                            <h3>Informes Trimestrales de Evolución</h3>
-                            <p>Inicie la carga del plan de tratamiento periódico.</p>
-                        </div>
-                    </div>
-
-                    <div id="pru" class="tab-content">
-                        <div class="surface-container" style="background:#ffebee; color:#c62828;">
-                            <h3>Acceso Denegado</h3>
-                            <p>No puede cargar dictámenes de prueba judicial hasta completar las fases de Tratamiento previas.</p>
-                        </div>
-                    </div>
+        <!-- PSICOLOGÍA -->
+        <section id="psicologia" class="view-section">
+            <h1 class="bebas">Instrumento de Psicología</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
                 </div>
-
-                <!-- Columna Derecha: Panel del Gabinete Criminológico -->
-                <div style="flex: 1; border-left: 2px solid var(--bg-surface); padding-left: 2.5rem;">
-                    <h3 style="color:var(--primary-dark); margin-bottom: 0.5rem;">Gabinete Criminológico</h3>
-                    <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.5rem">
-                        Repositorio exclusivo de todo informe y dictamen emitido por el GC.
-                    </p>
-                    
-                    <div class="surface-container" style="margin-bottom:1rem; border-left: 3px solid var(--primary-cyan);">
-                        <strong>Dictamen Criminológico Interdisciplinario</strong><br>
-                        <span style="font-size:0.8rem; color:#555;">20 Oct 2026</span><br>
-                        <a href="#" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;">📄 Descargar PDF</a>
-                    </div>
-
-                    <div class="surface-container" style="margin-bottom:1rem; border-left: 3px solid var(--primary-cyan);">
-                        <strong>Evaluación Psicológica de Ingreso</strong><br>
-                        <span style="font-size:0.8rem; color:#555;">18 Sep 2026</span><br>
-                        <a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;" download>📄 Descargar Instrumento</a>
-                    </div>
-
-                    <div class="surface-container" style="margin-bottom:1rem; border-left: 3px solid var(--primary-cyan);">
-                        <strong>Plan de Vida Operacional</strong><br>
-                        <span style="font-size:0.8rem; color:#555;">Instrumento Técnico</span><br>
-                        <a href="instrumentos/Instrumento Plan de Vida SPRS (2).xlsx" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;" download>📄 Descargar Instrumento</a>
-                    </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Relación con el grupo familiar de origen</h4>
+                    <div class="form-field"><label>Nombre y Apellido / Vínculo</label><textarea placeholder="—"></textarea></div>
                 </div>
-            </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Relación con el grupo familiar de elección</h4>
+                    <div class="form-field"><label>Nombre y Apellido / Vínculo</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Referente de crianza</h4>
+                    <div class="radio-group">
+                        <label><input type="checkbox" value="madre"> Madre</label>
+                        <label><input type="checkbox" value="padre"> Padre</label>
+                        <label><input type="checkbox" value="hermanos"> Hermanos/as</label>
+                        <label><input type="checkbox" value="abuelos"> Abuelos/as</label>
+                        <label><input type="checkbox" value="otro"> Otro</label>
+                    </div>
+                    <div class="form-field"><label>¿Quién/es?</label><input type="text" placeholder="—"></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">4 — Padres separados</h4>
+                    <div class="radio-group"><label><input type="radio" name="sep" value="si"> Sí</label><label><input type="radio" name="sep" value="no"> No</label></div>
+                    <div class="form-field"><label>Edad cuando se separaron</label><input type="text" placeholder="—"></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">5 — Fugas del hogar durante infancia o adolescencia</h4>
+                    <div class="radio-group"><label><input type="radio" name="fugas" value="si"> Sí</label><label><input type="radio" name="fugas" value="no"> No</label></div>
+                    <div class="form-field"><label>Motivo</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">6 — Antecedentes de problemas de conducta en la escuela</h4>
+                    <div class="radio-group"><label><input type="radio" name="conducta-esc" value="si"> Sí</label><label><input type="radio" name="conducta-esc" value="no"> No</label></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">7 — Antecedentes de problemas para relacionarse con personas</h4>
+                    <div class="radio-group"><label><input type="radio" name="relaciones" value="si"> Sí</label><label><input type="radio" name="relaciones" value="no"> No</label></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">8 — Antecedentes de relaciones de pareja/familiares violentas</h4>
+                    <div class="radio-group"><label><input type="radio" name="violencia" value="si"> Sí</label><label><input type="radio" name="violencia" value="no"> No</label></div>
+                    <div class="form-field"><label>¿Con la actual pareja?</label>
+                        <div class="radio-group"><label><input type="radio" name="violencia-actual" value="si"> Sí</label><label><input type="radio" name="violencia-actual" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">9 — ¿Ha realizado tratamiento psicológico?</h4>
+                    <div class="radio-group"><label><input type="radio" name="trat-psico" value="si"> Sí</label><label><input type="radio" name="trat-psico" value="no"> No</label></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Firma del profesional interviniente</h4>
+                    <div class="form-field"><label>Nombre / Matrícula</label><input type="text" placeholder="—"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Psicología</button>
+                </div>
+            </form>
         </section>
 
-        <!-- 4. VISTA: SALUD -->
-        <section id="salud" class="view-section">
-            <h1 class="bebas">Historia Clínica Digital</h1>
-            <div class="card">
-                <h3>Atenciones Recientes</h3>
-                <div class="surface-container" style="margin-top: 1rem;">
-                    <p><strong>12/05/2026:</strong> Control de rutina. Presión normal. Sin medicación asignada.</p>
+        <!-- SOCIAL -->
+        <section id="social" class="view-section">
+            <h1 class="bebas">Instrumento Social</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
                 </div>
-            </div>
-
-            <div class="card" style="border-left: 5px solid var(--primary-cyan);">
-                <h3>Gabinete de Psicología</h3>
-                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Acceso al instrumento técnico de evaluación psicológica y grilla de variables.</p>
-                <div style="margin-top: 1rem;">
-                    <a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" class="btn-tactical" download>📥 DESCARGAR INSTRUMENTO PSICOLOGÍA</a>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Situación de calle y estrategias</h4>
+                    <div class="form-field"><label>Describir</label><textarea placeholder="—"></textarea></div>
                 </div>
-            </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Acceso a servicios básicos de infraestructura social</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>¿Agua potable?</label><div class="radio-group inline"><label><input type="radio" name="agua" value="si"> Sí</label><label><input type="radio" name="agua" value="no"> No</label></div></div>
+                        <div class="form-field"><label>¿Red de gas?</label><div class="radio-group inline"><label><input type="radio" name="gas" value="si"> Sí</label><label><input type="radio" name="gas" value="no"> No</label></div></div>
+                        <div class="form-field"><label>¿Red cloacal?</label><div class="radio-group inline"><label><input type="radio" name="cloaca" value="si"> Sí</label><label><input type="radio" name="cloaca" value="no"> No</label></div></div>
+                        <div class="form-field"><label>Servicios eléctricos</label><div class="radio-group inline"><label><input type="radio" name="electr" value="si"> Sí</label><label><input type="radio" name="electr" value="no"> No</label></div></div>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Identificación del grupo familiar y/o socioafectivo</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Padres biológicos</label><input type="text" placeholder="Nombre y vínculo"></div>
+                        <div class="form-field"><label>Hermanos</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Cónyuge / Pareja</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>Hijos/as a cargo</label><textarea placeholder="Nombre, edad, a cargo de quién quedó..."></textarea></div>
+                    <div class="form-field"><label>Personas de apoyo o sostén</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">5 — Egreso del hogar de origen</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="egreso-hogar" value="expulsion"> Por expulsión</label>
+                        <label><input type="radio" name="egreso-hogar" value="fuga"> Por fuga</label>
+                        <label><input type="radio" name="egreso-hogar" value="voluntario"> Voluntario</label>
+                        <label><input type="radio" name="egreso-hogar" value="na"> No aplica</label>
+                    </div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">6 y 7 — Interrupción de vínculos con progenitores</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>¿Interrupción vínculo con progenitor?</label><div class="radio-group inline"><label><input type="radio" name="vinc-padre" value="si"> Sí</label><label><input type="radio" name="vinc-padre" value="no"> No</label></div></div>
+                        <div class="form-field"><label>¿Interrupción vínculo con progenitora?</label><div class="radio-group inline"><label><input type="radio" name="vinc-madre" value="si"> Sí</label><label><input type="radio" name="vinc-madre" value="no"> No</label></div></div>
+                    </div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">8 — Antecedentes de institucionalización</h4>
+                    <div class="radio-group"><label><input type="radio" name="inst" value="si"> Sí</label><label><input type="radio" name="inst" value="no"> No</label></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">9 — Antecedentes de violencia familiar</h4>
+                    <div class="radio-group"><label><input type="radio" name="viol-fam" value="si"> Sí</label><label><input type="radio" name="viol-fam" value="no"> No</label></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Firma del profesional interviniente</h4>
+                    <div class="form-field"><label>Nombre / Matrícula</label><input type="text" placeholder="—"></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento Social</button>
+                </div>
+            </form>
         </section>
 
         <!-- 5. VISTA: EDUCACIÓN -->
@@ -459,63 +625,45 @@
         </section>
 
 
-        <!-- 7. VISTA: CONFIGURACIÓN -->
-        <section id="configuracion" class="view-section">
-            <h1 class="bebas">Ajustes del Operador Judicial</h1>
-            <div class="card" style="background:var(--tac-base); color:white;">
-                <h3 style="color:var(--primary-cyan)">Gestión de Firma Digital</h3>
-                <p style="margin-top:1rem">Suba su certificado para la validación de oficios.</p>
-                <button class="btn-primary" style="margin-top:1rem;">Cargar Firma</button>
-            </div>
+        <!-- SITUACIÓN JUDICIAL -->
+        <section id="situacion" class="view-section">
+            <h1 class="bebas">Situación Judicial</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Operador Jurídico</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Informes remitidos al Juez</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Fecha</label><input type="date"></div>
+                        <div class="form-field"><label>Oficio N°</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Descripción</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Estado</label>
+                            <div class="radio-group inline"><label><input type="radio" name="inf-estado" value="enviado"> Enviado</label><label><input type="radio" name="inf-estado" value="pendiente"> Pendiente</label></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section-block" style="border-left-color: var(--status-red);">
+                    <h4 class="form-section-title" style="color:var(--status-red);">Incidentes de conducta comunicados</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Fecha</label><input type="date"></div>
+                        <div class="form-field"><label>Expediente N°</label><input type="text" placeholder="—"></div>
+                    </div>
+                    <div class="form-field"><label>Descripción</label><textarea placeholder="Describir el incidente..."></textarea></div>
+                </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Gestión de progresividad de la pena</h4>
+                    <div class="form-field"><label>Acciones documentadas</label><textarea placeholder="Describir solicitudes de cómputo, informes del Gabinete, etc."></textarea></div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Situación Judicial</button>
+                </div>
+            </form>
         </section>
 
-        <!-- VISTAS DE VÍNCULOS / VISITAS -->
-        <section id="vinculos-visitas" class="view-section" style="background:var(--bg-card); padding: 2rem; border-radius: 4px;">
-            <h1 class="bebas" style="color:#000; margin-bottom: 2rem;">Vínculos / Visitas</h1>
-            
-            <div class="tabs-header">
-                <button class="tab-btn active" data-tab="familiares">Familiares</button>
-                <button class="tab-btn" data-tab="allegados">Allegados Registrados</button>
-                <button class="tab-btn" data-tab="dias-visitas">Días de Visitas</button>
-                <button class="tab-btn" data-tab="necesidades-especiales" style="color:var(--status-yellow);">Necesidades Esp.</button>
-            </div>
-
-            <div id="familiares" class="tab-content active">
-                <div class="surface-container">
-                    <h3>Familiares</h3>
-                    <p>Listado y perfil de familiares directos.</p>
-                </div>
-            </div>
-
-            <div id="allegados" class="tab-content">
-                <div class="surface-container">
-                    <h3>Allegados Registrados</h3>
-                    <p>Vínculos verificados y estado de habilitación.</p>
-                </div>
-            </div>
-
-            <div id="dias-visitas" class="tab-content">
-                <div class="surface-container">
-                    <h3>Días de Visitas</h3>
-                    <p>Cronograma asignado por interno.</p>
-                </div>
-            </div>
-
-            <div id="necesidades-especiales" class="tab-content">
-                <div class="surface-container" style="border-left: 3px solid var(--status-yellow);">
-                    <h3 style="color:var(--status-yellow)">Necesidades Especiales</h3>
-                    <p>Alertas críticas: Movilidad reducida, requerimiento de intérpretes.</p>
-                </div>
-            </div>
-
-            <div class="card" style="margin-top: 2rem;">
-                <h3>Área Social - Instrumentos</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #555;">Grilla y variables para el abordaje social del interno y su entorno familiar.</p>
-                <a href="instrumentos/Instrumento Social SPRS - Grilla y variables (1).xlsx" class="btn-tactical" download>📥 DESCARGAR INSTRUMENTO SOCIAL</a>
-            </div>
-        </section>
-
-        <!-- VISTAS DE SEGURIDAD -->
+        <!-- SEGURIDAD -->
         <section id="seguridad" class="view-section">
             <h1 class="bebas">Instrumento de Seguridad</h1>
             <form class="instrument-form">
@@ -524,7 +672,6 @@
                     <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
                     <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
                 </div>
-
                 <div class="form-section-block">
                     <h4 class="form-section-title">1 — Alojamiento</h4>
                     <div class="form-row">
@@ -541,92 +688,43 @@
                     </div>
                     <div class="form-field"><label>Otros (especificar)</label><input type="text" placeholder="—"></div>
                 </div>
-
                 <div class="form-section-block">
                     <h4 class="form-section-title">2 — Capacidades Interpersonales</h4>
                     <div class="form-field"><label>¿Cómo se relaciona con el personal penitenciario?</label>
-                        <div class="radio-group"><label><input type="radio" name="relacion-personal" value="bien"> Bien</label><label><input type="radio" name="relacion-personal" value="regular"> Regular</label><label><input type="radio" name="relacion-personal" value="mal"> Mal</label></div>
+                        <div class="radio-group"><label><input type="radio" name="rel-personal" value="bien"> Bien</label><label><input type="radio" name="rel-personal" value="regular"> Regular</label><label><input type="radio" name="rel-personal" value="mal"> Mal</label></div>
                     </div>
-                    <div class="form-field"><label>¿Solicita asesoramiento para las actividades que puede realizar?</label>
-                        <div class="radio-group"><label><input type="radio" name="asesoramiento" value="si"> Sí</label><label><input type="radio" name="asesoramiento" value="no"> No</label></div>
+                    <div class="form-field"><label>¿Solicita asesoramiento para actividades?</label>
+                        <div class="radio-group"><label><input type="radio" name="ases" value="si"> Sí</label><label><input type="radio" name="ases" value="no"> No</label></div>
                     </div>
-                    <div class="form-field"><label>¿Cuida su lugar de alojamiento y mantiene el orden y la limpieza?</label>
-                        <div class="radio-group"><label><input type="radio" name="orden" value="si"> Sí</label><label><input type="radio" name="orden" value="no"> No</label></div>
+                    <div class="form-field"><label>¿Cuida su lugar de alojamiento?</label>
+                        <div class="radio-group"><label><input type="radio" name="cuida" value="si"> Sí</label><label><input type="radio" name="cuida" value="no"> No</label></div>
                     </div>
                     <div class="form-field"><label>¿Ha tenido buena recepción por parte de la población?</label>
-                        <div class="radio-group"><label><input type="radio" name="recepcion" value="buena"> Buena</label><label><input type="radio" name="recepcion" value="regular"> Regular</label><label><input type="radio" name="recepcion" value="mala"> Mala</label></div>
+                        <div class="radio-group"><label><input type="radio" name="recep" value="buena"> Buena</label><label><input type="radio" name="recep" value="regular"> Regular</label><label><input type="radio" name="recep" value="mala"> Mala</label></div>
                     </div>
-                    <div class="form-field"><label>¿Pudo integrarse con facilidad a este alojamiento?</label>
-                        <div class="radio-group"><label><input type="radio" name="integracion" value="si"> Sí</label><label><input type="radio" name="integracion" value="no"> No</label></div>
+                    <div class="form-field"><label>¿Pudo integrarse con facilidad?</label>
+                        <div class="radio-group"><label><input type="radio" name="integ" value="si"> Sí</label><label><input type="radio" name="integ" value="no"> No</label></div>
                     </div>
                     <div class="form-field"><label>Motivos (en caso negativo)</label><textarea placeholder="Describir..."></textarea></div>
                 </div>
-
                 <div class="form-section-block">
                     <h4 class="form-section-title">Ampliación de información</h4>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Información adicional relevante..."></textarea></div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
                     <div class="form-field"><label>Firma del profesional interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
                 </div>
-
                 <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Seguridad</button>
                 </div>
             </form>
         </section>
 
-
-        <!-- NUEVO: VISTA REPOSITORIO DE INSTRUMENTOS -->
-        <section id="instrumentos-repo" class="view-section">
-            <h1 class="bebas">Repositorio Central de Instrumentos</h1>
-            <p style="margin-bottom: 2rem; color: #666;">Listado completo de instrumentos técnicos (Archivos Excel) para el S.P.R.S.</p>
-            
-            <div class="card">
-                <table style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr style="text-align: left; border-bottom: 2px solid var(--bg-surface);">
-                            <th style="padding: 1rem;">Área / Instrumento</th>
-                            <th style="padding: 1rem;">Tipo de Archivo</th>
-                            <th style="padding: 1rem;">Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Ingreso y Admisión</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Plan de Vida</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Plan de Vida SPRS (2).xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Psicología (Grilla y Variables)</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Educación (Grilla y Variables)</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Educación SPRS con grilla y variables (2).xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Trabajo (Variables)</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Trabajo SPRS con variables.xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--bg-surface);">
-                            <td style="padding: 1rem;"><strong>Social (Grilla y Variables)</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Social SPRS - Grilla y variables (1).xlsx" download>Descargar</a></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1rem;"><strong>Seguridad</strong></td>
-                            <td style="padding: 1rem;">Excel (xlsx)</td>
-                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Seguridad SPRS (1).xlsx" download>Descargar</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- 7. VISTA: CONFIGURACIÓN -->
+        <section id="configuracion" class="view-section">
+            <h1 class="bebas">Ajustes del Operador Judicial</h1>
+            <div class="card" style="background:var(--tac-base); color:white;">
+                <h3 style="color:var(--primary-cyan)">Gestión de Firma Digital</h3>
+                <p style="margin-top:1rem">Suba su certificado para la validación de oficios.</p>
+                <button class="btn-primary" style="margin-top:1rem;">Cargar Firma</button>
             </div>
         </section>
 
