@@ -292,6 +292,135 @@ h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
+/* =============================================
+   INSTRUMENT FORMS
+   ============================================= */
+.instrument-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    background: var(--tac-base);
+    padding: 1.5rem;
+    border-radius: 4px;
+}
+
+.form-header .form-field label {
+    color: var(--primary-cyan);
+}
+
+.form-header .form-field input {
+    background: var(--tac-surface);
+    color: white;
+    border-color: var(--tac-card);
+}
+
+.form-section-block {
+    background: var(--bg-card);
+    border-radius: 4px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--primary-cyan);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.form-section-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.form-field:last-child { margin-bottom: 0; }
+
+.form-field label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #666;
+}
+
+.form-field input[type="text"],
+.form-field input[type="date"],
+.form-field textarea {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #1a1c1c;
+    background: var(--bg-surface);
+    transition: border 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(0, 106, 97, 0.1);
+}
+
+.form-field textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.radio-group.inline {
+    margin-bottom: 0;
+    gap: 0.8rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--primary-dark);
+    width: 16px;
+    height: 16px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+    border-top: 2px solid var(--bg-surface);
+}
+
 /* Table for Repo */
 table {
     width: 100%;

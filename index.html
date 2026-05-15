@@ -233,35 +233,231 @@
 
         <!-- 5. VISTA: EDUCACIÓN -->
         <section id="educacion" class="view-section">
-            <h1 class="bebas">Repositorio Educativo</h1>
-            <div class="card">
-                <h3>Ciclos en Curso</h3>
-                <ul style="margin-top:1rem; line-height:2">
-                    <li>Finalización Primaria <span class="badge green">En curso</span></li>
-                    <li>Boletín Q4 2026: <span class="badge yellow">Pendiente de carga</span></li>
-                </ul>
-                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #eee;">
-                    <a href="instrumentos/Instrumento Educación SPRS con grilla y variables (2).xlsx" style="color: var(--primary-dark); font-weight: 600; text-decoration: none; font-size: 0.9rem;" download>
-                        📄 Instrumento de Evaluación Educativa (Descargar)
-                    </a>
+            <h1 class="bebas">Instrumento de Educación</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
                 </div>
-            </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — ¿Lee y escribe?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="lectoescritura" value="si"> Sí</label>
+                        <label><input type="radio" name="lectoescritura" value="no"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Estudios Primarios</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="primaria" value="completos"> Completos</label>
+                        <label><input type="radio" name="primaria" value="incompletos"> Incompletos</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Última escuela</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Estudios Secundarios</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="secundaria" value="completos"> Completos</label>
+                        <label><input type="radio" name="secundaria" value="incompletos"> Incompletos</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Última escuela</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">4 — Estudios Terciarios / Universitarios</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="terciaria" value="completos"> Completos</label>
+                        <label><input type="radio" name="terciaria" value="incompletos"> Incompletos</label>
+                        <label><input type="radio" name="terciaria" value="ninguno"> Ninguno</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Nivel alcanzado</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Último año cursado</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">6 — Interrupción de estudios</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>¿En qué nivel?</label><input type="text" placeholder="—"></div>
+                        <div class="form-field" style="flex:2"><label>Motivo</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">7 — Cursos / Certificaciones</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="cursos" value="si"> Sí</label>
+                        <label><input type="radio" name="cursos" value="no"> No</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Título</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Institución</label><input type="text" placeholder="—"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">8 — Diagnóstico psicopedagógico que afecte el aprendizaje</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="diagnostico-ped" value="si"> Sí</label>
+                        <label><input type="radio" name="diagnostico-ped" value="no"> No</label>
+                    </div>
+                    <div class="form-field"><label>¿Qué apoyos/ajustes necesita?</label><textarea placeholder="Describir..."></textarea></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">9 — Interés en continuar estudios</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="interes-estudio" value="si"> Sí</label>
+                        <label><input type="radio" name="interes-estudio" value="no"> No</label>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Ampliación de información</h4>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Notas adicionales del profesional..."></textarea></div>
+                    <div class="form-field"><label>Firma del profesional interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
+                </div>
+            </form>
         </section>
 
         <!-- 6. VISTA: TRABAJO -->
         <section id="trabajo" class="view-section">
-            <h1 class="bebas">Ficha Laboral y Talleres</h1>
-            <div class="card">
-                <h3>Taller Asignado</h3>
-                <div class="surface-container" style="display:flex; justify-content:space-between; margin-top: 1rem">
-                    <span>Carpintería Inicial</span>
-                    <strong>Asistencia: 95%</strong>
+            <h1 class="bebas">Instrumento de Trabajo</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                    <div class="form-field"><label>Alojamiento</label><input type="text" placeholder="Pabellón / Unidad"></div>
                 </div>
-                <div style="margin-top: 1.5rem;">
-                    <a href="instrumentos/Instrumento Trabajo SPRS con variables.xlsx" class="btn-tactical" download>📥 INSTRUMENTO TRABAJO / VARIABLES</a>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Ocupado al momento del ingreso</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="ocupado" value="si"> Sí</label>
+                        <label><input type="radio" name="ocupado" value="no"> No</label>
+                    </div>
+                    <div class="form-field"><label>Actividad</label><input type="text" placeholder="—"></div>
                 </div>
-            </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Actividad remunerada al ingreso</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="remunerada" value="si"> Sí</label>
+                        <label><input type="radio" name="remunerada" value="no"> No</label>
+                    </div>
+                    <div class="form-field"><label>¿Cuál?</label><input type="text" placeholder="—"></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">3 — Modalidad de la actividad</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="modalidad" value="presencial"> Presencial</label>
+                        <label><input type="radio" name="modalidad" value="remota"> Remota</label>
+                    </div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Indagar si tiene posibilidad y medios para continuar con la actividad..."></textarea></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">4 — Tiempo de permanencia en el último empleo</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="tiempo-empleo" value="menos-6m"> Menos de 6 meses</label>
+                        <label><input type="radio" name="tiempo-empleo" value="6m-1a"> Entre 6 meses y 1 año</label>
+                        <label><input type="radio" name="tiempo-empleo" value="1a-3a"> Entre 1 y 3 años</label>
+                        <label><input type="radio" name="tiempo-empleo" value="mas-3a"> Más de 3 años</label>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">5 — Actividades laborales realizadas</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Actividad 1</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Empresa / Lugar</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Desde</label><input type="text" placeholder="MM/AAAA"></div>
+                        <div class="form-field"><label>Hasta</label><input type="text" placeholder="MM/AAAA"></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>Actividad 2</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Empresa / Lugar</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Desde</label><input type="text" placeholder="MM/AAAA"></div>
+                        <div class="form-field"><label>Hasta</label><input type="text" placeholder="MM/AAAA"></div>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">6 — ¿Cuenta con herramientas/materiales para continuar con la actividad?</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="herramientas" value="si"> Sí</label>
+                        <label><input type="radio" name="herramientas" value="no"> No</label>
+                    </div>
+                    <div class="form-field"><label>¿Qué herramientas necesita?</label><input type="text" placeholder="—"></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">7 — Tiempo en situación de desempleo</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="desempleo" value="menos-6m"> Menos de 6 meses</label>
+                        <label><input type="radio" name="desempleo" value="6m-1a"> Entre 6 meses y 1 año</label>
+                        <label><input type="radio" name="desempleo" value="1a-3a"> Entre 1 y 3 años</label>
+                        <label><input type="radio" name="desempleo" value="mas-3a"> Más de 3 años</label>
+                    </div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">8 — Antecedentes de formación profesional</h4>
+                    <div class="radio-group">
+                        <label><input type="radio" name="formacion-prof" value="si"> Sí</label>
+                        <label><input type="radio" name="formacion-prof" value="no"> No</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field"><label>¿Cuál?</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>¿En medio libre?</label>
+                            <div class="radio-group inline"><label><input type="radio" name="medio-libre" value="si"> Sí</label><label><input type="radio" name="medio-libre" value="no"> No</label></div>
+                        </div>
+                        <div class="form-field"><label>¿En contexto de encierro?</label>
+                            <div class="radio-group inline"><label><input type="radio" name="encierro-form" value="si"> Sí</label><label><input type="radio" name="encierro-form" value="no"> No</label></div>
+                        </div>
+                        <div class="form-field"><label>¿Tiene certificación?</label>
+                            <div class="radio-group inline"><label><input type="radio" name="cert" value="si"> Sí</label><label><input type="radio" name="cert" value="no"> No</label></div>
+                        </div>
+                    </div>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">9 — Conocimientos específicos relacionados a alguna actividad laboral</h4>
+                    <div class="form-field"><label>¿Cuáles?</label><textarea placeholder="Describir..."></textarea></div>
+                </div>
+
+                <div class="form-section-block">
+                    <h4 class="form-section-title">10 — Antecedentes de actividad laboral en contexto de encierro</h4>
+                    <div class="form-field"><label>Actividad</label><input type="text" placeholder="—"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
+                </div>
+            </form>
         </section>
+
 
         <!-- 7. VISTA: CONFIGURACIÓN -->
         <section id="configuracion" class="view-section">
@@ -320,42 +516,64 @@
         </section>
 
         <!-- VISTAS DE SEGURIDAD -->
-        <section id="seguridad" class="view-section" style="background:var(--bg-card); padding: 2rem; border-radius: 4px;">
-            <h1 class="bebas" style="color:#000; margin-bottom: 2rem;">Seguridad Operativa</h1>
-            
-            <div class="tabs-header">
-                <button class="tab-btn active" data-tab="disciplina">Disciplina</button>
-                <button class="tab-btn" data-tab="traslado">Traslados</button>
-                <button class="tab-btn" data-tab="eventos-criticos" style="color:var(--status-red); font-weight:bold;">⚠️ Eventos Críticos</button>
-            </div>
-
-            <div id="disciplina" class="tab-content active">
-                <div class="surface-container">
-                    <h3>Disciplina</h3>
-                    <p>Registro de sanciones, conducta y legajo disciplinario.</p>
+        <section id="seguridad" class="view-section">
+            <h1 class="bebas">Instrumento de Seguridad</h1>
+            <form class="instrument-form">
+                <div class="form-header">
+                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
                 </div>
-            </div>
 
-            <div id="traslado" class="tab-content">
-                <div class="surface-container">
-                    <h3>Traslados</h3>
-                    <p>Gestión de movimientos internos y externos.</p>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">1 — Alojamiento</h4>
+                    <div class="form-row">
+                        <div class="form-field"><label>Lugar de alojamiento</label><input type="text" placeholder="—"></div>
+                        <div class="form-field"><label>Fecha de ingreso al alojamiento actual</label><input type="date"></div>
+                    </div>
+                    <div class="form-field"><label>Movimientos dentro del alojamiento</label><textarea placeholder="Describir..."></textarea></div>
+                    <div class="form-field"><label>Características del alojamiento</label><textarea placeholder="Describir..."></textarea></div>
+                    <div class="form-field"><label>Motivo determinante del lugar de alojamiento otorgado</label></div>
+                    <div class="radio-group">
+                        <label><input type="radio" name="motivo-aloj" value="solicitud"> Solicitud de la PPL</label>
+                        <label><input type="radio" name="motivo-aloj" value="vinculos"> Vínculos socioafectivos</label>
+                        <label><input type="radio" name="motivo-aloj" value="otros"> Otros</label>
+                    </div>
+                    <div class="form-field"><label>Otros (especificar)</label><input type="text" placeholder="—"></div>
                 </div>
-            </div>
 
-            <div id="eventos-criticos" class="tab-content">
-                <div class="surface-container" style="background-color: #ffebee; border: 2px solid var(--status-red);">
-                    <h3 style="color: var(--status-red);">🔴 Alerta de Seguridad Activa</h3>
-                    <p>Panel de incidentes, alarmas y reportes de emergencia.</p>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">2 — Capacidades Interpersonales</h4>
+                    <div class="form-field"><label>¿Cómo se relaciona con el personal penitenciario?</label>
+                        <div class="radio-group"><label><input type="radio" name="relacion-personal" value="bien"> Bien</label><label><input type="radio" name="relacion-personal" value="regular"> Regular</label><label><input type="radio" name="relacion-personal" value="mal"> Mal</label></div>
+                    </div>
+                    <div class="form-field"><label>¿Solicita asesoramiento para las actividades que puede realizar?</label>
+                        <div class="radio-group"><label><input type="radio" name="asesoramiento" value="si"> Sí</label><label><input type="radio" name="asesoramiento" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>¿Cuida su lugar de alojamiento y mantiene el orden y la limpieza?</label>
+                        <div class="radio-group"><label><input type="radio" name="orden" value="si"> Sí</label><label><input type="radio" name="orden" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>¿Ha tenido buena recepción por parte de la población?</label>
+                        <div class="radio-group"><label><input type="radio" name="recepcion" value="buena"> Buena</label><label><input type="radio" name="recepcion" value="regular"> Regular</label><label><input type="radio" name="recepcion" value="mala"> Mala</label></div>
+                    </div>
+                    <div class="form-field"><label>¿Pudo integrarse con facilidad a este alojamiento?</label>
+                        <div class="radio-group"><label><input type="radio" name="integracion" value="si"> Sí</label><label><input type="radio" name="integracion" value="no"> No</label></div>
+                    </div>
+                    <div class="form-field"><label>Motivos (en caso negativo)</label><textarea placeholder="Describir..."></textarea></div>
                 </div>
-            </div>
 
-            <div class="card" style="margin-top: 2rem; background: var(--tac-surface); color: white;">
-                <h3 style="color: var(--primary-cyan);">Protocolos y Seguridad</h3>
-                <p style="margin-bottom: 1rem; font-size: 0.9rem; opacity: 0.8;">Instrumento técnico de seguridad SPRS para evaluación de riesgos y variables operativas.</p>
-                <a href="instrumentos/Instrumento Seguridad SPRS (1).xlsx" class="btn-tactical" style="background: var(--primary-cyan); color: var(--tac-base);" download>📥 DESCARGAR INSTRUMENTO SEGURIDAD</a>
-            </div>
+                <div class="form-section-block">
+                    <h4 class="form-section-title">Ampliación de información</h4>
+                    <div class="form-field"><label>Observaciones</label><textarea placeholder="Información adicional relevante..."></textarea></div>
+                    <div class="form-field"><label>Firma del profesional interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-primary">💾 Guardar Instrumento</button>
+                </div>
+            </form>
         </section>
+
 
         <!-- NUEVO: VISTA REPOSITORIO DE INSTRUMENTOS -->
         <section id="instrumentos-repo" class="view-section">
