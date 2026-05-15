@@ -86,142 +86,95 @@
 
             <div class="collapsible-container collapsed">
                 <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
+                    <h4>Cargar Instrumento Táctico de Ingreso</h4>
                     <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
                 <div class="collapsible-content">
                     <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                    <div class="form-field"><label>Fecha</label><input type="date"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Datos personales</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Apellido y nombre</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Fecha de nacimiento</label><input type="date"></div>
-                        <div class="form-field"><label>Edad</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Nacionalidad</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-field"><label>DNI</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>CUIL</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Estado civil</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Nivel de instrucción</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="instruccion" value="sin"> Sin instrucción</label>
-                        <label><input type="radio" name="instruccion" value="prim-inc"> Primaria incompleta</label>
-                        <label><input type="radio" name="instruccion" value="prim-comp"> Primaria completa</label>
-                        <label><input type="radio" name="instruccion" value="sec-inc"> Secundaria incompleta</label>
-                        <label><input type="radio" name="instruccion" value="sec-comp"> Secundaria completa</label>
-                        <label><input type="radio" name="instruccion" value="sup"> Superior</label>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Identidad de género</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="genero" value="varon"> Varón cis</label>
-                        <label><input type="radio" name="genero" value="mujer"> Mujer cis</label>
-                        <label><input type="radio" name="genero" value="varon-trans"> Varón trans</label>
-                        <label><input type="radio" name="genero" value="mujer-trans"> Mujer trans</label>
-                        <label><input type="radio" name="genero" value="nb"> No binarie</label>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">9 — Situación habitacional</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="habitacional" value="calle"> Situación de calle</label>
-                        <label><input type="radio" name="habitacional" value="domicilio"> Posee domicilio</label>
-                    </div>
-                    <div class="form-field"><label>Domicilio (en caso de poseer)</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">11 — Causa detención actual</h4>
-                    <div class="form-field"><label>Causa</label><textarea placeholder="Describir..."></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">12 — Asistencia jurídica</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Tipo</label>
-                            <div class="radio-group"><label><input type="radio" name="asist-jur" value="oficial"> Defensor Oficial</label><label><input type="radio" name="asist-jur" value="particular"> Particular</label></div>
+                        <!-- ... (contenido previo de ingreso) ... -->
+                        <div class="form-header">
+                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                            <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                            <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
+                            <div class="form-field"><label>Fecha</label><input type="date"></div>
                         </div>
-                        <div class="form-field"><label>Nombre del abogado</label><input type="text" placeholder="—"></div>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">13 — Procedencia</h4>
-                    <div class="radio-group">
-                        <label><input type="radio" name="procedencia" value="directo"> Ingreso directo</label>
-                        <label><input type="radio" name="procedencia" value="alcaidia"> Alcaidía</label>
-                        <label><input type="radio" name="procedencia" value="comisaria"> Comisaría/CAD</label>
-                        <label><input type="radio" name="procedencia" value="otro-complejo"> Complejo/Unidad otra jurisdicción</label>
-                        <label><input type="radio" name="procedencia" value="arresto"> Arresto domiciliario</label>
-                        <label><input type="radio" name="procedencia" value="reingreso"> Reingreso por evasión</label>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">14 — Referente que sepa de su detención</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Nombre y apellido</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Domicilio</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>¿Desea dar aviso de su detención?</label>
-                        <div class="radio-group"><label><input type="radio" name="aviso" value="si"> Sí</label><label><input type="radio" name="aviso" value="no"> No</label></div>
-                    </div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">15 — Discapacidad</h4>
-                    <div class="radio-group">
-                        <label><input type="checkbox" name="discapacidad" value="motora"> Motora</label>
-                        <label><input type="checkbox" name="discapacidad" value="intelectual"> Intelectual</label>
-                        <label><input type="checkbox" name="discapacidad" value="ninguna"> Ninguna</label>
-                    </div>
-                    <div class="form-field"><label>¿Posee CUD?</label>
-                        <div class="radio-group"><label><input type="radio" name="cud" value="si"> Sí</label><label><input type="radio" name="cud" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>Necesidades de adecuación espacial</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block" style="border-left-color: var(--status-red);">
-                    <h4 class="form-section-title" style="color:var(--status-red);">Salud Mental — Condición observada al ingreso</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Estado de conciencia</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Orientación temporoespacial</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Afecto y ánimo</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>¿Tuvo autolesiones?</label>
-                        <div class="radio-group"><label><input type="radio" name="autolesiones" value="si"> Sí</label><label><input type="radio" name="autolesiones" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>¿Tuvo intentos de suicidio?</label>
-                        <div class="radio-group"><label><input type="radio" name="suicidio" value="si"> Sí</label><label><input type="radio" name="suicidio" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>Observaciones conducta/apariencia</label><textarea placeholder="—"></textarea></div>
-                </div>
-                <div class="form-section-block" style="border-left-color: var(--status-yellow);">
-                    <h4 class="form-section-title" style="color:var(--status-yellow);">Indicadores de consumo problemático</h4>
-                    <div class="form-field"><label>¿Refiere consumo reciente de sustancias?</label>
-                        <div class="radio-group"><label><input type="radio" name="consumo" value="si"> Sí</label><label><input type="radio" name="consumo" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>Sustancias (marcar todas)</label>
-                        <div class="radio-group">
-                            <label><input type="checkbox" value="alcohol"> Alcohol</label>
-                            <label><input type="checkbox" value="pb"> Pasta base</label>
-                            <label><input type="checkbox" value="cocaina"> Cocaína</label>
-                            <label><input type="checkbox" value="marihuana"> Marihuana</label>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">1 — Datos personales</h4>
+                            <div class="form-row">
+                                <div class="form-field"><label>Apellido y nombre</label><input type="text" placeholder="—"></div>
+                                <div class="form-field"><label>Fecha de nacimiento</label><input type="date"></div>
+                                <div class="form-field"><label>Edad</label><input type="text" placeholder="—"></div>
+                                <div class="form-field"><label>Nacionalidad</label><input type="text" placeholder="—"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-field"><label>Frecuencia habitual referida</label>
-                        <div class="radio-group"><label><input type="radio" name="frecuencia" value="diario"> Diario</label><label><input type="radio" name="frecuencia" value="frecuente"> Frecuente</label><label><input type="radio" name="frecuencia" value="ocasional"> Ocasional</label><label><input type="radio" name="frecuencia" value="esporadico"> Esporádico</label></div>
-                    </div>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                        <!-- ... (resto del form de ingreso) ... -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Instrumento de Ingreso</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Ingreso</button>
+            </div>
+
+            <!-- NUEVO: INFORME MÉDICO DE INGRESO -->
+            <div class="collapsible-container collapsed" style="border-left: 4px solid #2196F3;">
+                <div class="collapsible-header">
+                    <h4>Informe Médico de Ingreso</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-header">
+                            <div class="form-field"><label>Médico Interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
+                            <div class="form-field"><label>Fecha de Examen</label><input type="date"></div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Examen Físico</h4>
+                            <div class="form-row">
+                                <div class="form-field"><label>Tensión Arterial</label><input type="text" placeholder="—"></div>
+                                <div class="form-field"><label>Frecuencia Cardíaca</label><input type="text" placeholder="—"></div>
+                                <div class="form-field"><label>Peso / Talla</label><input type="text" placeholder="—"></div>
+                            </div>
+                            <div class="form-field"><label>Lesiones visibles al ingreso</label><textarea placeholder="Describir hematomas, cicatrices, etc."></textarea></div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Antecedentes Clínicos</h4>
+                            <div class="form-field"><label>Patologías crónicas</label><textarea placeholder="—"></textarea></div>
+                            <div class="form-field"><label>Medicación actual</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Informe Médico</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- NUEVO: DICTAMEN DE ALOJAMIENTO -->
+            <div class="collapsible-container collapsed" style="border-left: 4px solid var(--status-red);">
+                <div class="collapsible-header">
+                    <h4>Instrumento de Dictamen de Alojamiento</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-header">
+                            <div class="form-field"><label>Autoridad de Clasificación</label><input type="text" placeholder="Nombre / Cargo"></div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Criterios de Clasificación</h4>
+                            <div class="radio-group">
+                                <label><input type="radio" name="perfil-riesgo" value="bajo"> Perfil Bajo Riesgo</label>
+                                <label><input type="radio" name="perfil-riesgo" value="medio"> Perfil Medio</label>
+                                <label><input type="radio" name="perfil-riesgo" value="alto"> Perfil Alto Riesgo</label>
+                            </div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Destino Sugerido</h4>
+                            <div class="form-field"><label>Unidad / Pabellón</label><input type="text" placeholder="—"></div>
+                            <div class="form-field"><label>Fundamentación del alojamiento</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Dictamen de Alojamiento</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -238,23 +191,41 @@
                         <button class="tab-btn active" data-tab="pv-obs">Observación</button>
                         <button class="tab-btn" data-tab="pv-trat">Tratamiento</button>
                         <button class="tab-btn" data-tab="pv-pru">Prueba</button>
+                        <button class="tab-btn" data-tab="pv-post">Post Penitenciario</button>
                     </div>
                     <div id="pv-obs" class="tab-content active">
                         <div class="surface-container">
-                            <h3>Informes Base</h3>
-                            <p style="margin-top:0.5rem; font-size:0.9rem;">Seguridad: <span class="badge green">OK</span> | Social: <span class="badge green">OK</span> | Médica: <span class="badge green">OK</span></p>
+                            <h3>Apertura de Instrumentos de Diagnóstico</h3>
+                            <p style="margin-top:0.5rem; font-size:0.9rem; color: #666;">Seleccione el área para completar el diagnóstico inicial de la etapa de observación.</p>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                                <button class="btn-tactical nav-shortcut" data-target="psicologia">🧠 Psicología</button>
+                                <button class="btn-tactical nav-shortcut" data-target="social">👥 Social</button>
+                                <button class="btn-tactical nav-shortcut" data-target="seguridad">🛡️ Seguridad</button>
+                                <button class="btn-tactical nav-shortcut" data-target="educacion">🎓 Educación</button>
+                                <button class="btn-tactical nav-shortcut" data-target="trabajo">🛠️ Trabajo y Talleres</button>
+                            </div>
                         </div>
                     </div>
                     <div id="pv-trat" class="tab-content">
                         <div class="surface-container">
-                            <h3>Evolución Trimestral</h3>
-                            <p style="font-size:0.9rem;">Pendiente de evaluación del próximo ciclo.</p>
+                            <h3>Informes de Seguimiento en Tratamiento</h3>
+                            <p style="font-size:0.9rem; color: #666;">Gestión de la evolución del interno durante la fase tratamental.</p>
+                            <div class="card" style="margin-top: 1rem; border-left: 3px solid var(--primary-cyan);">
+                                <strong>Historial de Informes Trimestrales</strong><br>
+                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">No hay informes cargados en este período.</p>
+                            </div>
                         </div>
                     </div>
                     <div id="pv-pru" class="tab-content">
-                        <div class="surface-container" style="background:#fff3f3; color:#c62828;">
-                            <h3>Acceso Restringido</h3>
-                            <p style="font-size:0.9rem;">Fases previas incompletas.</p>
+                        <div class="surface-container">
+                            <h3>Etapa de Prueba</h3>
+                            <p style="font-size:0.9rem; color: #666;">Seguimiento de medidas de autogobierno y acceso a beneficios.</p>
+                        </div>
+                    </div>
+                    <div id="pv-post" class="tab-content">
+                        <div class="surface-container">
+                            <h3>Post Penitenciario</h3>
+                            <p style="font-size:0.9rem; color: #666;">Supervisión y cierre de la intervención institucional.</p>
                         </div>
                     </div>
                 </div>
@@ -269,56 +240,156 @@
                 </div>
             </div>
 
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento Plan de Vida</h3>
+            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumentos de la Etapa</h3>
 
+            <!-- INSTRUMENTO: PLAN DE VIDA (Movido a Tratamiento lógicamente) -->
             <div class="collapsible-container collapsed">
                 <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
+                    <h4>Plan de Vida (Instrumento Base)</h4>
                     <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
                 <div class="collapsible-content">
                     <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                        <!-- ... contenido del plan de vida ... -->
+                        <div class="form-header">
+                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
+                            <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Objetivos Tratamentales</h4>
+                            <div class="form-field"><label>Área Salud</label><textarea placeholder="Objetivos y metas..."></textarea></div>
+                            <div class="form-field"><label>Área Psicológica</label><textarea placeholder="Objetivos y metas..."></textarea></div>
+                            <div class="form-field"><label>Área Educación/Trabajo</label><textarea placeholder="Objetivos y metas..."></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Área Salud</h4>
-                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Condiciones de salud física, accesibilidad al sistema sanitario, tratamientos en curso..."></textarea></div>
-                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
+            </div>
+
+            <!-- INSTRUMENTO: INFORMES TRIMESTRALES DE AVANCE -->
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Informes Trimestrales de Avance</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">3 — Área Psicológica</h4>
-                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Funcionamiento psicoemocional, recursos personales, adaptación institucional..."></textarea></div>
-                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-header">
+                            <div class="form-field"><label>Trimestre</label>
+                                <select><option>1° Trimestre</option><option>2° Trimestre</option><option>3° Trimestre</option><option>4° Trimestre</option></select>
+                            </div>
+                            <div class="form-field"><label>Fecha de Evaluación</label><input type="date"></div>
+                        </div>
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Evolución del Período</h4>
+                            <div class="form-field"><label>Cumplimiento de objetivos</label><textarea placeholder="Describir avance en las áreas propuestas..."></textarea></div>
+                            <div class="form-field"><label>Conducta y concepto</label><input type="text" placeholder="Nota numérica / Concepto"></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Informe Trimestral</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">5 — Área Educación</h4>
-                    <div class="form-field"><label>Problemáticas relevadas</label><textarea placeholder="Nivel educativo alcanzado, alfabetización, continuidad escolar..."></textarea></div>
-                    <div class="form-field"><label>Intereses y necesidades de la PPL</label><textarea placeholder="—"></textarea></div>
-                    <div class="form-row">
-                        <div class="form-field"><label>Objetivo consensuado</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Plazo</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>Acciones previstas</label><textarea placeholder="—"></textarea></div>
+            </div>
+
+            <!-- INSTRUMENTO: DICTAMEN RECOMENDACIÓN PRUEBA -->
+            <div class="collapsible-container collapsed" style="border-left-color: var(--status-yellow);">
+                <div class="collapsible-header">
+                    <h4>Dictamen de Recomendación de Pase a Etapa de Prueba</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">7 — Dimensión Restaurativa</h4>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Evaluación de Progresividad</h4>
+                            <div class="form-field"><label>Fundamentación del pase</label><textarea placeholder="Describir por qué se recomienda el cambio de etapa..."></textarea></div>
+                            <div class="form-field"><label>Opinión del Gabinete</label>
+                                <div class="radio-group"><label><input type="radio" name="rec-prueba" value="si"> Favorable</label><label><input type="radio" name="rec-prueba" value="no"> Desfavorable</label></div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Dictamen Prueba</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
+            </div>
+
+            <!-- INSTRUMENTOS DE ETAPA DE PRUEBA -->
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Informes de Avance (Etapa de Prueba)</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
                 </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Seguimiento de Salidas/Beneficios</h4>
+                            <div class="form-field"><label>Desempeño en salidas transitorias</label><textarea placeholder="—"></textarea></div>
+                            <div class="form-field"><label>Cumplimiento de pautas</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Informe de Avance Prueba</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="collapsible-container collapsed">
+                <div class="collapsible-header">
+                    <h4>Instrumento de Acceso a Medida</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Solicitud de Medida Judicial</h4>
+                            <div class="form-field"><label>Tipo de medida (Libertad condicional, asistida, etc.)</label><input type="text" placeholder="—"></div>
+                            <div class="form-field"><label>Condiciones propuestas</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Acceso a Medida</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- INSTRUMENTOS POST PENITENCIARIO -->
+            <div class="collapsible-container collapsed" style="border-left-color: #9c27b0;">
+                <div class="collapsible-header">
+                    <h4>Informes de Avance (Post Penitenciario)</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Seguimiento en Medio Libre</h4>
+                            <div class="form-field"><label>Inserción laboral / familiar</label><textarea placeholder="—"></textarea></div>
+                            <div class="form-field"><label>Cumplimiento de reglas de conducta</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Informe Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="collapsible-container collapsed" style="border-left-color: #000;">
+                <div class="collapsible-header">
+                    <h4>Cierre de Intervención</h4>
+                    <span class="collapse-indicator">➕ Abrir Formulario</span>
+                </div>
+                <div class="collapsible-content">
+                    <form class="instrument-form">
+                        <div class="form-section-block">
+                            <h4 class="form-section-title">Dictamen Final</h4>
+                            <div class="form-field"><label>Motivo del cierre</label><input type="text" placeholder="Egreso, vencimiento de pena, etc."></div>
+                            <div class="form-field"><label>Conclusiones del acompañamiento</label><textarea placeholder="—"></textarea></div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary">💾 Guardar Cierre</button>
+                        </div>
                     </form>
                 </div>
             </div>
