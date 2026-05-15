@@ -37,6 +37,9 @@
         <div class="nav-item" data-target="salud">Salud</div>
         <div class="nav-item" data-target="educacion">Educación</div>
         <div class="nav-item" data-target="trabajo">Trabajo y Talleres</div>
+        <div class="nav-item" data-target="instrumentos-repo" style="color: var(--primary-cyan); border-top: 1px solid var(--tac-surface); margin-top: 1rem;">
+            <span style="font-size: 0.8rem;">📦 REPOSITORIO</span><br>Instrumentos
+        </div>
         <div class="nav-item" data-target="configuracion">Configuración</div>
     </nav>
 
@@ -47,7 +50,7 @@
         <section id="resumen" class="view-section active">
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
                 <h1 class="bebas">Panel General y Eventos</h1>
-                <button class="btn-tactical">📄 VER INSTRUMENTO INGRESO</button>
+                <a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" class="btn-tactical" download>📄 VER INSTRUMENTO INGRESO</a>
             </div>
             
             <div class="card" style="margin-bottom: 2rem;">
@@ -132,6 +135,11 @@
                     <div class="surface-container" style="margin-top: 1rem">
                         <span class="badge yellow">🟡 Pendiente de Carga</span>
                         <p style="margin-top:0.5rem">Falta Diagnóstico Tratamental Inicial.</p>
+                        <div style="margin-top: 1rem; border-top: 1px solid #ddd; padding-top: 1rem;">
+                            <a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" style="font-size: 0.85rem; color: var(--primary-dark); text-decoration: none; font-weight: 600;" download>
+                                📥 Descargar Instrumento de Ingreso
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,7 +200,13 @@
                     <div class="surface-container" style="margin-bottom:1rem; border-left: 3px solid var(--primary-cyan);">
                         <strong>Evaluación Psicológica de Ingreso</strong><br>
                         <span style="font-size:0.8rem; color:#555;">18 Sep 2026</span><br>
-                        <a href="#" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;">📄 Descargar PDF</a>
+                        <a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;" download>📄 Descargar Instrumento</a>
+                    </div>
+
+                    <div class="surface-container" style="margin-bottom:1rem; border-left: 3px solid var(--primary-cyan);">
+                        <strong>Plan de Vida Operacional</strong><br>
+                        <span style="font-size:0.8rem; color:#555;">Instrumento Técnico</span><br>
+                        <a href="instrumentos/Instrumento Plan de Vida SPRS (2).xlsx" style="font-size:0.85rem; font-weight:600; color:var(--primary-dark); display:inline-block; margin-top:0.3rem;" download>📄 Descargar Instrumento</a>
                     </div>
                 </div>
             </div>
@@ -207,6 +221,14 @@
                     <p><strong>12/05/2026:</strong> Control de rutina. Presión normal. Sin medicación asignada.</p>
                 </div>
             </div>
+
+            <div class="card" style="border-left: 5px solid var(--primary-cyan);">
+                <h3>Gabinete de Psicología</h3>
+                <p style="margin-top: 0.5rem; color: #666; font-size: 0.9rem;">Acceso al instrumento técnico de evaluación psicológica y grilla de variables.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" class="btn-tactical" download>📥 DESCARGAR INSTRUMENTO PSICOLOGÍA</a>
+                </div>
+            </div>
         </section>
 
         <!-- 5. VISTA: EDUCACIÓN -->
@@ -218,6 +240,11 @@
                     <li>Finalización Primaria <span class="badge green">En curso</span></li>
                     <li>Boletín Q4 2026: <span class="badge yellow">Pendiente de carga</span></li>
                 </ul>
+                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                    <a href="instrumentos/Instrumento Educación SPRS con grilla y variables (2).xlsx" style="color: var(--primary-dark); font-weight: 600; text-decoration: none; font-size: 0.9rem;" download>
+                        📄 Instrumento de Evaluación Educativa (Descargar)
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -229,6 +256,9 @@
                 <div class="surface-container" style="display:flex; justify-content:space-between; margin-top: 1rem">
                     <span>Carpintería Inicial</span>
                     <strong>Asistencia: 95%</strong>
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <a href="instrumentos/Instrumento Trabajo SPRS con variables.xlsx" class="btn-tactical" download>📥 INSTRUMENTO TRABAJO / VARIABLES</a>
                 </div>
             </div>
         </section>
@@ -281,6 +311,12 @@
                     <p>Alertas críticas: Movilidad reducida, requerimiento de intérpretes.</p>
                 </div>
             </div>
+
+            <div class="card" style="margin-top: 2rem;">
+                <h3>Área Social - Instrumentos</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #555;">Grilla y variables para el abordaje social del interno y su entorno familiar.</p>
+                <a href="instrumentos/Instrumento Social SPRS - Grilla y variables (1).xlsx" class="btn-tactical" download>📥 DESCARGAR INSTRUMENTO SOCIAL</a>
+            </div>
         </section>
 
         <!-- VISTAS DE SEGURIDAD -->
@@ -312,6 +348,67 @@
                     <h3 style="color: var(--status-red);">🔴 Alerta de Seguridad Activa</h3>
                     <p>Panel de incidentes, alarmas y reportes de emergencia.</p>
                 </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem; background: var(--tac-surface); color: white;">
+                <h3 style="color: var(--primary-cyan);">Protocolos y Seguridad</h3>
+                <p style="margin-bottom: 1rem; font-size: 0.9rem; opacity: 0.8;">Instrumento técnico de seguridad SPRS para evaluación de riesgos y variables operativas.</p>
+                <a href="instrumentos/Instrumento Seguridad SPRS (1).xlsx" class="btn-tactical" style="background: var(--primary-cyan); color: var(--tac-base);" download>📥 DESCARGAR INSTRUMENTO SEGURIDAD</a>
+            </div>
+        </section>
+
+        <!-- NUEVO: VISTA REPOSITORIO DE INSTRUMENTOS -->
+        <section id="instrumentos-repo" class="view-section">
+            <h1 class="bebas">Repositorio Central de Instrumentos</h1>
+            <p style="margin-bottom: 2rem; color: #666;">Listado completo de instrumentos técnicos (Archivos Excel) para el S.P.R.S.</p>
+            
+            <div class="card">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="text-align: left; border-bottom: 2px solid var(--bg-surface);">
+                            <th style="padding: 1rem;">Área / Instrumento</th>
+                            <th style="padding: 1rem;">Tipo de Archivo</th>
+                            <th style="padding: 1rem;">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Ingreso y Admisión</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Ingreso SPRS 2304.xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Plan de Vida</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Plan de Vida SPRS (2).xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Psicología (Grilla y Variables)</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Psicología SPRS con Grilla y variables (1).xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Educación (Grilla y Variables)</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Educación SPRS con grilla y variables (2).xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Trabajo (Variables)</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Trabajo SPRS con variables.xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--bg-surface);">
+                            <td style="padding: 1rem;"><strong>Social (Grilla y Variables)</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Social SPRS - Grilla y variables (1).xlsx" download>Descargar</a></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;"><strong>Seguridad</strong></td>
+                            <td style="padding: 1rem;">Excel (xlsx)</td>
+                            <td style="padding: 1rem;"><a href="instrumentos/Instrumento Seguridad SPRS (1).xlsx" download>Descargar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 

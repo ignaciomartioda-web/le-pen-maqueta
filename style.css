@@ -292,6 +292,47 @@ h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
 .tab-content { display: none; }
 .tab-content.active { display: block; }
 
+/* Table for Repo */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
+    padding: 1rem;
+    border-bottom: 2px solid var(--bg-surface);
+}
+
+td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid var(--bg-surface);
+    font-size: 0.95rem;
+}
+
+tr:hover td {
+    background-color: #fafafa;
+}
+
+td a {
+    color: var(--primary-dark);
+    font-weight: 700;
+    text-decoration: none;
+    background-color: var(--primary-cyan);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+td a:hover {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(5px); }
     to { opacity: 1; transform: translateY(0); }
