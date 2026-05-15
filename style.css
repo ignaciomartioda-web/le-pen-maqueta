@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Tonal Tokens: Corporal / Asistencial */
+  --primary-cyan: #8de2d6;
+  --primary-dark: #006a61;
+  --bg-base: #e8e8e8;
+  --bg-surface: #f3f3f3;
+  --bg-card: #ffffff;
+  
+  /* Tonal Tokens: Táctico (Seguridad) */
+  --tac-base: #1a1c1c;
+  --tac-surface: #2f3131;
+  --tac-card: #474747;
+  --tac-text: #fcfcfc;
+
+  /* Typography */
+  --font-display: 'Bebas Neue', cursive;
+  --font-body: 'Inter', sans-serif;
+
+  /* Status Colors */
+  --status-green: #2e7d32;
+  --status-yellow: #f57f17;
+  --status-red: #c62828;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-base);
+    color: #1a1c1c;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Typography styles */
+h1, h2, h3, .bebas {
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+h1 { font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-dark); }
+h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+
+/* Layout: Sidebar */
+.sidebar {
+    width: 270px;
+    background-color: var(--tac-base);
+    color: var(--tac-text);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0;
+    overflow-y: auto;
+}
+
+.sidebar .brand {
+    padding: 0 2rem;
+    font-size: 2.5rem;
+    color: var(--primary-cyan);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Profile Section for Left Sidebar */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem 2rem 1rem;
+    border-bottom: 2px solid var(--tac-surface);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-dark);
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.nav-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #a1a3a3;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--tac-surface);
+    border-right: 4px solid var(--primary-cyan);
+    color: var(--tac-text);
+}
+
+/* Sub-navigation Groups */
+.nav-group {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.nav-group-header {
+    padding: 0.4rem 2rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    font-weight: 700;
+}
+.nav-item.sub {
+    padding: 0.7rem 2rem 0.7rem 3rem;
+    font-size: 0.9rem;
+}
+
+/* Módulo de Seguridad: Alerta Crítica */
+.nav-item.alert {
+    color: #ffcdd2;
+    border-left: 4px solid var(--status-red);
+    background-color: rgba(198, 40, 40, 0.15);
+}
+.nav-item.alert:hover, .nav-item.alert.active {
+    background-color: var(--status-red);
+    color: white;
+    border-right: none;
+    border-left: 4px solid #fff;
+}
+
+/* Layout: Main View Area */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+}
+
+/* Secciones de vista (Tabs Lógicos) */
+.view-section {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.view-section.active {
+    display: block;
+}
+
+/* Tonal Layering: Cards without lines */
+.card {
+    background-color: var(--bg-card);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* Tonal Layering: Sectores grises */
+.surface-container {
+    background-color: var(--bg-surface);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Timeline Component */
+.timeline {
+    border-left: 2px solid var(--primary-cyan);
+    margin-left: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    max-width: 800px;
+}
+
+.timeline-item {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.95rem; /* Ajustado al borde izquierdo para tapar la raya */
+    top: 0.2rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 3px solid var(--primary-cyan);
+}
+
+.time-date {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.3rem;
+}
+
+.time-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #1a1c1c;
+}
+
+.time-desc {
+    font-size: 0.95rem;
+    color: #5d5e5f;
+    line-height: 1.5;
+}
+
+
+/* Botones */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-dark), #004d47);
+    color: white;
+    font-family: var(--font-display);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-tactical {
+    background-color: var(--tac-base);
+    color: var(--primary-cyan);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* Badges / Estados */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.badge.green { background-color: #e8f5e9; color: var(--status-green); border: 1px solid #c8e6c9;}
+.badge.yellow { background-color: #fffde7; color: var(--status-yellow); border: 1px solid #fff59d;}
+.badge.red { background-color: #ffebee; color: var(--status-red); border: 1px solid #ffcdd2;}
+
+/* Plan de Vida - Triple Tab */
+.tabs-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--bg-surface);
+}
+.tab-btn {
+    background: transparent;
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+}
+.tab-btn.active {
+    color: var(--primary-dark);
+    border-bottom: 3px solid var(--primary-cyan);
+}
+.tab-btn.locked {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
