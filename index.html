@@ -8,631 +8,1304 @@
 </head>
 <body>
 
-    <!-- Sidebar de Navegación Institucional -->
-    <nav class="sidebar">
-        <div class="brand bebas">S.P.R.S.</div>
+    <div class="app-container">
         
-        <!-- Perfil del Detenido -->
-        <div class="profile-section">
-            <img src="https://ui-avatars.com/api/?name=Juan+Perez&background=006a61&color=fff&size=200&bold=true" alt="Foto Juan Perez" class="profile-pic">
-            <h2 class="bebas" style="color: white; font-size: 1.8rem; margin-bottom: 0;">PEREZ, JUAN</h2>
-            <div style="color: var(--primary-cyan); font-size: 0.95rem; font-weight: 600; margin-top: 0.2rem;">LUD: 3294</div>
-            <div style="color: #999; font-size: 0.85rem; margin-top: 0.5rem;">Unidad Funcional: 4</div>
-            <div style="margin-top: 0.8rem;">
-                <span class="badge red">Riesgo Alto</span>
+        <!-- Sidebar de Navegación Institucional -->
+        <nav class="sidebar">
+            <div class="brand">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>S.P.R.S.</span>
             </div>
-        </div>
+            
+            <div class="nav-menu">
+                <div class="nav-item active" data-target="resumen">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Inicio / Resumen
+                </div>
+                <div class="nav-item" data-target="ingreso">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                    Ingreso y Eval. Inicial
+                </div>
+                <div class="nav-item" data-target="situacion">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Situación Judicial
+                </div>
+                <div class="nav-item" data-target="plan-vida">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                    Plan de Vida
+                </div>
+                <div class="nav-item" data-target="justicia-restaurativa">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                    Justicia Restaurativa
+                </div>
+                <div class="nav-item" data-target="configuracion">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.54 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    Configuración
+                </div>
+            </div>
+        </nav>
 
-        <div class="nav-item active" data-target="resumen">Inicio / Resumen</div>
-        <div class="nav-item" data-target="ingreso">Ingreso y evaluación inicial</div>
-        <div class="nav-item" data-target="situacion">Situación Judicial</div>
-        <div class="nav-item" data-target="plan-vida">Plan de Vida</div>
-        <div class="nav-item" data-target="configuracion">Configuración</div>
-    </nav>
+        <!-- Contenedor Principal (Vistas) -->
+        <main class="main-content">
+            
+            <!-- Top Header Bar -->
+            <header class="top-bar">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" class="search-input" placeholder="Buscar casos, nombres, IDs...">
+                </div>
+                <div class="top-bar-right">
+                    <button class="notification-bell">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" alt="Auditora Sarah Jensen" class="user-avatar">
+                        <div class="user-info">
+                            <div class="user-name">Sarah Jensen</div>
+                            <div class="user-role">Auditora</div>
+                        </div>
+                        <svg class="user-profile-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                </div>
+            </header>
 
-    <!-- Contenedor Principal (Vistas) -->
-    <main class="main-content">
-        
-        <!-- 0. VISTA: RESUMEN / INICIO -->
-        <section id="resumen" class="view-section active">
-            <h1 class="bebas">Panel General y Eventos</h1>
-            <div class="card" style="margin-bottom: 2rem;">
-                <h3>Línea de Tiempo Operacional del Interno</h3>
-                <div class="surface-container" style="margin-top: 1.5rem; padding: 2rem;">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="time-date">HOY - 14:30hs</div>
-                            <div class="time-title">Educación: Finalización de Ciclo</div>
-                            <div class="time-desc">Aprobación del módulo de "Alfabetización Digital".</div>
+            <!-- Main Scrollable Body Area -->
+            <div class="content-body">
+                <div class="breadcrumbs">Inicio &gt; Casos &gt; Ficha Individual: FLORENCIA DEICH</div>
+                
+                <div class="header-title-row">
+                    <h1 class="page-title">Ficha Individual - FLORENCIA DEICH</h1>
+                    <button class="btn-action-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Añadir registro
+                    </button>
+                </div>
+
+                <!-- Pena Progresiva Card (Global/Persistent - Spans Full Width) -->
+                <div class="card progresividad-card">
+                    <div class="progresividad-header">
+                        <h3 class="progresividad-title">Progresividad de la Pena y Plan de Vida</h3>
+                        <div class="progresividad-dates">
+                            <div class="progresividad-date-item">
+                                <span class="date-label">Ingreso a Tratamiento</span>
+                                <span class="date-value">21 Oct 2026</span>
+                            </div>
+                            <div class="progresividad-date-item">
+                                <span class="date-label">Pase Estimado a Prueba</span>
+                                <span class="date-value highlighted">15 Feb 2027</span>
+                            </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="time-date">10 OCT 2026 - 09:15hs</div>
-                            <div class="time-title">Atención Médica (Rutina)</div>
-                            <div class="time-desc">Control general de signos vitales. Sin novedades.</div>
+                    </div>
+                    
+                    <!-- Stepper Progress Bar -->
+                    <div class="progresividad-stepper">
+                        <div class="stepper-track">
+                            <div class="stepper-track-fill" style="width: 50%"></div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="time-date">01 OCT 2026 - 11:00hs</div>
-                            <div class="time-title" style="color: var(--status-red)">Infracción Disciplinaria (Grado 2)</div>
-                            <div class="time-desc">Altercado en sector comedor de la Unidad 4. Parte elevado al director.</div>
+                        
+                        <!-- Step 1: Ingreso -->
+                        <div class="step-node completed">
+                            <div class="step-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div class="step-label">Ingreso y Admisión</div>
+                            <div class="step-date">15 Sep 2026</div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="time-date">15 SEP 2026 - 08:00hs</div>
-                            <div class="time-title">Ingreso Táctico y Alta</div>
-                            <div class="time-desc">Recepción central desde alcaldía. Toma de biometría y dictamen de riesgo elevado al Gabinete.</div>
+                        
+                        <!-- Step 2: Observación -->
+                        <div class="step-node completed">
+                            <div class="step-circle">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <div class="step-label">Observación</div>
+                            <div class="step-date">20 Oct 2026</div>
+                        </div>
+                        
+                        <!-- Step 3: Tratamiento -->
+                        <div class="step-node active">
+                            <div class="step-circle">
+                                <div class="step-pulse"></div>
+                            </div>
+                            <div class="step-label">Tratamiento</div>
+                            <div class="step-date">Desde 21 Oct 2026</div>
+                        </div>
+                        
+                        <!-- Step 4: Prueba -->
+                        <div class="step-node pending">
+                            <div class="step-circle"></div>
+                            <div class="step-label">Prueba (Estimado)</div>
+                            <div class="step-date">15 Feb 2027</div>
+                        </div>
+                        
+                        <!-- Step 5: Post Penitenciario -->
+                        <div class="step-node pending">
+                            <div class="step-circle"></div>
+                            <div class="step-label">Post Penitenciario</div>
+                            <div class="step-date">Sep 2028 (Egreso)</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- INSTRUMENTO DE INGRESO -->
-        <section id="ingreso" class="view-section">
-            <h1 class="bebas">Admisión e Ingreso Táctico</h1>
-            
-            <div class="card" style="margin-bottom: 2rem;">
-                <h3>Estado del Trámite de Ingreso</h3>
-                <div class="surface-container" style="margin-top: 1rem; display: flex; align-items: center; gap: 1rem;">
-                    <span class="badge yellow">🟡 Pendiente de Validación</span>
-                    <p style="font-size: 0.9rem; color: #666;">El instrumento técnico ha sido iniciado. Falta firma de autoridad de admisión.</p>
-                </div>
-            </div>
+                <!-- View Sections Container (Spans Full Width) -->
+                <div class="view-sections-container">
 
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumento Técnico de Ingreso</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento Táctico de Ingreso</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <!-- ... (contenido previo de ingreso) ... -->
-                        <div class="form-header">
-                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                            <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                            <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                            <div class="form-field"><label>Fecha</label><input type="date"></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">1 — Datos personales</h4>
-                            <div class="form-row">
-                                <div class="form-field"><label>Apellido y nombre</label><input type="text" placeholder="—"></div>
-                                <div class="form-field"><label>Fecha de nacimiento</label><input type="date"></div>
-                                <div class="form-field"><label>Edad</label><input type="text" placeholder="—"></div>
-                                <div class="form-field"><label>Nacionalidad</label><input type="text" placeholder="—"></div>
-                            </div>
-                        </div>
-                        <!-- ... (resto del form de ingreso) ... -->
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Instrumento de Ingreso</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- NUEVO: INFORME MÉDICO DE INGRESO -->
-            <div class="collapsible-container collapsed" style="border-left: 4px solid #2196F3;">
-                <div class="collapsible-header">
-                    <h4>Informe Médico de Ingreso</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-header">
-                            <div class="form-field"><label>Médico Interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
-                            <div class="form-field"><label>Fecha de Examen</label><input type="date"></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Examen Físico</h4>
-                            <div class="form-row">
-                                <div class="form-field"><label>Tensión Arterial</label><input type="text" placeholder="—"></div>
-                                <div class="form-field"><label>Frecuencia Cardíaca</label><input type="text" placeholder="—"></div>
-                                <div class="form-field"><label>Peso / Talla</label><input type="text" placeholder="—"></div>
-                            </div>
-                            <div class="form-field"><label>Lesiones visibles al ingreso</label><textarea placeholder="Describir hematomas, cicatrices, etc."></textarea></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Antecedentes Clínicos</h4>
-                            <div class="form-field"><label>Patologías crónicas</label><textarea placeholder="—"></textarea></div>
-                            <div class="form-field"><label>Medicación actual</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Informe Médico</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- NUEVO: DICTAMEN DE ALOJAMIENTO -->
-            <div class="collapsible-container collapsed" style="border-left: 4px solid var(--status-red);">
-                <div class="collapsible-header">
-                    <h4>Instrumento de Dictamen de Alojamiento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-header">
-                            <div class="form-field"><label>Autoridad de Clasificación</label><input type="text" placeholder="Nombre / Cargo"></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Criterios de Clasificación</h4>
-                            <div class="radio-group">
-                                <label><input type="radio" name="perfil-riesgo" value="bajo"> Perfil Bajo Riesgo</label>
-                                <label><input type="radio" name="perfil-riesgo" value="medio"> Perfil Medio</label>
-                                <label><input type="radio" name="perfil-riesgo" value="alto"> Perfil Alto Riesgo</label>
-                            </div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Destino Sugerido</h4>
-                            <div class="form-field"><label>Unidad / Pabellón</label><input type="text" placeholder="—"></div>
-                            <div class="form-field"><label>Fundamentación del alojamiento</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Dictamen de Alojamiento</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- PLAN DE VIDA -->
-        <section id="plan-vida" class="view-section">
-            <h1 class="bebas">Gestión del Plan de Vida</h1>
-            
-            <div style="display: flex; gap: 2rem; margin-bottom: 2.5rem;">
-                <!-- Columna Izquierda: Fases -->
-                <div style="flex: 2;">
-                    <div class="tabs-header">
-                        <button class="tab-btn active" data-tab="pv-obs">Observación</button>
-                        <button class="tab-btn" data-tab="pv-trat">Tratamiento</button>
-                        <button class="tab-btn" data-tab="pv-pru">Prueba</button>
-                        <button class="tab-btn" data-tab="pv-post">Post Penitenciario</button>
-                    </div>
-                    <div id="pv-obs" class="tab-content active">
-                        <div class="surface-container">
-                            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Diagnósticos Técnicos de Observación</h3>
+                    <!-- 0. VISTA: RESUMEN / INICIO -->
+                    <section id="resumen" class="view-section active">
+                        <div class="grid-container">
                             
-                            <!-- INSTRUMENTO PSICOLOGÍA -->
-                            <div class="collapsible-container collapsed" style="border-left: 4px solid #9c27b0;">
-                                <div class="collapsible-header">
-                                    <h4>Área de Psicología / Salud</h4>
-                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <form class="instrument-form">
-                                        <div class="form-section-block">
-                                            <h4 class="form-section-title">Evaluación Psicológica de Ingreso</h4>
-                                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="—"></div>
-                                            <div class="form-field"><label>Relación con grupo familiar</label><textarea placeholder="—"></textarea></div>
-                                            <div class="form-field"><label>Antecedentes de tratamiento</label><textarea placeholder="—"></textarea></div>
+                            <!-- Columna Izquierda: Ficha Individual y Resumen del Caso -->
+                            <div class="col-left">
+                                
+                                <!-- Ficha Individual -->
+                                <div class="detainee-profile-card">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200&h=200" alt="Foto Florencia Deich" class="detainee-avatar">
+                                    <div class="detainee-details-col">
+                                        <div class="detainee-name">Florencia Deich</div>
+                                        <div class="detainee-meta-subtitle">Mujer • 30s</div>
+                                        <div class="detainee-info-row">
+                                            <div><strong>ID:</strong> #32.941.082 (LUD: 3294)</div>
+                                            <div><strong>F. de Nacimiento:</strong> 12 Oct 1993</div>
+                                            <div><strong>Edad:</strong> 32</div>
+                                            <div><strong>Ubicación:</strong> Unidad 4 - Pabellón Psiquiátrico</div>
                                         </div>
-                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Psicología</button></div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <!-- INSTRUMENTO SOCIAL -->
-                            <div class="collapsible-container collapsed" style="border-left: 4px solid #4caf50;">
-                                <div class="collapsible-header">
-                                    <h4>Área Social y Vínculos</h4>
-                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <form class="instrument-form">
-                                        <div class="form-section-block">
-                                            <h4 class="form-section-title">Abordaje Social</h4>
-                                            <div class="form-field"><label>Situación habitacional</label><textarea placeholder="—"></textarea></div>
-                                            <div class="form-field"><label>Grupo familiar de apoyo</label><textarea placeholder="—"></textarea></div>
+                                        <div class="detainee-badges-row">
+                                            <span class="badge red">Alto Riesgo</span>
+                                            <span class="badge yellow">Evaluación Pendiente</span>
+                                            <span class="badge green">Caso Activo</span>
                                         </div>
-                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Social</button></div>
-                                    </form>
+                                    </div>
+                                    <button class="detainee-card-menu-btn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                                    </button>
                                 </div>
-                            </div>
 
-                            <!-- INSTRUMENTO EDUCACIÓN -->
-                            <div class="collapsible-container collapsed" style="border-left: 4px solid #2196f3;">
-                                <div class="collapsible-header">
-                                    <h4>Seguimiento Educativo</h4>
-                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <form class="instrument-form">
-                                        <div class="form-section-block">
-                                            <h4 class="form-section-title">Nivel de Instrucción</h4>
-                                            <div class="form-field"><label>Último nivel alcanzado</label><input type="text" placeholder="—"></div>
-                                            <div class="form-field"><label>Interés educativo</label><textarea placeholder="—"></textarea></div>
+                                <!-- Resumen de Plan de Vida (Objetivos) -->
+                                <div class="card" style="margin-top: 1.5rem;">
+                                    <h3>Plan de Vida - Estado General</h3>
+                                    
+                                    <div class="pdv-objectives-list">
+                                        <!-- Item 1: Educación -->
+                                        <div class="pdv-objective-card">
+                                            <div class="pdv-objective-icon-container">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                                            </div>
+                                            <div class="pdv-objective-content">
+                                                <div class="pdv-objective-title-row">
+                                                    <span class="pdv-objective-title">Objetivo: Completar Educación Secundaria</span>
+                                                    <span class="pdv-objective-percentage">75%</span>
+                                                </div>
+                                                <div class="pdv-progress-bar-track">
+                                                    <div class="pdv-progress-bar-fill" style="width: 75%"></div>
+                                                </div>
+                                                <div class="pdv-objective-footer">
+                                                    <span>Fecha límite: 15 Feb 2027</span>
+                                                    <span class="pdv-objective-status">En Curso</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Educación</button></div>
-                                    </form>
-                                </div>
-                            </div>
 
-                            <!-- INSTRUMENTO TRABAJO -->
-                            <div class="collapsible-container collapsed" style="border-left: 4px solid #ff9800;">
-                                <div class="collapsible-header">
-                                    <h4>Talleres y Formación Laboral</h4>
-                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <form class="instrument-form">
-                                        <div class="form-section-block">
-                                            <h4 class="form-section-title">Antecedentes Laborales</h4>
-                                            <div class="form-field"><label>Oficio / Habilidades</label><input type="text" placeholder="—"></div>
-                                            <div class="form-field"><label>Experiencia previa</label><textarea placeholder="—"></textarea></div>
+                                        <!-- Item 2: Salud -->
+                                        <div class="pdv-objective-card">
+                                            <div class="pdv-objective-icon-container">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                                            </div>
+                                            <div class="pdv-objective-content">
+                                                <div class="pdv-objective-title-row">
+                                                    <span class="pdv-objective-title">Terapia Conductual Bisemanal</span>
+                                                    <span class="pdv-objective-percentage">90%</span>
+                                                </div>
+                                                <div class="pdv-progress-bar-track">
+                                                    <div class="pdv-progress-bar-fill" style="width: 90%"></div>
+                                                </div>
+                                                <div class="pdv-objective-footer">
+                                                    <span>Fecha límite: Evaluaciones Mensuales</span>
+                                                    <span class="pdv-objective-status">Estable</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Trabajo</button></div>
-                                    </form>
-                                </div>
-                            </div>
 
-                            <!-- INSTRUMENTO SEGURIDAD -->
-                            <div class="collapsible-container collapsed" style="border-left: 4px solid #f44336;">
-                                <div class="collapsible-header">
-                                    <h4>Seguridad y Disciplina</h4>
-                                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                                </div>
-                                <div class="collapsible-content">
-                                    <form class="instrument-form">
-                                        <div class="form-section-block">
-                                            <h4 class="form-section-title">Evaluación de Riesgo Inicial</h4>
-                                            <div class="form-field"><label>Conducta observada</label><textarea placeholder="—"></textarea></div>
-                                            <div class="form-field"><label>Concepto sugerido</label><input type="text" placeholder="—"></div>
+                                        <!-- Item 3: Trabajo -->
+                                        <div class="pdv-objective-card">
+                                            <div class="pdv-objective-icon-container">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                            </div>
+                                            <div class="pdv-objective-content">
+                                                <div class="pdv-objective-title-row">
+                                                    <span class="pdv-objective-title">Capacitación y Taller de Costura</span>
+                                                    <span class="pdv-objective-percentage">55%</span>
+                                                </div>
+                                                <div class="pdv-progress-bar-track">
+                                                    <div class="pdv-progress-bar-fill" style="width: 55%"></div>
+                                                </div>
+                                                <div class="pdv-objective-footer">
+                                                    <span>Fecha límite: 20 Dic 2026</span>
+                                                    <span class="pdv-objective-status">En Progreso</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Seguridad</button></div>
-                                    </form>
+                                    </div>
+                                </div>
+
+                                <!-- Resumen del Caso -->
+                                <div class="card" style="margin-top: 1.5rem;">
+                                    <h3>Resumen del Caso</h3>
+                                    <div class="surface-container">
+                                        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-muted);">
+                                            La interna se encuentra alojada en el Pabellón Psiquiátrico, bajo un régimen de tratamiento especial. Actualmente cursa la etapa de Observación y Diagnóstico Interdisciplinario. Cuenta con el acompañamiento de las áreas de Psicología, Salud, Social, Educación y Trabajo. Su evolución tratamental del Plan de Vida demuestra avances significativos en educación y terapia conductual.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Columna Derecha: Trayectoria Institucional (Cronología) y Gabinete Criminológico -->
+                            <div class="col-right">
+                                
+                                <!-- Timeline Card -->
+                                <div class="timeline-card">
+                                    <h3>Trayectoria Institucional - Cronología</h3>
+                                    <div class="timeline">
+                                        
+                                        <!-- Evento 1: Educación -->
+                                        <div class="timeline-item-new">
+                                            <div class="timeline-date-left">
+                                                HOY<br>14:30
+                                            </div>
+                                            <div class="timeline-marker">
+                                                <div class="timeline-icon-circle green-bg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-content-right">
+                                                <h4>Educación: Finalización de Ciclo</h4>
+                                                <p>Aprobación del módulo de "Alfabetización Digital" en el área tratamental.</p>
+                                                <div class="timeline-details">
+                                                    <strong>Materia:</strong> Alfabetización Digital I<br>
+                                                    <strong>Docente:</strong> Prof. Eduardo Gómez<br>
+                                                    <strong>Calificación:</strong> 9/10 (Excelente)<br>
+                                                    <strong>Observaciones:</strong> Muestra gran interés en el uso de herramientas de procesador de texto y hojas de cálculo. Asistencia perfecta.
+                                                </div>
+                                                <div class="timeline-actions">
+                                                    <button class="btn-timeline-primary">Ver Detalles</button>
+                                                    <button class="btn-timeline-secondary">Añadir Nota</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Evento 2: Médico -->
+                                        <div class="timeline-item-new">
+                                            <div class="timeline-date-left">
+                                                10 Oct<br>2026
+                                            </div>
+                                            <div class="timeline-marker">
+                                                <div class="timeline-icon-circle cyan-bg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-content-right">
+                                                <h4>Atención Médica (Rutina)</h4>
+                                                <p>Control general de signos vitales. Sin novedades en pabellón psiquiátrico.</p>
+                                                <div class="timeline-details">
+                                                    <strong>Área:</strong> Clínica Médica - Pabellón Psiquiátrico<br>
+                                                    <strong>Médico:</strong> Dr. Hugo Spinelli<br>
+                                                    <strong>Presión Arterial:</strong> 120/80 mmHg | <strong>Frecuencia Cardíaca:</strong> 72 lpm<br>
+                                                    <strong>Prescripción:</strong> Continuar con el tratamiento psicofarmacológico indicado por psiquiatría.
+                                                </div>
+                                                <div class="timeline-actions">
+                                                    <button class="btn-timeline-primary">Ver Detalles</button>
+                                                    <button class="btn-timeline-secondary">Añadir Nota</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Evento 3: Alerta Infracción -->
+                                        <div class="timeline-item-new">
+                                            <div class="timeline-date-left">
+                                                01 Oct<br>2026
+                                            </div>
+                                            <div class="timeline-marker">
+                                                <div class="timeline-icon-circle red-bg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-content-right">
+                                                <h4>Infracción Disciplinaria (Grado 2)</h4>
+                                                <p>Altercado en sector comedor de la Unidad 4. Parte elevado al director.</p>
+                                                <div class="timeline-details text-red">
+                                                    <strong>Expediente Disciplinario:</strong> EXP-2026-90412<br>
+                                                    <strong>Sanción propuesta:</strong> Apercibimiento y restricción temporal de actividades grupales recreativas por 5 días.<br>
+                                                    <strong>Descargo de la interna:</strong> Refiere haber reaccionado ante una provocación verbal de otra interna.
+                                                </div>
+                                                <div class="timeline-actions">
+                                                    <button class="btn-timeline-primary">Ver Detalles</button>
+                                                    <button class="btn-timeline-secondary">Añadir Nota</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Evento 4: Ingreso -->
+                                        <div class="timeline-item-new">
+                                            <div class="timeline-date-left">
+                                                15 Sep<br>2026
+                                            </div>
+                                            <div class="timeline-marker">
+                                                <div class="timeline-icon-circle purple-bg">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle></svg>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-content-right">
+                                                <h4>Ingreso y Evaluación Inicial</h4>
+                                                <p>Recepción central desde alcaldía. Toma de biometría y dictamen de riesgo.</p>
+                                                <div class="timeline-details">
+                                                    <strong>Unidad de Destino:</strong> Unidad Penal 4 (Femenina)<br>
+                                                    <strong>Oficial a Cargo:</strong> Alcaide Mayor R. Silva<br>
+                                                    <strong>Documentación:</strong> Oficio judicial de prisión preventiva verificado. Pertenencias inventariadas y resguardadas bajo Acta N° 8219.
+                                                </div>
+                                                <div class="timeline-actions">
+                                                    <button class="btn-timeline-primary">Ver Detalles</button>
+                                                    <button class="btn-timeline-secondary">Añadir Nota</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Gabinete Card -->
+                                <div class="gabinete-card" style="margin-top: 1.5rem;">
+                                    <h3>Gabinete Criminológico</h3>
+                                    <div class="gabinete-badge-block">
+                                        <strong>Dictamen Interdisciplinario</strong>
+                                        <span>Emitido: 20 Oct 2026</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="pv-trat" class="tab-content">
-                        <div class="surface-container">
-                            <h3>Informes de Seguimiento en Tratamiento</h3>
-                            <p style="font-size:0.9rem; color: #666;">Gestión de la evolución del interno durante la fase tratamental.</p>
-                            <div class="card" style="margin-top: 1rem; border-left: 3px solid var(--primary-cyan);">
-                                <strong>Historial de Informes Trimestrales</strong><br>
-                                <p style="font-size: 0.85rem; margin-top: 0.5rem;">No hay informes cargados en este período.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="pv-pru" class="tab-content">
-                        <div class="surface-container">
-                            <h3>Etapa de Prueba</h3>
-                            <p style="font-size:0.9rem; color: #666;">Seguimiento de medidas de autogobierno y acceso a beneficios.</p>
-                        </div>
-                    </div>
-                    <div id="pv-post" class="tab-content">
-                        <div class="surface-container">
-                            <h3>Post Penitenciario</h3>
-                            <p style="font-size:0.9rem; color: #666;">Supervisión y cierre de la intervención institucional.</p>
-                        </div>
-                    </div>
-                </div>
+                    </section>
 
-                <!-- Columna Derecha: Gabinete -->
-                <div style="flex: 1; border-left: 2px solid var(--bg-surface); padding-left: 2rem;">
-                    <h3 style="color:var(--primary-dark); font-size: 1rem;">Gabinete Criminológico</h3>
-                    <div class="surface-container" style="margin-top:1rem; border-left: 3px solid var(--primary-cyan); font-size:0.85rem;">
-                        <strong>Dictamen Interdisciplinario</strong><br>
-                        <span style="color:#666;">Emitido: 20 Oct 2026</span>
+                            <!-- 1. VISTA: INGRESO -->
+                            <section id="ingreso" class="view-section">
+                                <div class="card">
+                                    <h3>Estado del Trámite de Ingreso</h3>
+                                    <div class="surface-container" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                                        <span class="badge yellow">🟡 Pendiente de Validación</span>
+                                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">El instrumento técnico ha sido iniciado. Falta firma de autoridad de admisión.</p>
+                                    </div>
+
+                                    <div class="collapsible-container collapsed">
+                                        <div class="collapsible-header">
+                                            <h4>Instrumento Técnico de Ingreso</h4>
+                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-header">
+                                                    <div class="form-field"><label>Entrevistador</label><input type="text" name="entrevistador" placeholder="Nombre"></div>
+                                                    <div class="form-field"><label>Fecha</label><input type="date" name="fecha_ingreso"></div>
+                                                </div>
+                                                <div class="form-section-block">
+                                                    <h4 class="form-section-title">Datos Personales</h4>
+                                                    <div class="form-field"><label>Observaciones de Ingreso</label><textarea name="obs_ingreso" placeholder="..."></textarea></div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Ingreso</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapsible-container collapsed" style="border-left: 4px solid #3b82f6;">
+                                        <div class="collapsible-header">
+                                            <h4>Informe Médico de Ingreso</h4>
+                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-section-block">
+                                                    <h4 class="form-section-title">Evaluación de Salud</h4>
+                                                    <div class="form-field"><label>Diagnóstico inicial</label><textarea name="diag_inicial" placeholder="..."></textarea></div>
+                                                </div>
+                                                <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Informe Médico</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="collapsible-container collapsed" style="border-left: 4px solid #ef4444;">
+                                        <div class="collapsible-header">
+                                            <h4>Dictamen de Alojamiento</h4>
+                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field"><label>Perfil de riesgo</label><input type="text" name="perfil_riesgo" placeholder="Bajo / Medio / Alto"></div>
+                                                <div class="form-field"><label>Ubicación sugerida</label><input type="text" name="ubicacion_sugerida" placeholder="Unidad / Pabellón"></div>
+                                                <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar Dictamen</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 2. VISTA: SITUACIÓN JUDICIAL -->
+                            <section id="situacion" class="view-section">
+                                <div class="card">
+                                    <h3>Intervención Área Jurídica</h3>
+                                    <div class="surface-container" style="margin-bottom: 1.5rem;">
+                                        <p style="margin: 0; font-size: 0.95rem;"><strong>Situación de Cómputo:</strong> Libertad estimada el 15/05/2030</p>
+                                    </div>
+                                    
+                                    <div class="collapsible-container collapsed">
+                                        <div class="collapsible-header">
+                                            <h4>Cargar Actualización Judicial</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field"><label>Acciones Judiciales / Resoluciones</label><textarea name="acciones_judiciales" placeholder="Detalle de la resolución judicial..."></textarea></div>
+                                                <div class="form-actions"><button type="button" class="btn-primary">💾 Guardar</button></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sanciones Disciplinares dentro de la Alcaidía -->
+                                <div class="card" style="margin-top: 1.5rem; border-top: 4px solid var(--status-red);">
+                                    <h3 style="margin-bottom: 0.5rem; font-family: var(--font-display);">Sanciones Disciplinares en la Alcaidía</h3>
+                                    <p class="section-description" style="margin-bottom: 1.5rem;">
+                                        Historial de sanciones aplicadas e incidentes disciplinarios registrados dentro del establecimiento.
+                                    </p>
+
+                                    <div class="sanctions-table-container">
+                                        <table class="sanctions-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fecha</th>
+                                                    <th>Grado</th>
+                                                    <th>Causa / Incidente</th>
+                                                    <th>Sanción Aplicada</th>
+                                                    <th>Estado</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>01 Oct 2026</strong></td>
+                                                    <td><span class="badge badge-warning">Media</span></td>
+                                                    <td>Altercado verbal menor en sector comedor de la Unidad 4</td>
+                                                    <td>Apercibimiento y restricción de recreo (5 días)</td>
+                                                    <td><span class="badge badge-success">Resuelta vía Mediación JR</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>18 Sep 2026</strong></td>
+                                                    <td><span class="badge badge-success" style="background-color: #f8fafc; color: var(--text-muted); border-color: var(--border-color);">Leve</span></td>
+                                                    <td>Incumplimiento de horario de fajina en pabellón</td>
+                                                    <td>Advertencia verbal en legajo</td>
+                                                    <td><span class="badge badge-success">Archivada</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="collapsible-container collapsed">
+                                        <div class="collapsible-header">
+                                            <h4>Registrar Nueva Sanción Disciplinaria</h4>
+                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-header">
+                                                    <div class="form-field">
+                                                        <label>Fecha del Incidente</label>
+                                                        <input type="date" name="sancion_fecha">
+                                                    </div>
+                                                    <div class="form-field">
+                                                        <label>Grado de la Falta</label>
+                                                        <select name="sancion_grado">
+                                                            <option value="Leve">Leve</option>
+                                                            <option value="Media">Media</option>
+                                                            <option value="Grave">Grave</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-section-block">
+                                                    <div class="form-field">
+                                                        <label>Causa / Descripción del Incidente</label>
+                                                        <textarea name="sancion_causa" placeholder="Detalle los hechos del altercado o falta..."></textarea>
+                                                    </div>
+                                                    <div class="form-field">
+                                                        <label>Sanción Propuesta / Aplicada</label>
+                                                        <input type="text" name="sancion_aplicada" placeholder="Ej: Apercibimiento, aislamiento temporal, etc.">
+                                                    </div>
+                                                    <div class="form-field">
+                                                        <label>Estado del Trámite</label>
+                                                        <select name="sancion_estado">
+                                                            <option value="En Curso">En Trámite</option>
+                                                            <option value="Resuelta JR">Resuelta vía Mediación JR</option>
+                                                            <option value="Cumplida">Cumplida</option>
+                                                            <option value="Archivada">Archivada</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Sanción</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 3. VISTA: PLAN DE VIDA -->
+                            <section id="plan-vida" class="view-section">
+                                <div class="pdv-grid">
+                                    
+                                    <!-- 1. EDUCACIÓN -->
+                                    <div class="pdv-area-card area-educacion">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Educación</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Nivel Actual</span>
+                                                <span class="pdv-metric-value">Secundaria (En Curso)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Asistencia</span>
+                                                <span class="pdv-metric-value">95%</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Completó la educación primaria inicial. Actualmente cursa el último año de secundaria y participa de talleres de oficios.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-educacion"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="educacion">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área de Educación</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Nivel de Instrucción</label>
+                                                            <input type="text" name="nivel_instruccion" placeholder="Ej: Secundaria en curso">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Asistencia (%)</label>
+                                                            <input type="text" name="asistencia_educacion" placeholder="Ej: 95%">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Observaciones de Educación</label>
+                                                            <textarea name="obs_educacion" placeholder="Detalle el desempeño escolar..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Educación</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. TRABAJO -->
+                                    <div class="pdv-area-card area-trabajo">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Trabajo</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Taller Activo</span>
+                                                <span class="pdv-metric-value">Panadería / Costura</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Carga Horaria</span>
+                                                <span class="pdv-metric-value">20 hs/semana</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Participa principalmente en el taller de Panadería, complementando con tareas de Costura y Mantenimiento general de pabellones.
+                                            </div>
+                                            <div class="pdv-trabajo-mini-charts-wrapper" style="display: flex; flex-direction: column; gap: 8px; margin: 0.5rem 0 0.8rem 0; width: 100%;">
+                                                <div style="display: flex; flex-direction: column; gap: 4px;">
+                                                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                                        <span style="font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:6px; height:6px; background:#f59e0b; border-radius:50%;"></span>Panadería</span>
+                                                        <span style="color: var(--text-muted); font-size: 10px;">Promedio: 12.5 hs/sem</span>
+                                                    </div>
+                                                    <div style="height: 30px; position: relative;"><canvas id="chart-trabajo-panaderia-main"></canvas></div>
+                                                </div>
+                                                <div style="display: flex; flex-direction: column; gap: 4px;">
+                                                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                                        <span style="font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:6px; height:6px; background:#fbbf24; border-radius:50%;"></span>Costura</span>
+                                                        <span style="color: var(--text-muted); font-size: 10px;">Promedio: 5.0 hs/sem</span>
+                                                    </div>
+                                                    <div style="height: 30px; position: relative;"><canvas id="chart-trabajo-costura-main"></canvas></div>
+                                                </div>
+                                                <div style="display: flex; flex-direction: column; gap: 4px;">
+                                                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 11px;">
+                                                        <span style="font-weight: 600; color: var(--text-main); display: flex; align-items: center; gap: 4px;"><span style="display:inline-block; width:6px; height:6px; background:#d97706; border-radius:50%;"></span>Mantenimiento</span>
+                                                        <span style="color: var(--text-muted); font-size: 10px;">Promedio: 2.5 hs/sem</span>
+                                                    </div>
+                                                    <div style="height: 30px; position: relative;"><canvas id="chart-trabajo-mantenimiento-main"></canvas></div>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="trabajo">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área de Trabajo</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Oficios / Taller</label>
+                                                            <input type="text" name="oficios" placeholder="Ej: Costura / Panadería">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Horas Semanales</label>
+                                                            <input type="text" name="horas_trabajo" placeholder="Ej: 20 hs">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Observaciones de Trabajo</label>
+                                                            <textarea name="obs_trabajo" placeholder="Detalle el desempeño laboral..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Trabajo</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. SALUD -->
+                                    <div class="pdv-area-card area-salud">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Salud</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Estado Físico</span>
+                                                <span class="pdv-metric-value">Estable</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Último Control</span>
+                                                <span class="pdv-metric-value">10 Oct 2026</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Controles clínicos y cardiovasculares estables. Registro periódico de presión arterial dentro de parámetros normales.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-salud"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="salud">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área de Salud</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Profesional de Salud</label>
+                                                            <input type="text" name="prof_salud" placeholder="Nombre del médico...">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Estado clínico general</label>
+                                                            <textarea name="estado_clinico" placeholder="Detalles del estado de salud..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Salud</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4. SOCIAL -->
+                                    <div class="pdv-area-card area-social">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Social</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Vínculo Familiar</span>
+                                                <span class="pdv-metric-value">Activo (Madre)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Visitas</span>
+                                                <span class="pdv-metric-value">Quincenal</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Red de contención activa. Mantiene comunicación con su familia a través de visitas presenciales, llamadas y videollamadas.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-social"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="social">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área Social</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Abordaje Social y Vínculos</label>
+                                                            <textarea name="abordaje_social" placeholder="Detalle de visitas, llamadas o gestiones sociales..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Social</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 5. PSICOLÓGICA -->
+                                    <div class="pdv-area-card area-psicologia">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-9-7-9s-7 4.7-7 9a7 7 0 0 0 7 7z"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Psicológica</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Terapia</span>
+                                                <span class="pdv-metric-value">Quincenal (Individual)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Adhesión</span>
+                                                <span class="pdv-metric-value">Favorable</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Evolución favorable en el espacio psicoterapéutico. Trabajo centrado en control de impulsos.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-psicologia"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="psicologia">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área Psicológica</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Psicólogo Interviniente</label>
+                                                            <input type="text" name="psicologo" placeholder="Nombre del profesional...">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Evaluación Psicológica</label>
+                                                            <textarea name="eval_psicologica" placeholder="Detalle del informe psicológico actual..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Psicología</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 6. LABORAL -->
+                                    <div class="pdv-area-card area-laboral">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Laboral</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Curso Actual</span>
+                                                <span class="pdv-metric-value">Informática / Computación</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Estado</span>
+                                                <span class="pdv-metric-value">En Curso</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Avance sobresaliente en formación profesional. Excelente desempeño en práctica aplicada y normas de seguridad.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-laboral"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="laboral">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Capacitación Laboral</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Curso / Capacitación</label>
+                                                            <input type="text" name="curso_laboral" placeholder="Ej: Informática / Herrería">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Desempeño Laboral</label>
+                                                            <textarea name="desempeno_laboral" placeholder="Evaluación del perfil laboral y competencias..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Laboral</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 7. SEGURIDAD -->
+                                    <div class="pdv-area-card area-seguridad">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Seguridad</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value">Buena (7)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Concepto</span>
+                                                <span class="pdv-metric-value">Templado (6)</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Mantiene conducta estable en pabellón. Cumple con las directivas de los agentes de seguridad.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-seguridad"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="seguridad">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Área de Seguridad</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Conducta Observada</label>
+                                                            <textarea name="conducta_observada" placeholder="Reportes de incidentes, convivencia y cumplimiento de normas..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Seguridad</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 8. DIMENSIÓN RESTAURATIVA -->
+                                    <div class="pdv-area-card area-restaurativa">
+                                        <div class="pdv-card-header">
+                                            <div class="pdv-card-title-group">
+                                                <div class="pdv-area-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                                </div>
+                                                <div class="pdv-area-title">Dimensión Restaurativa</div>
+                                            </div>
+                                        </div>
+                                        <div class="pdv-card-body">
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Prog. Encuentros</span>
+                                                <span class="pdv-metric-value">Activo (8/12 Sesiones)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Mediaciones</span>
+                                                <span class="pdv-metric-value">1 Exitosa (Sin Sanción)</span>
+                                            </div>
+                                            <div class="pdv-card-text">
+                                                Participa activamente en círculos de diálogo restaurativo, talleres de concientización y proyectos de reparación comunitaria.
+                                            </div>
+                                            <div class="pdv-chart-container">
+                                                <canvas id="chart-restaurativa"></canvas>
+                                            </div>
+                                            
+                                            <button type="button" class="btn-expand-area" data-area="restaurativa">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                                Ver Dashboard Detallado
+                                            </button>
+                                            
+                                            <div class="collapsible-container collapsed">
+                                                <div class="collapsible-header">
+                                                    <h4>Actualizar Dimensión Restaurativa</h4>
+                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                </div>
+                                                <div class="collapsible-content">
+                                                    <form class="instrument-form">
+                                                        <div class="form-field">
+                                                            <label>Estado en Programas Restaurativos</label>
+                                                            <input type="text" name="estado_restaurativa" placeholder="Ej: Participación activa">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Observaciones / Avances</label>
+                                                            <textarea name="obs_restaurativa" placeholder="Aspectos de autorreflexión y reparación del daño..."></textarea>
+                                                        </div>
+                                                        <div class="form-actions">
+                                                            <button type="button" class="btn-primary">💾 Guardar Restaurativa</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- TRÁMITES Y EVALUACIONES DE PROGRESIVIDAD AL FINAL -->
+                                <div class="card" style="margin-top: 2rem; border-top: 4px solid var(--primary);">
+                                    <h3 style="margin-bottom: 0.5rem; font-family: var(--font-display);">Trámites y Evaluaciones de Progresividad</h3>
+                                    <p class="section-description" style="margin-bottom: 1.5rem;">
+                                        Registros e informes administrativos y técnicos para el avance de las fases del tratamiento penitenciario.
+                                    </p>
+
+                                    <!-- 1. PLAN DE VIDA BASE -->
+                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
+                                        <div class="collapsible-header">
+                                            <h4>Plan de Vida (Instrumento Base)</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field">
+                                                    <label>Objetivos del Plan de Vida</label>
+                                                    <textarea name="objetivos_pv" placeholder="Definición de metas tratamentales a corto, mediano y largo plazo..."></textarea>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2. INFORMES TRIMESTRALES -->
+                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
+                                        <div class="collapsible-header">
+                                            <h4>Informes Trimestrales de Avance</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-header">
+                                                    <div class="form-field">
+                                                        <label>Periodo Trimestral</label>
+                                                        <select name="trimestre">
+                                                            <option value="1°">1° Trimestre</option>
+                                                            <option value="2°">2° Trimestre</option>
+                                                            <option value="3°">3° Trimestre</option>
+                                                            <option value="4°">4° Trimestre</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-section-block">
+                                                    <div class="form-field">
+                                                        <label>Evaluación del Avance Trimestral</label>
+                                                        <textarea name="avance_trimestral" placeholder="Describa los avances logrados en el periodo..."></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Informe Trimestral</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. RECOMENDACIÓN DE PASE A PRUEBA -->
+                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #f59e0b;">
+                                        <div class="collapsible-header">
+                                            <h4>Dictamen de Recomendación de Pase a Prueba</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field">
+                                                    <label>Fundamentación del Pase a Prueba</label>
+                                                    <textarea name="fundamentacion" placeholder="Detallar méritos, conducta y evolución que justifican el pase a periodo de prueba..."></textarea>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Dictamen de Prueba</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- 4. ACCESO A MEDIDA -->
+                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #3b82f6;">
+                                        <div class="collapsible-header">
+                                            <h4>Instrumento de Acceso a Medida</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field">
+                                                    <label>Tipo de Medida Solicitada</label>
+                                                    <input type="text" name="tipo_medida" placeholder="Ej: Salidas transitorias, semilibertad, etc.">
+                                                </div>
+                                                <div class="form-field">
+                                                    <label>Detalle o Justificación de la Medida</label>
+                                                    <textarea name="detalle_medida" placeholder="Fundamento y requisitos de la medida solicitada..."></textarea>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Solicitud de Medida</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <!-- 5. CIERRE DE INTERVENCIÓN -->
+                                    <div class="collapsible-container collapsed" style="border-left: 4px solid #0f172a;">
+                                        <div class="collapsible-header">
+                                            <h4>Cierre de Intervención / Egreso</h4>
+                                            <span class="collapse-indicator">➕ Abrir</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-field">
+                                                    <label>Conclusiones Finales</label>
+                                                    <textarea name="conclusiones_cierre" placeholder="Evaluación final del egreso e inserción social..."></textarea>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Cierre</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <!-- 5. VISTA: JUSTICIA RESTAURATIVA -->
+                            <section id="justicia-restaurativa" class="view-section">
+                                <div class="card">
+                                    <div class="card-header-with-badge">
+                                        <h3>Justicia Restaurativa y Mediación</h3>
+                                        <span class="badge green">2 Registros Activos</span>
+                                    </div>
+                                    <p class="section-description">
+                                        Registro de participación en programas de mediación, asunción de responsabilidad y resolución pacífica de conflictos de convivencia dentro del establecimiento.
+                                    </p>
+
+                                    <!-- Panel 1: Programa de Justicia Restaurativa -->
+                                    <div class="surface-container" style="margin-bottom: 1.5rem; border-left: 4px solid var(--primary);">
+                                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                                            <div>
+                                                <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">Programa de Encuentros Restaurativos y Reparación</h4>
+                                                <span style="font-size: 0.8rem; color: var(--text-muted);">Facilitador: Lic. Clara Montes (Área de Mediación)</span>
+                                            </div>
+                                            <span class="badge green">En Curso</span>
+                                        </div>
+                                        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main); margin-bottom: 0.5rem;">
+                                            Participa activamente en el módulo semanal de "Empatía y Responsabilidad Social". Ha demostrado capacidad para la autorreflexión y una evolución favorable en la asunción del daño causado.
+                                        </p>
+                                        <div style="font-size: 0.8rem; color: var(--text-muted);">
+                                            <strong>Inicio:</strong> 25 Sep 2026 | <strong>Sesiones asistidas:</strong> 8 de 12
+                                        </div>
+                                    </div>
+
+                                    <!-- Panel 2: Conflicto Disciplinario Resuelto -->
+                                    <div class="surface-container" style="margin-bottom: 1.5rem; border-left: 4px solid var(--status-yellow);">
+                                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
+                                            <div>
+                                                <h4 style="margin: 0; color: var(--text-main); font-size: 1.05rem;">Mediación por Conflicto Convivencial (Disciplinario)</h4>
+                                                <span style="font-size: 0.8rem; color: var(--text-muted);">Expediente Relacionado: EXP-2026-90412 | Mediador: Dr. Javier Rossi</span>
+                                            </div>
+                                            <span class="badge green" style="background-color: #e8f5e9; color: var(--status-green); border-color: #c8e6c9;">Resuelto con Acuerdo</span>
+                                        </div>
+                                        <p style="font-size: 0.9rem; line-height: 1.5; color: var(--text-main); margin-bottom: 0.75rem;">
+                                            <strong>Descripción del conflicto:</strong> Altercado verbal con agresión mutua menor en el sector comedor de la Unidad 4 (Evento del 01 Oct 2026) con la interna M. González. Se derivó a mediación para evitar sanción de aislamiento.
+                                        </p>
+                                        <div style="background-color: white; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.85rem; margin-bottom: 0.75rem;">
+                                            <strong style="display: block; margin-bottom: 0.25rem; color: var(--text-main);">Acuerdo de Reparación y Convivencia:</strong>
+                                            <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-muted); line-height: 1.4;">
+                                                <li>Disculpas recíprocas formales y compromiso escrito de no agresión y respeto mutuo.</li>
+                                                <li>Trabajo restaurativo conjunto: Mantenimiento y limpieza del comedor común (Lunes y Miércoles por 3 semanas).</li>
+                                                <li>Finalización del acuerdo certificada sin incidentes recurrentes el 25 Oct 2026.</li>
+                                            </ul>
+                                        </div>
+                                        <div style="font-size: 0.8rem; color: var(--text-muted);">
+                                            <strong>Fecha del Acuerdo:</strong> 04 Oct 2026 | <strong>Estado del Legajo:</strong> Sin Sanción Registrada (Mediación Exitosa)
+                                        </div>
+                                    </div>
+
+                                    <!-- Formulario Colapsable para Añadir Registro de Mediación -->
+                                    <div class="collapsible-container collapsed" style="border-left: 4px solid var(--text-muted);">
+                                        <div class="collapsible-header">
+                                            <h4>Registrar Nuevo Acuerdo de Mediación / Actividad</h4>
+                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                        </div>
+                                        <div class="collapsible-content">
+                                            <form class="instrument-form">
+                                                <div class="form-header">
+                                                    <div class="form-field">
+                                                        <label>Tipo de Registro</label>
+                                                        <select name="jr_tipo">
+                                                            <option value="conflicto">Mediación por Conflicto Disciplinario</option>
+                                                            <option value="programa">Participación en Programa Restaurativo</option>
+                                                            <option value="reparacion">Actividad de Reparación del Daño</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-field"><label>Facilitador / Mediador</label><input type="text" name="jr_mediador" placeholder="Nombre completo"></div>
+                                                </div>
+                                                <div class="form-section-block">
+                                                    <h4 class="form-section-title">Detalles del Acuerdo / Participación</h4>
+                                                    <div class="form-field"><label>Descripción del caso o conflicto</label><textarea name="jr_descripcion" placeholder="Escriba los hechos..."></textarea></div>
+                                                    <div class="form-field"><label>Compromisos o Reparaciones Acordadas</label><textarea name="jr_compromisos" placeholder="Detalle las tareas o acuerdos..."></textarea></div>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn-primary">💾 Guardar Registro Restaurativo</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 4. VISTA: CONFIGURACIÓN -->
+                            <section id="configuracion" class="view-section">
+                                <div class="card">
+                                    <h3>Configuración del Sistema</h3>
+                                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                                        Opciones de personalización del expediente digital y accesos rápidos del usuario.
+                                    </p>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+            <!-- SUB-DASHBOARD MODAL POR ÁREA -->
+            <div id="area-dashboard-modal" class="area-modal-overlay">
+                <div class="area-modal-card">
+                    <div class="area-modal-header">
+                        <div class="area-modal-header-left">
+                            <h3 class="area-modal-header-title">Plan de Vida - Detalle de Variables</h3>
+                            <div class="area-modal-detainee-tag">Interna: <strong>García, Sofia</strong> &nbsp;|&nbsp; Pabellón: <strong>Psiquiátrico</strong></div>
+                        </div>
+                        <button type="button" class="area-modal-close-btn" id="close-area-modal">×</button>
+                    </div>
+                    <div class="area-modal-body">
+                        <!-- Sidebar de Navegación por Área -->
+                        <aside class="area-modal-sidebar">
+                            <button type="button" class="sidebar-area-btn active" data-modal-area="educacion" style="--area-color: #06b6d4;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg></span>
+                                <span class="sidebar-area-name">Educación</span>
+                                <span class="sidebar-area-badge badge-info">85%</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="trabajo" style="--area-color: #f59e0b;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></span>
+                                <span class="sidebar-area-name">Trabajo</span>
+                                <span class="sidebar-area-badge badge-warning">Activo</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="salud" style="--area-color: #3b82f6;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></span>
+                                <span class="sidebar-area-name">Salud</span>
+                                <span class="sidebar-area-badge badge-success">Estable</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="social" style="--area-color: #10b981;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></span>
+                                <span class="sidebar-area-name">Social</span>
+                                <span class="sidebar-area-badge badge-success">Activo</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="psicologia" style="--area-color: #8b5cf6;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-4.3-7-9-7-9s-7 4.7-7 9a7 7 0 0 0 7 7z"></path></svg></span>
+                                <span class="sidebar-area-name">Psicología</span>
+                                <span class="sidebar-area-badge badge-primary">Favorable</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="laboral" style="--area-color: #f43f5e;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+                                <span class="sidebar-area-name">L. Egreso</span>
+                                <span class="sidebar-area-badge badge-danger">Listo</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="seguridad" style="--area-color: #ef4444;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
+                                <span class="sidebar-area-name">Seguridad</span>
+                                <span class="sidebar-area-badge badge-danger">Conducta: 7</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-modal-area="restaurativa" style="--area-color: #6366f1;">
+                                <span class="sidebar-area-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg></span>
+                                <span class="sidebar-area-name">Restaurativa</span>
+                                <span class="sidebar-area-badge badge-indigo">82%</span>
+                            </button>
+                        </aside>
+                        
+                        <!-- Panel de Contenido Dinámico -->
+                        <main class="area-modal-content-panel" id="modal-dynamic-content">
+                            <!-- El contenido se inyecta dinámicamente mediante JS -->
+                        </main>
                     </div>
                 </div>
             </div>
-            
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Instrumentos de la Etapa</h3>
 
-            <!-- INSTRUMENTO: PLAN DE VIDA (Movido a Tratamiento lógicamente) -->
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Plan de Vida (Instrumento Base)</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <!-- ... contenido del plan de vida ... -->
-                        <div class="form-header">
-                            <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                            <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Objetivos Tratamentales</h4>
-                            <div class="form-field"><label>Área Salud</label><textarea placeholder="Objetivos y metas..."></textarea></div>
-                            <div class="form-field"><label>Área Psicológica</label><textarea placeholder="Objetivos y metas..."></textarea></div>
-                            <div class="form-field"><label>Área Educación/Trabajo</label><textarea placeholder="Objetivos y metas..."></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Plan de Vida</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- INSTRUMENTO: INFORMES TRIMESTRALES DE AVANCE -->
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Informes Trimestrales de Avance</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-header">
-                            <div class="form-field"><label>Trimestre</label>
-                                <select><option>1° Trimestre</option><option>2° Trimestre</option><option>3° Trimestre</option><option>4° Trimestre</option></select>
-                            </div>
-                            <div class="form-field"><label>Fecha de Evaluación</label><input type="date"></div>
-                        </div>
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Evolución del Período</h4>
-                            <div class="form-field"><label>Cumplimiento de objetivos</label><textarea placeholder="Describir avance en las áreas propuestas..."></textarea></div>
-                            <div class="form-field"><label>Conducta y concepto</label><input type="text" placeholder="Nota numérica / Concepto"></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Informe Trimestral</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- INSTRUMENTO: DICTAMEN RECOMENDACIÓN PRUEBA -->
-            <div class="collapsible-container collapsed" style="border-left-color: var(--status-yellow);">
-                <div class="collapsible-header">
-                    <h4>Dictamen de Recomendación de Pase a Etapa de Prueba</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Evaluación de Progresividad</h4>
-                            <div class="form-field"><label>Fundamentación del pase</label><textarea placeholder="Describir por qué se recomienda el cambio de etapa..."></textarea></div>
-                            <div class="form-field"><label>Opinión del Gabinete</label>
-                                <div class="radio-group"><label><input type="radio" name="rec-prueba" value="si"> Favorable</label><label><input type="radio" name="rec-prueba" value="no"> Desfavorable</label></div>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Dictamen Prueba</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- INSTRUMENTOS DE ETAPA DE PRUEBA -->
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Informes de Avance (Etapa de Prueba)</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Seguimiento de Salidas/Beneficios</h4>
-                            <div class="form-field"><label>Desempeño en salidas transitorias</label><textarea placeholder="—"></textarea></div>
-                            <div class="form-field"><label>Cumplimiento de pautas</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Informe de Avance Prueba</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Instrumento de Acceso a Medida</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Solicitud de Medida Judicial</h4>
-                            <div class="form-field"><label>Tipo de medida (Libertad condicional, asistida, etc.)</label><input type="text" placeholder="—"></div>
-                            <div class="form-field"><label>Condiciones propuestas</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Acceso a Medida</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- INSTRUMENTOS POST PENITENCIARIO -->
-            <div class="collapsible-container collapsed" style="border-left-color: #9c27b0;">
-                <div class="collapsible-header">
-                    <h4>Informes de Avance (Post Penitenciario)</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Seguimiento en Medio Libre</h4>
-                            <div class="form-field"><label>Inserción laboral / familiar</label><textarea placeholder="—"></textarea></div>
-                            <div class="form-field"><label>Cumplimiento de reglas de conducta</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Informe Post</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="collapsible-container collapsed" style="border-left-color: #000;">
-                <div class="collapsible-header">
-                    <h4>Cierre de Intervención</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                        <div class="form-section-block">
-                            <h4 class="form-section-title">Dictamen Final</h4>
-                            <div class="form-field"><label>Motivo del cierre</label><input type="text" placeholder="Egreso, vencimiento de pena, etc."></div>
-                            <div class="form-field"><label>Conclusiones del acompañamiento</label><textarea placeholder="—"></textarea></div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="button" class="btn-primary">💾 Guardar Cierre</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="situacion" class="view-section">
-            <h1 class="bebas">Intervención Área Jurídica</h1>
-            
-            <div class="card" style="margin-bottom: 2rem;">
-                <h3 style="color:var(--primary-dark)">Informes y Progresividad (Resumen Operativo)</h3>
-                <div class="surface-container" style="margin-top: 1rem;">
-                    <ul style="line-height:1.8; font-size: 0.9rem;">
-                        <li><strong>15/10/2026:</strong> Oficio N° 102 - Informe de Concepto Inicial <span class="badge green">Enviado</span></li>
-                        <li><strong>02/10/2026:</strong> <span class="badge red">Notificado</span> Elevación parte disciplinario (Exp. 22941).</li>
-                        <li><strong>18/10/2026:</strong> Solicitud de Cómputo Actualizado <span class="badge yellow">Pendiente Resolución</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin: 2rem 0 1rem 0;">Actualización de Instrumento Judicial</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Operador Jurídico</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Informes remitidos al Juez</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Fecha</label><input type="date"></div>
-                        <div class="form-field"><label>Oficio N°</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Descripción</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Estado</label>
-                            <div class="radio-group inline"><label><input type="radio" name="inf-estado" value="enviado"> Enviado</label><label><input type="radio" name="inf-estado" value="pendiente"> Pendiente</label></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-section-block" style="border-left-color: var(--status-red);">
-                    <h4 class="form-section-title" style="color:var(--status-red);">Incidentes de conducta comunicados</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Fecha</label><input type="date"></div>
-                        <div class="form-field"><label>Expediente N°</label><input type="text" placeholder="—"></div>
-                    </div>
-                    <div class="form-field"><label>Descripción</label><textarea placeholder="Describir el incidente..."></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Gestión de progresividad de la pena</h4>
-                    <div class="form-field"><label>Acciones documentadas</label><textarea placeholder="Describir solicitudes de cómputo, informes del Gabinete, etc."></textarea></div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Situación Judicial</button>
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section id="seguridad" class="view-section">
-            <h1 class="bebas">Control de Seguridad y Disciplina</h1>
-            
-            <div style="display: flex; gap: 1.5rem; margin-bottom: 2rem;">
-                <div class="card" style="flex:1">
-                    <h3>Situación Disciplinaria</h3>
-                    <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
-                        <p><strong>Concepto:</strong> Bueno (5)</p>
-                        <p><strong>Última Sanción:</strong> 01/10/2026</p>
-                    </div>
-                </div>
-                <div class="card" style="flex:1">
-                    <h3>Ubicación Actual</h3>
-                    <div class="surface-container" style="margin-top: 1rem; font-size: 0.9rem;">
-                        <p><strong>Unidad:</strong> 4 - Sector A</p>
-                        <p><strong>Pabellón:</strong> 12 (Baja Conflictividad)</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="bebas" style="color: var(--primary-cyan); margin-bottom: 1rem;">Carga Instrumento de Seguridad</h3>
-
-            <div class="collapsible-container collapsed">
-                <div class="collapsible-header">
-                    <h4>Cargar Instrumento</h4>
-                    <span class="collapse-indicator">➕ Abrir Formulario</span>
-                </div>
-                <div class="collapsible-content">
-                    <form class="instrument-form">
-                <div class="form-header">
-                    <div class="form-field"><label>Entrevistador</label><input type="text" placeholder="Nombre y apellido"></div>
-                    <div class="form-field"><label>Apellido y nombre PPL</label><input type="text" placeholder="Apellido, Nombre"></div>
-                    <div class="form-field"><label>N° de Legajo</label><input type="text" placeholder="0000"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">1 — Alojamiento</h4>
-                    <div class="form-row">
-                        <div class="form-field"><label>Lugar de alojamiento</label><input type="text" placeholder="—"></div>
-                        <div class="form-field"><label>Fecha de ingreso al alojamiento actual</label><input type="date"></div>
-                    </div>
-                    <div class="form-field"><label>Movimientos dentro del alojamiento</label><textarea placeholder="Describir..."></textarea></div>
-                    <div class="form-field"><label>Características del alojamiento</label><textarea placeholder="Describir..."></textarea></div>
-                    <div class="form-field"><label>Motivo determinante del lugar de alojamiento otorgado</label></div>
-                    <div class="radio-group">
-                        <label><input type="radio" name="motivo-aloj" value="solicitud"> Solicitud de la PPL</label>
-                        <label><input type="radio" name="motivo-aloj" value="vinculos"> Vínculos socioafectivos</label>
-                        <label><input type="radio" name="motivo-aloj" value="otros"> Otros</label>
-                    </div>
-                    <div class="form-field"><label>Otros (especificar)</label><input type="text" placeholder="—"></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">2 — Capacidades Interpersonales</h4>
-                    <div class="form-field"><label>¿Cómo se relaciona con el personal penitenciario?</label>
-                        <div class="radio-group"><label><input type="radio" name="rel-personal" value="bien"> Bien</label><label><input type="radio" name="rel-personal" value="regular"> Regular</label><label><input type="radio" name="rel-personal" value="mal"> Mal</label></div>
-                    </div>
-                    <div class="form-field"><label>¿Solicita asesoramiento para actividades?</label>
-                        <div class="radio-group"><label><input type="radio" name="ases" value="si"> Sí</label><label><input type="radio" name="ases" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>¿Cuida su lugar de alojamiento?</label>
-                        <div class="radio-group"><label><input type="radio" name="cuida" value="si"> Sí</label><label><input type="radio" name="cuida" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>¿Ha tenido buena recepción por parte de la población?</label>
-                        <div class="radio-group"><label><input type="radio" name="recep" value="buena"> Buena</label><label><input type="radio" name="recep" value="regular"> Regular</label><label><input type="radio" name="recep" value="mala"> Mala</label></div>
-                    </div>
-                    <div class="form-field"><label>¿Pudo integrarse con facilidad?</label>
-                        <div class="radio-group"><label><input type="radio" name="integ" value="si"> Sí</label><label><input type="radio" name="integ" value="no"> No</label></div>
-                    </div>
-                    <div class="form-field"><label>Motivos (en caso negativo)</label><textarea placeholder="Describir..."></textarea></div>
-                </div>
-                <div class="form-section-block">
-                    <h4 class="form-section-title">Ampliación de información</h4>
-                    <div class="form-field"><label>Observaciones</label><textarea placeholder="—"></textarea></div>
-                    <div class="form-field"><label>Firma del profesional interviniente</label><input type="text" placeholder="Nombre / Matrícula"></div>
-                </div>
-                <div class="form-actions">
-                    <button type="button" class="btn-primary">💾 Guardar Instrumento de Seguridad</button>
-                </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. VISTA: CONFIGURACIÓN -->
-        <section id="configuracion" class="view-section">
-            <h1 class="bebas">Ajustes del Operador Judicial</h1>
-            <div class="card" style="background:var(--tac-base); color:white;">
-                <h3 style="color:var(--primary-cyan)">Gestión de Firma Digital</h3>
-                <p style="margin-top:1rem">Suba su certificado para la validación de oficios.</p>
-                <button class="btn-primary" style="margin-top:1rem;">Cargar Firma</button>
-            </div>
-        </section>
-
-    </main>
-
-    <script src="app.js"></script>
-</body>
-</html>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="app.js"></script>
+        </body>
+        </html>
