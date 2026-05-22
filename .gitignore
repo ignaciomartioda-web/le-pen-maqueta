@@ -3,3 +3,5 @@ node_modules/
 .env
 *.log
 le-pen-maqueta/
+diff.txt
+*_diff.txt

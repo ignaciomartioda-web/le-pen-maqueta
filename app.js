@@ -152,10 +152,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Configure default typography and styles
+        // Safe cleanup of existing instances to avoid overlays
+        const canvasIds = [
+            'chart-educacion', 'chart-trabajo-panaderia-main', 'chart-trabajo-costura-main',
+            'chart-trabajo-mantenimiento-main', 'chart-salud', 'chart-social',
+            'chart-psicologia', 'chart-laboral', 'chart-seguridad', 'chart-restaurativa'
+        ];
+        canvasIds.forEach(id => {
+            const chartInstance = Chart.getChart(id);
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+        });
+
+        const isDark = document.body.classList.contains('dark-theme');
+        const isSepia = document.body.classList.contains('sepia-theme');
+
+        // Configure default typography and styles based on active theme
         Chart.defaults.font.family = "'Inter', system-ui, -apple-system, sans-serif";
-        Chart.defaults.color = "#64748b";
-        Chart.defaults.scale.grid.color = "#f1f5f9";
+        Chart.defaults.color = isDark ? "#94a3b8" : (isSepia ? "#8c7355" : "#64748b");
+        Chart.defaults.scale.grid.color = isDark ? "#24324c" : (isSepia ? "#e4d7ba" : "#f1f5f9");
 
         const chartOptionsCommon = {
             responsive: true,
@@ -386,8 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             min: 0,
                             max: 100,
                             ticks: { display: false, stepSize: 20 },
-                            grid: { color: '#e2e8f0' },
-                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: isDark ? "#24324c" : (isSepia ? "#e4d7ba" : "#e2e8f0") },
+                            angleLines: { color: isDark ? "#24324c" : (isSepia ? "#e4d7ba" : "#e2e8f0") },
                             pointLabels: { font: { size: 9 } }
                         }
                     }
@@ -505,8 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Call Chart initialization
-    initDashboardCharts();
+    // Chart initialization is now deferred and managed by the Theme initialization logic at the end of the script
 
     // 7. Sub-Dashboards Modal Logic
     let currentModalChart = null;
@@ -893,6 +908,9 @@ document.addEventListener('DOMContentLoaded', () => {
             currentModalChart = null;
         }
 
+        const isDark = document.body.classList.contains('dark-theme');
+        const isSepia = document.body.classList.contains('sepia-theme');
+
         const colors = {
             educacion: '#06b6d4',
             trabajo: '#f59e0b',
@@ -1061,8 +1079,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             min: 0,
                             max: 100,
                             ticks: { display: false, stepSize: 20 },
-                            grid: { color: '#e2e8f0' },
-                            angleLines: { color: '#e2e8f0' },
+                            grid: { color: isDark ? "#24324c" : (isSepia ? "#e4d7ba" : "#e2e8f0") },
+                            angleLines: { color: isDark ? "#24324c" : (isSepia ? "#e4d7ba" : "#e2e8f0") },
                             pointLabels: { font: { size: 10 } }
                         }
                     }
@@ -1211,6 +1229,129 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
                 closeModal();
+            }
+        });
+    }
+
+    // ==========================================================================
+    // 8. Theme Switcher & System Configuration Logic
+    // ==========================================================================
+    const themeSelect = document.getElementById('config-theme-select');
+    
+    function applyTheme(theme) {
+        document.body.classList.remove('dark-theme', 'sepia-theme');
+        if (theme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else if (theme === 'sepia') {
+            document.body.classList.add('sepia-theme');
+        }
+        
+        // Re-initialize main dashboard charts with new colors
+        initDashboardCharts();
+        
+        // Re-initialize modal chart if it's currently open
+        if (modalOverlay && modalOverlay.classList.contains('active')) {
+            const activeSidebarBtn = document.querySelector('.sidebar-area-btn.active');
+            if (activeSidebarBtn) {
+                const areaId = activeSidebarBtn.getAttribute('data-modal-area');
+                renderSubDashboard(areaId);
+            }
+        }
+    }
+    
+    // Load and apply saved theme on startup
+    const savedTheme = localStorage.getItem('edp_theme') || 'light';
+    if (themeSelect) {
+        themeSelect.value = savedTheme;
+    }
+    applyTheme(savedTheme);
+    
+    if (themeSelect) {
+        themeSelect.addEventListener('change', (e) => {
+            const newTheme = e.target.value;
+            localStorage.setItem('edp_theme', newTheme);
+            applyTheme(newTheme);
+        });
+    }
+
+    // 9. Backup: Export / Import / Reset Logic
+    const btnExport = document.getElementById('btn-export-data');
+    const fileImport = document.getElementById('file-import-data');
+    const btnReset = document.getElementById('btn-reset-data');
+
+    if (btnExport) {
+        btnExport.addEventListener('click', () => {
+            const backupData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('edp_data_') || key === 'edp_theme') {
+                    backupData[key] = localStorage.getItem(key);
+                }
+            }
+            
+            const jsonStr = JSON.stringify(backupData, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `edp_respaldo_${new Date().toISOString().slice(0, 10)}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    }
+
+    if (fileImport) {
+        fileImport.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const importedData = JSON.parse(event.target.result);
+                    let importedCount = 0;
+                    
+                    Object.keys(importedData).forEach(key => {
+                        if (key.startsWith('edp_data_') || key === 'edp_theme') {
+                            localStorage.setItem(key, importedData[key]);
+                            importedCount++;
+                        }
+                    });
+                    
+                    if (importedCount > 0) {
+                        alert(`Se importaron ${importedCount} registros de configuración y datos correctamente. El sistema se reiniciará para aplicar los cambios.`);
+                        window.location.reload();
+                    } else {
+                        alert("El archivo de respaldo no contiene datos válidos para este expediente.");
+                    }
+                } catch (err) {
+                    console.error("Error al importar datos", err);
+                    alert("Error al leer el archivo. Asegúrese de que sea un archivo JSON válido exportado desde este sistema.");
+                }
+            };
+            reader.readAsText(file);
+        });
+    }
+
+    if (btnReset) {
+        btnReset.addEventListener('click', () => {
+            const confirmed = confirm("⚠️ ¿Está seguro de que desea restablecer todos los datos del expediente?\n\nEsta acción eliminará permanentemente todos los registros cargados (formularios, notas y configuraciones de temas) y no se puede deshacer.");
+            if (confirmed) {
+                const keysToRemove = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key.startsWith('edp_data_') || key === 'edp_theme') {
+                        keysToRemove.push(key);
+                    }
+                }
+                
+                keysToRemove.forEach(key => localStorage.removeItem(key));
+                
+                alert("Los datos han sido restablecidos con éxito. La página se recargará.");
+                window.location.reload();
             }
         });
     }
