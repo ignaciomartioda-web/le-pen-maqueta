@@ -450,7 +450,10 @@
                                 <div class="card">
                                     <h3>Intervención Área Jurídica</h3>
                                     <div class="surface-container" style="margin-bottom: 1.5rem;">
-                                        <p style="margin: 0; font-size: 0.95rem;"><strong>Situación de Cómputo:</strong> Libertad estimada el 15/05/2030</p>
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+                                            <p style="margin: 0; font-size: 0.95rem;"><strong>Situación de Cómputo:</strong> Libertad estimada el 15/05/2030</p>
+                                            <p style="margin: 0; font-size: 0.95rem;"><strong>Etapa de Cumplimiento:</strong> <span id="etapa-cumplimiento-display" style="font-weight: 600; color: var(--primary);">Período de Tratamiento</span></p>
+                                        </div>
                                     </div>
                                     
                                     <div class="collapsible-container collapsed">
@@ -460,6 +463,17 @@
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
+                                                <div class="form-field">
+                                                    <label for="etapa_cumplimiento">Etapa de Cumplimiento de la Pena</label>
+                                                    <select id="etapa_cumplimiento" name="etapa_cumplimiento" style="width: 100%; max-width: 100%;">
+                                                        <option value="tratamiento">Período de Tratamiento</option>
+                                                        <option value="ingreso">Ingreso y Admisión</option>
+                                                        <option value="observacion">Período de Observación</option>
+                                                        <option value="prueba">Período de Prueba</option>
+                                                        <option value="libertad_condicional">Período de Libertad Condicional</option>
+                                                        <option value="libertad_asistida">Período de Libertad Asistida</option>
+                                                    </select>
+                                                </div>
                                                 <div class="form-field"><label>Acciones Judiciales / Resoluciones</label><textarea name="acciones_judiciales" placeholder="Detalle de la resolución judicial..."></textarea></div>
                                                 <div class="form-actions"><button type="submit" class="btn-primary">💾 Guardar</button></div>
                                             </form>

@@ -107,6 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Save to localStorage
             localStorage.setItem(`edp_data_${sectionId}`, JSON.stringify(mergedData));
 
+            // Sync judicial display if changed
+            if (sectionId === 'situacion') {
+                updateJudicialDisplay();
+            }
+
             // Show Feedback
             const btn = form.querySelector('.btn-primary');
             if (btn) {
@@ -129,6 +134,73 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
+
+    // 4.1. Judicial Display & Stepper Sync Logic
+    function updateJudicialDisplay() {
+        const savedData = localStorage.getItem('edp_data_situacion');
+        const displayEl = document.getElementById('etapa-cumplimiento-display');
+        let stageVal = 'tratamiento'; // Default stage
+        
+        if (savedData) {
+            try {
+                const data = JSON.parse(savedData);
+                if (data.etapa_cumplimiento) {
+                    stageVal = data.etapa_cumplimiento;
+                }
+            } catch (e) { console.error("Error parsing judicial data for display", e); }
+        }
+
+        // Update display text
+        if (displayEl) {
+            const optionsMap = {
+                'ingreso': 'Ingreso y Admisión',
+                'observacion': 'Período de Observación',
+                'tratamiento': 'Período de Tratamiento',
+                'prueba': 'Período de Prueba',
+                'libertad_condicional': 'Período de Libertad Condicional',
+                'libertad_asistida': 'Período de Libertad Asistida'
+            };
+            displayEl.textContent = optionsMap[stageVal] || stageVal;
+        }
+
+        // Sync main progress stepper
+        const nodes = document.querySelectorAll('.progresividad-stepper .step-node');
+        const fill = document.querySelector('.stepper-track-fill');
+        if (nodes && nodes.length >= 5) {
+            // Map stage to step index
+            let activeIdx = 2; // Default is treatment (index 2)
+            if (stageVal === 'ingreso') activeIdx = 0;
+            else if (stageVal === 'observacion') activeIdx = 1;
+            else if (stageVal === 'tratamiento') activeIdx = 2;
+            else if (stageVal === 'prueba') activeIdx = 3;
+            else if (stageVal === 'libertad_condicional' || stageVal === 'libertad_asistida') activeIdx = 4;
+
+            // Set progress bar fill width
+            if (fill) {
+                fill.style.width = `${activeIdx * 25}%`;
+            }
+
+            nodes.forEach((node, idx) => {
+                node.classList.remove('completed', 'active', 'pending');
+                const circle = node.querySelector('.step-circle');
+                if (!circle) return;
+
+                if (idx < activeIdx) {
+                    node.classList.add('completed');
+                    circle.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="step-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                } else if (idx === activeIdx) {
+                    node.classList.add('active');
+                    circle.innerHTML = `<div class="step-pulse"></div>`;
+                } else {
+                    node.classList.add('pending');
+                    circle.innerHTML = '';
+                }
+            });
+        }
+    }
+
+    // Initialize display and stepper on startup
+    updateJudicialDisplay();
 
     // 5. Timeline Details Toggle Logic
     const timelineBtns = document.querySelectorAll('.btn-timeline-primary');
