@@ -935,6 +935,193 @@ body {
     background-color: var(--primary-hover);
 }
 
+/* ============================================================
+   Evaluación Profesional — Conducta + Opinión + Firma Block
+   ============================================================ */
+
+/* Section divider inside a form */
+.eval-section-divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.25rem 0;
+}
+
+.eval-section-divider::before,
+.eval-section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.eval-section-divider-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding: 2px 8px;
+    background-color: #f1f5f9;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+/* Evaluation highlight block (conducta + opinión) */
+.eval-highlight-block {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+/* Professional Signature Block */
+.firma-profesional-block {
+    background-color: #ffffff;
+    border: 1.5px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 1rem 1.1rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    position: relative;
+}
+
+.firma-profesional-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--firma-accent, #2563eb);
+    border-radius: 12px 0 0 12px;
+}
+
+/* Per-area accent color for signature block */
+.area-educacion  .firma-profesional-block { --firma-accent: #06b6d4; }
+.area-trabajo    .firma-profesional-block { --firma-accent: #f59e0b; }
+.area-salud      .firma-profesional-block { --firma-accent: #3b82f6; }
+.area-social     .firma-profesional-block { --firma-accent: #10b981; }
+.area-psicologia .firma-profesional-block { --firma-accent: #8b5cf6; }
+.area-laboral    .firma-profesional-block { --firma-accent: #f43f5e; }
+.area-seguridad  .firma-profesional-block { --firma-accent: #ef4444; }
+.area-restaurativa .firma-profesional-block { --firma-accent: #6366f1; }
+
+.firma-profesional-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.firma-profesional-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+}
+
+.firma-profesional-icon {
+    width: 14px;
+    height: 14px;
+    stroke: var(--text-muted);
+    fill: none;
+    stroke-width: 2;
+}
+
+.firma-data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+}
+
+@media (max-width: 600px) {
+    .firma-data-grid { grid-template-columns: 1fr; }
+}
+
+/* Signature pad box */
+.firma-pad-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-top: 0.35rem;
+}
+
+.firma-pad-box {
+    flex: 1;
+    height: 54px;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 8px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    letter-spacing: 0.03em;
+    position: relative;
+    overflow: hidden;
+}
+
+.firma-pad-box::after {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background-color: #e2e8f0;
+}
+
+.firma-pad-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+    align-self: flex-end;
+    padding-bottom: 4px;
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Dark/Sepia compatibility */
+body.dark-theme .eval-highlight-block {
+    background-color: rgba(255,255,255,0.03) !important;
+    border-color: var(--border-color) !important;
+}
+body.dark-theme .firma-profesional-block {
+    background-color: rgba(255,255,255,0.02) !important;
+    border-color: var(--border-color) !important;
+}
+body.dark-theme .firma-pad-box {
+    background-color: rgba(255,255,255,0.03) !important;
+    border-color: var(--border-color) !important;
+}
+body.dark-theme .eval-section-divider-label {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+body.sepia-theme .eval-highlight-block {
+    background-color: rgba(92, 64, 51, 0.04) !important;
+    border-color: var(--border-color) !important;
+}
+body.sepia-theme .firma-profesional-block {
+    background-color: rgba(92, 64, 51, 0.02) !important;
+    border-color: var(--border-color) !important;
+}
+body.sepia-theme .eval-section-divider-label {
+    background-color: var(--bg-body) !important;
+    border-color: var(--border-color) !important;
+}
+
+
+
 /* Case Info / Gabinete Card */
 .gabinete-card {
     background-color: var(--bg-card);
@@ -949,7 +1136,28 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+
+/* Collapsible Criminological Cabinet Report */
+.gabinete-card.collapsible-container {
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gabinete-card .collapsible-header {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+}
+.gabinete-card .collapsible-header h3 {
+    margin: 0;
+    transition: color 0.2s ease;
+}
+.gabinete-card .collapsible-header:hover h3 {
+    color: var(--primary);
+}
+.gabinete-card .collapsible-content {
+    padding: 1.25rem 0 0 0 !important;
 }
 
 .gabinete-badge-block {
@@ -1252,30 +1460,54 @@ td a:hover {
     background-color: var(--bg-card);
     border-radius: 16px;
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.02), 0 2px 4px -2px rgba(15, 23, 42, 0.02), 0 0 0 1px rgba(15, 23, 42, 0.03);
+    gap: 0;
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -2px rgba(15, 23, 42, 0.02), 0 0 0 1px rgba(15, 23, 42, 0.04);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
 }
 
 .pdv-area-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 20px -8px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.02), 0 0 0 1px rgba(15, 23, 42, 0.04);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px -10px rgba(15, 23, 42, 0.1), 0 4px 12px -2px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.05);
 }
 
-/* Area Left border color themes */
-.pdv-area-card.area-salud { border-left: 4px solid #3b82f6; }
-.pdv-area-card.area-psicologia { border-left: 4px solid #8b5cf6; }
-.pdv-area-card.area-social { border-left: 4px solid #10b981; }
-.pdv-area-card.area-educacion { border-left: 4px solid #06b6d4; }
-.pdv-area-card.area-trabajo { border-left: 4px solid #f59e0b; }
-.pdv-area-card.area-laboral { border-left: 4px solid #f43f5e; }
-.pdv-area-card.area-seguridad { border-left: 4px solid #ef4444; }
-.pdv-area-card.area-restaurativa { border-left: 4px solid #6366f1; }
+/* Color top stripe per area — using ::before pseudo-element */
+.pdv-area-card::before {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    flex-shrink: 0;
+}
+
+.pdv-card-header,
+.pdv-card-body {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.pdv-card-header {
+    padding-top: 1.25rem;
+}
+
+.pdv-card-body {
+    padding-bottom: 1.5rem;
+}
+
+/* Area-specific top stripe & accent colors */
+.pdv-area-card.area-salud::before      { background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); }
+.pdv-area-card.area-psicologia::before { background: linear-gradient(90deg, #8b5cf6 0%, #a78bfa 100%); }
+.pdv-area-card.area-social::before     { background: linear-gradient(90deg, #10b981 0%, #34d399 100%); }
+.pdv-area-card.area-educacion::before  { background: linear-gradient(90deg, #06b6d4 0%, #22d3ee 100%); }
+.pdv-area-card.area-trabajo::before    { background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%); }
+.pdv-area-card.area-laboral::before    { background: linear-gradient(90deg, #f43f5e 0%, #fb7185 100%); }
+.pdv-area-card.area-seguridad::before  { background: linear-gradient(90deg, #ef4444 0%, #f87171 100%); }
+.pdv-area-card.area-restaurativa::before { background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%); }
 
 /* PDV Card Header */
 .pdv-card-header {
@@ -1283,19 +1515,43 @@ td a:hover {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.75rem;
+    padding-bottom: 0.85rem;
+    margin-bottom: 1.1rem;
+    gap: 0.75rem;
 }
 
 .pdv-card-title-group {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex: 1;
+    min-width: 0;
 }
 
+/* Area status badge in header */
+.pdv-area-status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.pdv-area-card.area-salud .pdv-area-status-badge      { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+.pdv-area-card.area-psicologia .pdv-area-status-badge { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; }
+.pdv-area-card.area-social .pdv-area-status-badge     { background: #f0fdf4; color: #065f46; border: 1px solid #a7f3d0; }
+.pdv-area-card.area-educacion .pdv-area-status-badge  { background: #ecfeff; color: #0e7490; border: 1px solid #a5f3fc; }
+.pdv-area-card.area-trabajo .pdv-area-status-badge    { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+.pdv-area-card.area-laboral .pdv-area-status-badge    { background: #fff1f2; color: #be123c; border: 1px solid #fecdd3; }
+.pdv-area-card.area-seguridad .pdv-area-status-badge  { background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+.pdv-area-card.area-restaurativa .pdv-area-status-badge { background: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; }
+
 .pdv-area-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1303,18 +1559,18 @@ td a:hover {
 }
 
 /* Icon backgrounds by area */
-.area-salud .pdv-area-icon { background-color: #eff6ff; color: #3b82f6; }
+.area-salud .pdv-area-icon      { background-color: #eff6ff; color: #3b82f6; }
 .area-psicologia .pdv-area-icon { background-color: #f5f3ff; color: #8b5cf6; }
-.area-social .pdv-area-icon { background-color: #f0fdf4; color: #10b981; }
-.area-educacion .pdv-area-icon { background-color: #ecfeff; color: #06b6d4; }
-.area-trabajo .pdv-area-icon { background-color: #fffbeb; color: #f59e0b; }
-.area-laboral .pdv-area-icon { background-color: #fff1f2; color: #f43f5e; }
-.area-seguridad .pdv-area-icon { background-color: #fef2f2; color: #ef4444; }
+.area-social .pdv-area-icon     { background-color: #f0fdf4; color: #10b981; }
+.area-educacion .pdv-area-icon  { background-color: #ecfeff; color: #06b6d4; }
+.area-trabajo .pdv-area-icon    { background-color: #fffbeb; color: #f59e0b; }
+.area-laboral .pdv-area-icon    { background-color: #fff1f2; color: #f43f5e; }
+.area-seguridad .pdv-area-icon  { background-color: #fef2f2; color: #ef4444; }
 .area-restaurativa .pdv-area-icon { background-color: #e0e7ff; color: #6366f1; }
 
 .pdv-area-icon svg {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     stroke: currentColor;
     fill: none;
     stroke-width: 2.25;
@@ -1354,13 +1610,25 @@ td a:hover {
 
 .pdv-card-text {
     font-size: 0.85rem;
-    line-height: 1.45;
+    line-height: 1.5;
     color: var(--text-muted);
     background-color: #f8fafc;
-    padding: 0.75rem 0.85rem;
+    padding: 0.75rem 0.85rem 0.75rem 1rem;
     border-radius: 8px;
-    border: 1px dashed var(--border-color);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--pdv-accent, #e2e8f0);
+    position: relative;
 }
+
+/* Colored left accent per area for card text */
+.area-salud .pdv-card-text      { --pdv-accent: #3b82f6; background-color: #f8fbff; }
+.area-psicologia .pdv-card-text { --pdv-accent: #8b5cf6; background-color: #faf9ff; }
+.area-social .pdv-card-text     { --pdv-accent: #10b981; background-color: #f7fdfb; }
+.area-educacion .pdv-card-text  { --pdv-accent: #06b6d4; background-color: #f6feff; }
+.area-trabajo .pdv-card-text    { --pdv-accent: #f59e0b; background-color: #fffef7; }
+.area-laboral .pdv-card-text    { --pdv-accent: #f43f5e; background-color: #fff8f9; }
+.area-seguridad .pdv-card-text  { --pdv-accent: #ef4444; background-color: #fff8f8; }
+.area-restaurativa .pdv-card-text { --pdv-accent: #6366f1; background-color: #f9f9ff; }
 
 /* Disciplinary Sanctions Styles */
 .sanctions-table-container {
@@ -1424,11 +1692,26 @@ td a:hover {
 .pdv-chart-container {
     position: relative;
     width: 100%;
-    height: 140px;
-    margin: 0.5rem 0 0.8rem 0;
+    height: 165px;
+    margin: 0.25rem 0 0.6rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Collapsible inside pdv-card-body: extend to card edges */
+.pdv-card-body .collapsible-container {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+.pdv-card-body .collapsible-container:first-child {
+    border-top: none;
 }
 
 /* Button to expand area detail */
@@ -1436,75 +1719,57 @@ td a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     width: 100%;
     padding: 0.65rem 1rem;
-    border: 1px solid var(--border-color);
+    border: 1.5px solid transparent;
     border-radius: 10px;
-    background-color: #ffffff;
-    color: var(--text-main);
+    background-color: #f8fafc;
+    color: var(--text-muted);
     font-size: 0.82rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0.4rem;
+    margin-bottom: 0rem;
+    letter-spacing: 0.01em;
 }
 
 .btn-expand-area svg {
     transition: transform 0.2s ease;
+    opacity: 0.65;
 }
 
 .btn-expand-area:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(15, 23, 42, 0.1);
+    color: var(--text-main);
 }
 
 .btn-expand-area:hover svg {
     transform: scale(1.15);
+    opacity: 1;
 }
 
-/* Area-specific button hover themes */
-.area-educacion .btn-expand-area:hover {
-    border-color: #06b6d4;
-    color: #06b6d4;
-    background-color: #ecfeff;
-}
-.area-trabajo .btn-expand-area:hover {
-    border-color: #f59e0b;
-    color: #f59e0b;
-    background-color: #fffbeb;
-}
-.area-salud .btn-expand-area:hover {
-    border-color: #3b82f6;
-    color: #3b82f6;
-    background-color: #eff6ff;
-}
-.area-social .btn-expand-area:hover {
-    border-color: #10b981;
-    color: #10b981;
-    background-color: #ecfdf5;
-}
-.area-psicologia .btn-expand-area:hover {
-    border-color: #8b5cf6;
-    color: #8b5cf6;
-    background-color: #f5f3ff;
-}
-.area-laboral .btn-expand-area:hover {
-    border-color: #f43f5e;
-    color: #f43f5e;
-    background-color: #fff1f2;
-}
-.area-seguridad .btn-expand-area:hover {
-    border-color: #ef4444;
-    color: #ef4444;
-    background-color: #fef2f2;
-}
-.area-restaurativa .btn-expand-area:hover {
-    border-color: #6366f1;
-    color: #6366f1;
-    background-color: #eef2ff;
-}
+/* Area-specific tinted default state for expand button */
+.area-educacion  .btn-expand-area { background-color: #f0fdff; color: #0e7490;   border-color: #a5f3fc; }
+.area-trabajo    .btn-expand-area { background-color: #fffbeb; color: #92400e;   border-color: #fde68a; }
+.area-salud      .btn-expand-area { background-color: #eff6ff; color: #1d4ed8;   border-color: #bfdbfe; }
+.area-social     .btn-expand-area { background-color: #f0fdf4; color: #065f46;   border-color: #a7f3d0; }
+.area-psicologia .btn-expand-area { background-color: #f5f3ff; color: #5b21b6;   border-color: #ddd6fe; }
+.area-laboral    .btn-expand-area { background-color: #fff1f2; color: #be123c;   border-color: #fecdd3; }
+.area-seguridad  .btn-expand-area { background-color: #fef2f2; color: #991b1b;   border-color: #fca5a5; }
+.area-restaurativa .btn-expand-area { background-color: #eef2ff; color: #3730a3; border-color: #c7d2fe; }
+
+/* Area-specific button hover themes — darken the tint on hover */
+.area-educacion  .btn-expand-area:hover { background-color: #cffafe; border-color: #06b6d4; color: #0e7490; }
+.area-trabajo    .btn-expand-area:hover { background-color: #fef3c7; border-color: #f59e0b; color: #92400e; }
+.area-salud      .btn-expand-area:hover { background-color: #dbeafe; border-color: #3b82f6; color: #1d4ed8; }
+.area-social     .btn-expand-area:hover { background-color: #d1fae5; border-color: #10b981; color: #065f46; }
+.area-psicologia .btn-expand-area:hover { background-color: #ede9fe; border-color: #8b5cf6; color: #5b21b6; }
+.area-laboral    .btn-expand-area:hover { background-color: #ffe4e6; border-color: #f43f5e; color: #be123c; }
+.area-seguridad  .btn-expand-area:hover { background-color: #fee2e2; border-color: #ef4444; color: #991b1b; }
+.area-restaurativa .btn-expand-area:hover { background-color: #e0e7ff; border-color: #6366f1; color: #3730a3; }
 
 /* SUB-DASHBOARD MODAL OVERLAY */
 .area-modal-overlay {
@@ -1874,6 +2139,94 @@ td a:hover {
     margin-bottom: 4px;
 }
 
+/* Chart header: title + selector in same row */
+.modal-chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.modal-chart-header .modal-section-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+/* Chart type selector pill buttons */
+.chart-type-selector {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.chart-type-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+.chart-type-btn svg {
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.18s;
+}
+
+.chart-type-btn:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.chart-type-btn:hover svg {
+    opacity: 1;
+}
+
+.chart-type-btn.active {
+    border-color: var(--accent-blue);
+    background: var(--accent-blue);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.chart-type-btn.active svg {
+    opacity: 1;
+}
+
+.chart-type-btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* Dark theme overrides */
+.dark-theme .modal-chart-section,
+.dark-theme .modal-side-section,
+.dark-theme .modal-table-section,
+.dark-theme .modal-notes-section {
+    background-color: var(--card-bg);
+}
+
+.dark-theme .chart-type-btn.active {
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.4);
+}
+
 .modal-chart-container {
     position: relative;
     width: 100%;
@@ -2180,6 +2533,22 @@ body.dark-theme .collapsible-header {
     border-color: var(--border-color) !important;
 }
 
+body.dark-theme .pdv-card-text {
+    background-color: rgba(255,255,255,0.03) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-theme .pdv-area-status-badge {
+    background-color: rgba(255,255,255,0.06) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.dark-theme .pdv-area-card::before {
+    opacity: 0.85;
+}
+
 body.dark-theme .sidebar-area-btn.active .sidebar-area-icon {
     background-color: var(--area-color) !important;
     color: #ffffff !important;
@@ -2224,6 +2593,18 @@ body.sepia-theme .collapsible-header {
     border-color: var(--border-color) !important;
 }
 
+body.sepia-theme .pdv-card-text {
+    background-color: rgba(92, 64, 51, 0.04) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
+body.sepia-theme .pdv-area-status-badge {
+    background-color: rgba(92, 64, 51, 0.06) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
 body.sepia-theme .sidebar-area-btn.active .sidebar-area-icon {
     background-color: var(--area-color) !important;
     color: #ffffff !important;
@@ -2257,4 +2638,232 @@ body.sepia-theme ::-webkit-scrollbar-thumb {
     background: #e4d7ba;
     border: 3px solid #f4ecd8;
 }
+
+/* ============================================================
+   Interactive States, Tactile Feedback & Emojis Replacement
+   ============================================================ */
+
+/* Spin keyframes */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Button & interactive item layout alignments */
+.btn-primary, 
+.btn-secondary, 
+.btn-danger, 
+.btn-action-primary, 
+.btn-timeline-primary, 
+.btn-timeline-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary svg, 
+.btn-secondary svg, 
+.btn-danger svg, 
+.btn-action-primary svg, 
+.btn-timeline-primary svg, 
+.btn-timeline-secondary svg {
+    flex-shrink: 0;
+}
+
+/* Focus and active tactile feedback */
+button:focus-visible, 
+a:focus-visible, 
+input:focus-visible, 
+select:focus-visible, 
+textarea:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+button:active, 
+.btn-primary:active, 
+.btn-secondary:active, 
+.btn-danger:active, 
+.btn-action-primary:active, 
+.btn-timeline-primary:active, 
+.btn-timeline-secondary:active, 
+.btn-expand-area:active, 
+.sidebar-area-btn:active, 
+.tab-btn:active {
+    transform: scale(0.97);
+}
+
+/* Disabled buttons */
+button:disabled, 
+.btn-primary:disabled, 
+.btn-secondary:disabled, 
+.btn-danger:disabled, 
+.btn-action-primary:disabled, 
+.btn-timeline-primary:disabled, 
+.btn-timeline-secondary:disabled, 
+.btn-expand-area:disabled, 
+.sidebar-area-btn:disabled, 
+.tab-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none !important;
+}
+
+/* Modern rotating chevrons for collapsible items */
+.collapse-chevron {
+    transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    stroke: currentColor;
+    fill: none;
+    flex-shrink: 0;
+}
+
+.collapsible-container.collapsed .collapse-chevron {
+    transform: rotate(-90deg);
+}
+
+/* Status dots for badges (replacing cheap emojis) */
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* --- Módulo Gabinete Criminológico (CABA Ley 6.923) --- */
+
+/* User Profile Dropdown Switcher */
+.user-profile-container {
+    cursor: pointer;
+}
+
+.role-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 210px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1000;
+}
+
+.role-dropdown.show {
+    display: flex;
+    animation: slideDownFade 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDownFade {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.role-dropdown-header {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.role-dropdown-item {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-align: left;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: var(--font-body);
+    width: 100%;
+}
+
+.role-dropdown-item:hover {
+    background-color: #f1f5f9;
+}
+
+.role-dropdown-item.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Gabinete dynamic list styles */
+.gabinete-obj-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    animation: fadeIn 0.25s ease;
+}
+
+.btn-remove-obj {
+    background: none;
+    border: none;
+    color: var(--status-red);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-remove-obj:hover {
+    background-color: var(--status-red-bg);
+}
+
+.btn-remove-obj svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 2;
+}
+
+/* Legal CABA compliance banner */
+.caba-law-banner {
+    transition: all 0.3s ease;
+    border-radius: 12px;
+}
+
+body.dark-theme .role-dropdown {
+    background-color: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .role-dropdown-item:hover {
+    background-color: #334155;
+}
+
+body.dark-theme .role-dropdown-item.active {
+    background-color: rgba(37, 99, 235, 0.2);
+    color: #38bdf8;
+}
+
+body.dark-theme .gabinete-obj-item {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
 

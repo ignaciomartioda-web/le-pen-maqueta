@@ -38,6 +38,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
                     Justicia Restaurativa
                 </div>
+                <div class="nav-item" data-target="gabinete-criminologico" id="nav-item-gabinete" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Gabinete Criminológico
+                </div>
                 <div class="nav-item" data-target="configuracion">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.54 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
                     Configuración
@@ -59,13 +63,20 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                         <span class="notification-dot"></span>
                     </button>
-                    <div class="user-profile">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" alt="Auditora Sarah Jensen" class="user-avatar">
-                        <div class="user-info">
-                            <div class="user-name">Sarah Jensen</div>
-                            <div class="user-role">Auditora</div>
+                    <div class="user-profile-container" style="position: relative; z-index: 100;">
+                        <div class="user-profile" id="user-profile-trigger">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100&h=100" alt="Auditora Sarah Jensen" class="user-avatar">
+                            <div class="user-info">
+                                <div class="user-name">Sarah Jensen</div>
+                                <div class="user-role" id="active-user-role">Auditora</div>
+                            </div>
+                            <svg class="user-profile-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </div>
-                        <svg class="user-profile-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <div class="role-dropdown" id="role-dropdown-menu">
+                            <div class="role-dropdown-header">Rol de Simulación</div>
+                            <button class="role-dropdown-item active" data-role="auditora">Auditora</button>
+                            <button class="role-dropdown-item" data-role="gabinete">Gabinete Criminológico</button>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -371,11 +382,138 @@
                                 </div>
 
                                 <!-- Gabinete Card -->
-                                <div class="gabinete-card" style="margin-top: 1.5rem;">
-                                    <h3>Gabinete Criminológico</h3>
-                                    <div class="gabinete-badge-block">
-                                        <span class="badge yellow">Dictamen Finalizado</span>
-                                        <span>Emitido: 20 Oct 2025</span>
+                                <div class="gabinete-card collapsible-container collapsed" style="margin-top: 1.5rem;">
+                                    <div class="collapsible-header">
+                                        <h3>Gabinete Criminológico</h3>
+                                        <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                    </div>
+                                    <div style="margin-top: 0.75rem;">
+                                        <div class="gabinete-badge-block">
+                                            <span class="badge yellow" style="display: inline-block; margin-bottom: 4px;">Dictamen Finalizado</span>
+                                            <span>Emitido: 20 Oct 2025 • Dictamen Interdisciplinario N° 45/2025</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapsible-content">
+                                        <!-- Resumen General -->
+                                        <div style="margin-bottom: 1.25rem;">
+                                            <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: 600; color: var(--text-main);">Conclusiones del Dictamen</h4>
+                                            <p style="margin: 0; font-size: 0.85rem; line-height: 1.5; color: var(--text-muted);">
+                                                Se destaca la evolución tratamental favorable de la interna, evidenciada por una marcada reducción en los niveles de impulsividad y un fortalecimiento de los lazos familiares de contención. El equipo interdisciplinario aconseja la progresión de régimen y la flexibilización de medidas cautelares bajo condiciones tuteladas.
+                                            </p>
+                                        </div>
+
+                                        <!-- Grid de Informes Sectoriales -->
+                                        <div style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.25rem;">
+                                            
+                                            <!-- Área Social -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #10b981; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Informe Social</strong>
+                                                    <span class="badge green" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Favorable</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Vinculación familiar activa (madre y hermana). Red de contención externa apta para egresos transitorios.
+                                                </p>
+                                            </div>
+
+                                            <!-- Área Psicológica -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #8b5cf6; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Informe Psicológico</strong>
+                                                    <span class="badge green" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Favorable</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Control de impulsos consolidado (75%). Mayor introspección y asunción de responsabilidad subjetiva.
+                                                </p>
+                                            </div>
+
+                                            <!-- Área Educativa -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #06b6d4; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Informe Educativo</strong>
+                                                    <span class="badge green" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Favorable</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Completó con distinción el taller de alfabetización digital y asiste regularmente al nivel secundario.
+                                                </p>
+                                            </div>
+
+                                            <!-- Área Laboral -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #f59e0b; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Informe Laboral</strong>
+                                                    <span class="badge green" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Favorable</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Desempeño destacado en el taller de marroquinería y panadería con hábitos de trabajo consolidados.
+                                                </p>
+                                            </div>
+
+                                            <!-- Área Médica / Psiquiátrica -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #3b82f6; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Informe Médico y Psiquiátrico</strong>
+                                                    <span class="badge green" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Favorable</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Estabilidad psicofísica óptima. Adherencia al esquema farmacológico y buena tolerancia al mismo.
+                                                </p>
+                                            </div>
+
+                                            <!-- Área de Seguridad -->
+                                            <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-left: 4px solid #ef4444; border-radius: 8px; padding: 0.75rem 1rem;">
+                                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+                                                    <strong style="font-size: 0.85rem; color: var(--text-main);">Conducta y Seguridad</strong>
+                                                    <span class="badge yellow" style="font-size: 0.7rem; padding: 0.1rem 0.4rem;">Con Reservas</span>
+                                                </div>
+                                                <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-muted);">
+                                                    Conducta: 8 (Excelente) | Concepto: 7 (Muy Bueno). Adecuada adaptación al régimen interno; sanción de Octubre sin reiteraciones.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Indicadores de Riesgo y Adaptación -->
+                                        <div style="background-color: var(--bg-body); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; margin-bottom: 1.25rem;">
+                                            <h4 style="margin: 0 0 0.75rem 0; font-size: 0.9rem; font-weight: 600; color: var(--text-main);">Indicadores Criminométricos</h4>
+                                            
+                                            <!-- Riesgo de Reincidencia -->
+                                            <div style="margin-bottom: 0.75rem;">
+                                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.25rem;">
+                                                    <span style="color: var(--text-muted);">Probabilidad de Reincidencia</span>
+                                                    <strong style="color: #10b981;">Bajo-Medio (25%)</strong>
+                                                </div>
+                                                <div style="height: 6px; background-color: var(--border-color); border-radius: 3px; overflow: hidden;">
+                                                    <div style="height: 100%; width: 25%; background-color: #10b981; border-radius: 3px;"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Adaptación al Régimen -->
+                                            <div>
+                                                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.25rem;">
+                                                    <span style="color: var(--text-muted);">Adaptación al Régimen</span>
+                                                    <strong style="color: #3b82f6;">Alta (85%)</strong>
+                                                </div>
+                                                <div style="height: 6px; background-color: var(--border-color); border-radius: 3px; overflow: hidden;">
+                                                    <div style="height: 100%; width: 85%; background-color: #3b82f6; border-radius: 3px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Firmas Digitales -->
+                                        <div style="border-top: 1px dashed var(--border-color); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--text-muted);">
+                                            <div>
+                                                <strong>Firmantes del Dictamen:</strong>
+                                                <ul style="margin: 0.25rem 0 0 0; padding-left: 1.25rem; line-height: 1.4;">
+                                                    <li>Lic. María González (Registro N° 8412 - Psicóloga)</li>
+                                                    <li>Lic. Carlos Rossi (Registro N° 5721 - Trabajador Social)</li>
+                                                    <li>Prefecto J. L. Domínguez (Presidente del Gabinete)</li>
+                                                </ul>
+                                            </div>
+                                            <div style="margin-top: 0.25rem; font-family: monospace; font-size: 0.7rem; color: var(--text-muted); opacity: 0.8; display: flex; align-items: center; gap: 4px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                                Hash Firma: 7a8b9c0d1e2f3a4b5c6d7e8f900112233
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -387,14 +525,14 @@
                                 <div class="card">
                                     <h3>Estado del Trámite de Ingreso</h3>
                                     <div class="surface-container" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                                        <span class="badge yellow">🟡 Pendiente de Validación</span>
+                                        <span class="badge yellow"><span class="status-dot"></span> Pendiente de Validación</span>
                                         <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">El instrumento técnico ha sido iniciado. Falta firma de autoridad de admisión.</p>
                                     </div>
 
                                     <div class="collapsible-container collapsed">
                                         <div class="collapsible-header">
                                             <h4>Instrumento Técnico de Ingreso</h4>
-                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
@@ -407,7 +545,7 @@
                                                     <div class="form-field"><label>Observaciones de Ingreso</label><textarea name="obs_ingreso" placeholder="..."></textarea></div>
                                                 </div>
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Ingreso</button>
+                                                    <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Ingreso</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -416,7 +554,7 @@
                                     <div class="collapsible-container collapsed" style="border-left: 4px solid #3b82f6;">
                                         <div class="collapsible-header">
                                             <h4>Informe Médico de Ingreso</h4>
-                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
@@ -424,7 +562,7 @@
                                                     <h4 class="form-section-title">Evaluación de Salud</h4>
                                                     <div class="form-field"><label>Diagnóstico inicial</label><textarea name="diag_inicial" placeholder="..."></textarea></div>
                                                 </div>
-                                                <div class="form-actions"><button type="submit" class="btn-primary">💾 Guardar Informe Médico</button></div>
+                                                <div class="form-actions"><button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Informe Médico</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -432,13 +570,13 @@
                                     <div class="collapsible-container collapsed" style="border-left: 4px solid #ef4444;">
                                         <div class="collapsible-header">
                                             <h4>Dictamen de Alojamiento</h4>
-                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
                                                 <div class="form-field"><label>Perfil de riesgo</label><input type="text" name="perfil_riesgo" placeholder="Bajo / Medio / Alto"></div>
                                                 <div class="form-field"><label>Ubicación sugerida</label><input type="text" name="ubicacion_sugerida" placeholder="Unidad / Pabellón"></div>
-                                                <div class="form-actions"><button type="submit" class="btn-primary">💾 Guardar Dictamen</button></div>
+                                                <div class="form-actions"><button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Dictamen</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -459,7 +597,7 @@
                                     <div class="collapsible-container collapsed">
                                         <div class="collapsible-header">
                                             <h4>Cargar Actualización Judicial</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
@@ -475,7 +613,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-field"><label>Acciones Judiciales / Resoluciones</label><textarea name="acciones_judiciales" placeholder="Detalle de la resolución judicial..."></textarea></div>
-                                                <div class="form-actions"><button type="submit" class="btn-primary">💾 Guardar</button></div>
+                                                <div class="form-actions"><button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -521,7 +659,7 @@
                                     <div class="collapsible-container collapsed">
                                         <div class="collapsible-header">
                                             <h4>Registrar Nueva Sanción Disciplinaria</h4>
-                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
@@ -559,7 +697,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Sanción</button>
+                                                    <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Sanción</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -580,15 +718,20 @@
                                                 </div>
                                                 <div class="pdv-area-title">Educación</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">En Curso</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Nivel Actual</span>
-                                                <span class="pdv-metric-value">Secundaria (En Curso)</span>
+                                                <span class="pdv-metric-value pdv-val-nivel-edu">Secundaria (En Curso)</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Asistencia</span>
-                                                <span class="pdv-metric-value">95%</span>
+                                                <span class="pdv-metric-value pdv-val-asistencia-edu">95%</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-edu">Buena</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Completó la educación primaria inicial. Actualmente cursa el último año de secundaria y participa de talleres de oficios.
@@ -604,11 +747,13 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área de Educación</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área de Educación</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
                                                             <label>Nivel de Instrucción</label>
                                                             <input type="text" name="nivel_instruccion" placeholder="Ej: Secundaria en curso">
@@ -618,11 +763,69 @@
                                                             <input type="text" name="asistencia_educacion" placeholder="Ej: 95%">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Observaciones de Educación</label>
-                                                            <textarea name="obs_educacion" placeholder="Detalle el desempeño escolar..."></textarea>
+                                                            <label>Calificación de Conducta (Educativa)</label>
+                                                            <select name="calif_conducta_edu">
+                                                                <option value="">Seleccione calificación...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
                                                         </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_educacion" placeholder="Describa el comportamiento, actitud y disposición del/la interno/a en el área educativa..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_educacion" placeholder="Valoración integral del docente u orientador: logros, dificultades, recomendaciones..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_edu" placeholder="Ej: López, María J.">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_edu" placeholder="Ej: Docente – Nivel Secundario">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_edu" placeholder="Nº de registro profesional">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_edu">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Educación</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Educativa</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -639,15 +842,24 @@
                                                 </div>
                                                 <div class="pdv-area-title">Trabajo</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Óptimo</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Taller Activo</span>
-                                                <span class="pdv-metric-value">Panadería / Costura</span>
+                                                <span class="pdv-metric-value pdv-val-taller-trab">Panadería / Costura</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Carga Horaria</span>
-                                                <span class="pdv-metric-value">20 hs/semana</span>
+                                                <span class="pdv-metric-value pdv-val-horas-trab">20 hs/semana</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Asistencia</span>
+                                                <span class="pdv-metric-value pdv-val-asistencia-trab">98%</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-trab">Muy Buena</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Participa principalmente en el taller de Panadería, complementando con tareas de Costura y Mantenimiento general de pabellones.
@@ -683,25 +895,89 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área de Trabajo</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área de Trabajo</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
-                                                            <label>Oficios / Taller</label>
-                                                            <input type="text" name="oficios" placeholder="Ej: Costura / Panadería">
+                                                            <label>Oficios / Talleres Activos</label>
+                                                            <input type="text" name="oficios" placeholder="Ej: Costura / Panaderaía / Mantenimiento">
                                                         </div>
                                                         <div class="form-field">
                                                             <label>Horas Semanales</label>
                                                             <input type="text" name="horas_trabajo" placeholder="Ej: 20 hs">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Observaciones de Trabajo</label>
-                                                            <textarea name="obs_trabajo" placeholder="Detalle el desempeño laboral..."></textarea>
+                                                            <label>Asistencia (%)</label>
+                                                            <input type="text" name="asistencia_trabajo" placeholder="Ej: 98%">
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Calificación de Conducta (Laboral/Taller)</label>
+                                                            <select name="calif_conducta_trab">
+                                                                <option value="">Seleccione calificación...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_trabajo" placeholder="Comportamiento en los talleres, puntualidad, convivencia con pares y superiores..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_trabajo" placeholder="Valoración del instructor/supervisor: desempeño, competencias, actitud laboral..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_trab" placeholder="Ej: Rodríguez, Jorge">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_trab" placeholder="Ej: Instructor de Taller">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_trab" placeholder="Nº de registro profesional">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_trab">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Trabajo</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Laboral</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -718,15 +994,20 @@
                                                 </div>
                                                 <div class="pdv-area-title">Salud</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Estable</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Estado Físico</span>
-                                                <span class="pdv-metric-value">Estable</span>
+                                                <span class="pdv-metric-value pdv-val-diagnostico-salud">Estable</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Último Control</span>
-                                                <span class="pdv-metric-value">10 May 2026</span>
+                                                <span class="pdv-metric-value pdv-val-ultimo-control-sal">10 May 2026</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Adherencia</span>
+                                                <span class="pdv-metric-value pdv-val-adherencia-sal">100%</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Controles clínicos y cardiovasculares estables. Registro periódico de presión arterial dentro de parámetros normales.
@@ -742,21 +1023,78 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área de Salud</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área de Salud</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
-                                                            <label>Profesional de Salud</label>
-                                                            <input type="text" name="prof_salud" placeholder="Nombre del médico...">
+                                                            <label>Diagnóstico / Condición Clínica</label>
+                                                            <input type="text" name="diagnostico_salud" placeholder="Ej: Hipertensión arterial controlada">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Estado clínico general</label>
-                                                            <textarea name="estado_clinico" placeholder="Detalles del estado de salud..."></textarea>
+                                                            <label>Adherencia al Tratamiento (%)</label>
+                                                            <input type="text" name="adherencia_salud" placeholder="Ej: 100%">
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Estado Clínico General</label>
+                                                            <textarea name="estado_clinico" placeholder="Detalle del estado de salud actual, medicación, tratamientos..."></textarea>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_salud" placeholder="Adhesión al tratamiento, cooperación con el equipo médico, cambios de conducta relacionados a la salud..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_salud" placeholder="Valoración médica integral: evolución, riesgos, recomendaciones para el tratamiento penitenciario..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_sal" placeholder="Ej: García, Pablo">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Especialidad</label>
+                                                                    <input type="text" name="firma_cargo_sal" placeholder="Ej: Médico Clínico – M.P. 12345">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_sal" placeholder="Nº de matrícula médica">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_sal">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Salud</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación de Salud</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -773,15 +1111,20 @@
                                                 </div>
                                                 <div class="pdv-area-title">Social</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Activo</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Vínculo Familiar</span>
-                                                <span class="pdv-metric-value">Activo (Madre)</span>
+                                                <span class="pdv-metric-value pdv-val-vinculo-soc">Activo (Madre)</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Visitas</span>
-                                                <span class="pdv-metric-value">Quincenal</span>
+                                                <span class="pdv-metric-value pdv-val-visitas-soc">Quincenal</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-soc">Buena</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Red de contención activa. Mantiene comunicación con su familia a través de visitas presenciales, llamadas y videollamadas.
@@ -797,17 +1140,89 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área Social</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área Social</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
-                                                            <label>Abordaje Social y Vínculos</label>
-                                                            <textarea name="abordaje_social" placeholder="Detalle de visitas, llamadas o gestiones sociales..."></textarea>
+                                                            <label>Vínculos Familiares Activos</label>
+                                                            <input type="text" name="vinculos_sociales" placeholder="Ej: Madre, hermano, pareja">
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Frecuencia de Visitas / Contacto</label>
+                                                            <input type="text" name="frecuencia_visitas" placeholder="Ej: Quincenal / Semanal">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>CalificaciÃ³n de Conducta (Social)</label>
+                                                            <select name="calif_conducta_soc">
+                                                                <option value="">Seleccione calificaciÃ³n...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Abordaje Social y Gestiones</label>
+                                                            <textarea name="abordaje_social" placeholder="Detalle de visitas, llamadas, videollamadas o gestiones con organismos..."></textarea>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_social" placeholder="Vinculación con familia, actitud ante visitas, manejo de relaciones interpersonales..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_social" placeholder="Valoración del trabajador/a social: redes de contención, riesgos, recursos comunitarios..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_soc" placeholder="Ej: Torres, Aníbal">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_soc" placeholder="Ej: Trabajador/a Social">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_soc" placeholder="Nº de matrícula">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_soc">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Social</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Social</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -824,15 +1239,24 @@
                                                 </div>
                                                 <div class="pdv-area-title">Psicológica</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Favorable</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Terapia</span>
-                                                <span class="pdv-metric-value">Quincenal (Individual)</span>
+                                                <span class="pdv-metric-value pdv-val-modalidad-psi">Quincenal (Individual)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Asistencia</span>
+                                                <span class="pdv-metric-value pdv-val-asistencia-psi">90%</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Adhesión</span>
-                                                <span class="pdv-metric-value">Favorable</span>
+                                                <span class="pdv-metric-value pdv-val-adhesion-psi">Favorable</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-psi">Buena</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Evolución favorable en el espacio psicoterapéutico. Trabajo centrado en control de impulsos.
@@ -848,21 +1272,99 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área Psicológica</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área Psicológica</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
-                                                            <label>Psicólogo Interviniente</label>
-                                                            <input type="text" name="psicologo" placeholder="Nombre del profesional...">
+                                                            <label>Modalidad de Abordaje</label>
+                                                            <input type="text" name="modalidad_psico" placeholder="Ej: Terapia individual quincenal">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Evaluación Psicológica</label>
-                                                            <textarea name="eval_psicologica" placeholder="Detalle del informe psicológico actual..."></textarea>
+                                                            <label>Asistencia a Sesiones (%)</label>
+                                                            <input type="text" name="asistencia_psicologia" placeholder="Ej: 90%">
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Nivel de AdhesiÃ³n</label>
+                                                            <select name="adhesion_psico">
+                                                                <option value="">Seleccione adhesiÃ³n...</option>
+                                                                <option value="Favorable">Favorable</option>
+                                                                <option value="Aceptable">Aceptable</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Escasa / Nula">Escasa / Nula</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>CalificaciÃ³n de Conducta (PsicolÃ³gica)</label>
+                                                            <select name="calif_conducta_psi">
+                                                                <option value="">Seleccione calificaciÃ³n...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Evaluación Psicológica General</label>
+                                                            <textarea name="eval_psicologica" placeholder="Resumen del informe psicológico actual: diagnóstico, proceso, evolución..."></textarea>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_psico" placeholder="Actitud en sesión, nivel de adhesión, control emocional, relación con el terapeuta..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_psico" placeholder="Valoración del/la psicólogo/a: progresos, riesgos, estrategias terapéuticas recomendadas..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_psi" placeholder="Ej: Fernández, Laura">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Especialidad</label>
+                                                                    <input type="text" name="firma_cargo_psi" placeholder="Ej: Lic. en Psicología – M.P. 56789">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_psi" placeholder="Nº de matrícula">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_psi">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Psicología</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Psicológica</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -879,15 +1381,24 @@
                                                 </div>
                                                 <div class="pdv-area-title">Laboral</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Avanzado</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Curso Actual</span>
-                                                <span class="pdv-metric-value">Informática / Computación</span>
+                                                <span class="pdv-metric-value pdv-val-curso-lab">Informática / Computación</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Estado</span>
-                                                <span class="pdv-metric-value">En Curso</span>
+                                                <span class="pdv-metric-value pdv-val-estado-lab">En Curso</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Asistencia</span>
+                                                <span class="pdv-metric-value pdv-val-asistencia-lab">100%</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-lab">Ejemplar</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Avance sobresaliente en formación profesional. Excelente desempeño en práctica aplicada y normas de seguridad.
@@ -903,21 +1414,98 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Capacitación Laboral</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área Laboral / Capacitación</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
                                                             <label>Curso / Capacitación</label>
                                                             <input type="text" name="curso_laboral" placeholder="Ej: Informática / Herrería">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Desempeño Laboral</label>
-                                                            <textarea name="desempeno_laboral" placeholder="Evaluación del perfil laboral y competencias..."></textarea>
+                                                            <label>Estado del Curso</label>
+                                                            <select name="estado_laboral">
+                                                                <option value="">Seleccione estado...</option>
+                                                                <option value="En Curso">En Curso</option>
+                                                                <option value="Completado">Completado</option>
+                                                                <option value="Abandonado">Abandonado</option>
+                                                            </select>
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Asistencia (%)</label>
+                                                            <input type="text" name="asistencia_laboral" placeholder="Ej: 100%">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Desempeño General</label>
+                                                            <textarea name="desempeno_laboral" placeholder="Evaluación del perfil laboral y competencias adquiridas..."></textarea>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Calificación de Conducta (Capacitación)</label>
+                                                            <select name="calif_conducta_lab">
+                                                                <option value="">Seleccione calificación...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_laboral" placeholder="Actitud frente a la capacitación, respeto a normas, interés y participación..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_laboral" placeholder="Valoración del instructor/capacitador: aptitudes, avances, proyección laboral..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_lab" placeholder="Ej: Martínez, Carlos">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_lab" placeholder="Ej: Instructor de Capacitación">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_lab" placeholder="Nº de legajo">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_lab">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Laboral</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Laboral</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -934,15 +1522,16 @@
                                                 </div>
                                                 <div class="pdv-area-title">Seguridad</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Buena (7)</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Conducta</span>
-                                                <span class="pdv-metric-value">Buena (7)</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-seg">Buena (7)</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Concepto</span>
-                                                <span class="pdv-metric-value">Templado (6)</span>
+                                                <span class="pdv-metric-value pdv-val-concepto-seg">Templado (6)</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Mantiene conducta estable en pabellón. Cumple con las directivas de los agentes de seguridad.
@@ -958,17 +1547,90 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Área de Seguridad</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Área de Seguridad</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
-                                                            <label>Conducta Observada</label>
-                                                            <textarea name="conducta_observada" placeholder="Reportes de incidentes, convivencia y cumplimiento de normas..."></textarea>
+                                                            <label>Calificación de Conducta (Seguridad/Gral)</label>
+                                                            <select name="calif_conducta">
+                                                                <option value="">Seleccione calificación...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Calificación de Concepto</label>
+                                                            <select name="calif_concepto">
+                                                                <option value="">Seleccione concepto...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Bueno">Muy Bueno</option>
+                                                                <option value="Bueno">Bueno</option>
+                                                                <option value="Templado">Templado</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Insuficiente">Insuficiente</option>
+                                                                <option value="Pésimo">Pésimo</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_seguridad" placeholder="Incidentes registrados, relación con agentes, cumplimiento de normas institucionales, convivencia en pabellón..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_seguridad" placeholder="Valoración del equipo de seguridad: comportamiento, nivel de riesgo, factores relevantes para la progresividad..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_seg" placeholder="Ej: Romero, Juan">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_seg" placeholder="Ej: Jefe de Seguridad / Guardia">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Legajo</label>
+                                                                    <input type="text" name="firma_matricula_seg" placeholder="Nº de legajo institucional">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_seg">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Seguridad</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación de Seguridad</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -985,15 +1647,24 @@
                                                 </div>
                                                 <div class="pdv-area-title">Dimensión Restaurativa</div>
                                             </div>
+                                            <span class="pdv-area-status-badge">Activo</span>
                                         </div>
                                         <div class="pdv-card-body">
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Prog. Encuentros</span>
-                                                <span class="pdv-metric-value">Activo (8/12 Sesiones)</span>
+                                                <span class="pdv-metric-value pdv-val-encuentros-res">Activo (8/12 Sesiones)</span>
                                             </div>
                                             <div class="pdv-metrics-row">
                                                 <span class="pdv-metric-label">Mediaciones</span>
-                                                <span class="pdv-metric-value">1 Exitosa (Sin Sanción)</span>
+                                                <span class="pdv-metric-value pdv-val-mediaciones-res">1 Exitosa (Sin Sanción)</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Asistencia</span>
+                                                <span class="pdv-metric-value pdv-val-asistencia-res">83%</span>
+                                            </div>
+                                            <div class="pdv-metrics-row">
+                                                <span class="pdv-metric-label">Conducta</span>
+                                                <span class="pdv-metric-value pdv-val-conducta-res">Buena</span>
                                             </div>
                                             <div class="pdv-card-text">
                                                 Participa activamente en círculos de diálogo restaurativo, talleres de concientización y proyectos de reparación comunitaria.
@@ -1009,21 +1680,93 @@
                                             
                                             <div class="collapsible-container collapsed">
                                                 <div class="collapsible-header">
-                                                    <h4>Actualizar Dimensión Restaurativa</h4>
-                                                    <span class="collapse-indicator">➕ Abrir</span>
+                                                    <h4>Evaluación Dimensión Restaurativa</h4>
+                                                    <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                                 </div>
                                                 <div class="collapsible-content">
                                                     <form class="instrument-form">
+
+                                                        <!-- Datos del área -->
                                                         <div class="form-field">
                                                             <label>Estado en Programas Restaurativos</label>
-                                                            <input type="text" name="estado_restaurativa" placeholder="Ej: Participación activa">
+                                                            <input type="text" name="estado_restaurativa" placeholder="Ej: Participación activa / En evaluación">
                                                         </div>
                                                         <div class="form-field">
-                                                            <label>Observaciones / Avances</label>
-                                                            <textarea name="obs_restaurativa" placeholder="Aspectos de autorreflexión y reparación del daño..."></textarea>
+                                                            <label>Asistencia a Encuentros (%)</label>
+                                                            <input type="text" name="asistencia_restaurativa" placeholder="Ej: 83%">
                                                         </div>
+                                                        <div class="form-field">
+                                                            <label>Mediaciones y Logros</label>
+                                                            <input type="text" name="mediaciones_restaurativa" placeholder="Ej: 1 Exitosa (Sin SanciÃ³n)">
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Avances y Actividades</label>
+                                                            <textarea name="obs_restaurativa" placeholder="Círculos de diálogo, talleres de concientización, proyectos de reparación del daño..."></textarea>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Calificación de Conducta (Restaurativa)</label>
+                                                            <select name="calif_conducta_res">
+                                                                <option value="">Seleccione calificación...</option>
+                                                                <option value="Ejemplar">Ejemplar</option>
+                                                                <option value="Muy Buena">Muy Buena</option>
+                                                                <option value="Buena">Buena</option>
+                                                                <option value="Regular">Regular</option>
+                                                                <option value="Mala">Mala</option>
+                                                            </select>
+                                                        </div>
+
+                                                        <!-- Separador evaluación profesional -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">✍️ Evaluación Profesional</span>
+                                                        </div>
+
+                                                        <div class="eval-highlight-block">
+                                                            <div class="form-field">
+                                                                <label>Conducta Observada</label>
+                                                                <textarea name="conducta_restaurativa" placeholder="Actitud en espacios restaurativos, empatía, reconocimiento del daño causado, vínculo con víctimas..."></textarea>
+                                                            </div>
+                                                            <div class="form-field">
+                                                                <label>Opinión del Profesional Interviniente</label>
+                                                                <textarea name="opinion_restaurativa" placeholder="Valoración del facilitador/a o coordinador/a: proceso de autorreflexión, nivel de compromiso, impacto restaurativo..."></textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Separador firma -->
+                                                        <div class="eval-section-divider">
+                                                            <span class="eval-section-divider-label">📝 Firma del Profesional</span>
+                                                        </div>
+
+                                                        <div class="firma-profesional-block">
+                                                            <div class="firma-profesional-header">
+                                                                <svg class="firma-profesional-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                                                <span class="firma-profesional-title">Datos del Profesional Interviniente</span>
+                                                            </div>
+                                                            <div class="firma-data-grid">
+                                                                <div class="form-field">
+                                                                    <label>Apellido y Nombre</label>
+                                                                    <input type="text" name="firma_nombre_res" placeholder="Ej: Delgado, Silvia">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Cargo / Rol</label>
+                                                                    <input type="text" name="firma_cargo_res" placeholder="Ej: Facilitador/a de Justicia Restaurativa">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Matrícula / Legajo</label>
+                                                                    <input type="text" name="firma_matricula_res" placeholder="Nº de legajo o certificación">
+                                                                </div>
+                                                                <div class="form-field">
+                                                                    <label>Fecha de Evaluación</label>
+                                                                    <input type="date" name="firma_fecha_res">
+                                                                </div>
+                                                            </div>
+                                                            <div class="firma-pad-row">
+                                                                <div class="firma-pad-box">Espacio de firma</div>
+                                                                <span class="firma-pad-label">Firma y Sello</span>
+                                                            </div>
+                                                        </div>
+
                                                         <div class="form-actions">
-                                                            <button type="submit" class="btn-primary">💾 Guardar Restaurativa</button>
+                                                            <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Evaluación Restaurativa</button>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -1040,115 +1783,185 @@
                                         Registros e informes administrativos y técnicos para el avance de las fases del tratamiento penitenciario.
                                     </p>
 
-                                    <!-- 1. PLAN DE VIDA BASE -->
-                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
-                                        <div class="collapsible-header">
-                                            <h4>Plan de Vida (Instrumento Base)</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
-                                        </div>
-                                        <div class="collapsible-content">
-                                            <form class="instrument-form">
-                                                <div class="form-field">
-                                                    <label>Objetivos del Plan de Vida</label>
-                                                    <textarea name="objetivos_pv" placeholder="Definición de metas tratamentales a corto, mediano y largo plazo..."></textarea>
-                                                </div>
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Plan de Vida</button>
-                                                </div>
-                                            </form>
-                                        </div>
+                                    <!-- Tabs Header for Progresividad -->
+                                    <div class="tabs-header" style="margin-bottom: 1.5rem;">
+                                        <button type="button" class="tab-btn active" data-tab="pv-progres-obs">Observación</button>
+                                        <button type="button" class="tab-btn" data-tab="pv-progres-trat">Tratamiento</button>
+                                        <button type="button" class="tab-btn" data-tab="pv-progres-pru">Prueba</button>
+                                        <button type="button" class="tab-btn" data-tab="pv-progres-post">Post Penitenciario</button>
                                     </div>
 
-                                    <!-- 2. INFORMES TRIMESTRALES -->
-                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
-                                        <div class="collapsible-header">
-                                            <h4>Informes Trimestrales de Avance</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
-                                        </div>
-                                        <div class="collapsible-content">
-                                            <form class="instrument-form">
-                                                <div class="form-header">
+                                    <!-- TAB CONTENT: OBSERVACIÓN -->
+                                    <div id="pv-progres-obs" class="tab-content active">
+                                        <!-- 1. PLAN DE VIDA BASE -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
+                                            <div class="collapsible-header">
+                                                <h4>Plan de Vida (Instrumento Base)</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
                                                     <div class="form-field">
-                                                        <label>Periodo Trimestral</label>
-                                                        <select name="trimestre">
-                                                            <option value="1°">1° Trimestre</option>
-                                                            <option value="2°">2° Trimestre</option>
-                                                            <option value="3°">3° Trimestre</option>
-                                                            <option value="4°">4° Trimestre</option>
-                                                        </select>
+                                                        <label>Objetivos del Plan de Vida</label>
+                                                        <textarea name="objetivos_pv" placeholder="Definición de metas tratamentales a corto, mediano y largo plazo..."></textarea>
                                                     </div>
-                                                </div>
-                                                <div class="form-section-block">
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Plan de Vida</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- TAB CONTENT: TRATAMIENTO -->
+                                    <div id="pv-progres-trat" class="tab-content">
+                                        <!-- 2. INFORMES TRIMESTRALES -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem;">
+                                            <div class="collapsible-header">
+                                                <h4>Informes Trimestrales de Avance</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
+                                                    <div class="form-header">
+                                                        <div class="form-field">
+                                                            <label>Periodo Trimestral</label>
+                                                            <select name="trimestre">
+                                                                <option value="1°">1° Trimestre</option>
+                                                                <option value="2°">2° Trimestre</option>
+                                                                <option value="3°">3° Trimestre</option>
+                                                                <option value="4°">4° Trimestre</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-section-block">
+                                                        <div class="form-field">
+                                                            <label>Evaluación del Avance Trimestral</label>
+                                                            <textarea name="avance_trimestral" placeholder="Describa los avances logrados en el periodo..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Informe Trimestral</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- 3. RECOMENDACIÓN DE PASE A PRUEBA -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #f59e0b;">
+                                            <div class="collapsible-header">
+                                                <h4>Dictamen de Recomendación de Pase a Prueba</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
                                                     <div class="form-field">
-                                                        <label>Evaluación del Avance Trimestral</label>
-                                                        <textarea name="avance_trimestral" placeholder="Describa los avances logrados en el periodo..."></textarea>
+                                                        <label>Fundamentación del Pase a Prueba</label>
+                                                        <textarea name="fundamentacion" placeholder="Detallar méritos, conducta y evolución que justifican el pase a periodo de prueba..."></textarea>
                                                     </div>
-                                                </div>
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Informe Trimestral</button>
-                                                </div>
-                                            </form>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Dictamen de Prueba</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <!-- 3. RECOMENDACIÓN DE PASE A PRUEBA -->
-                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #f59e0b;">
-                                        <div class="collapsible-header">
-                                            <h4>Dictamen de Recomendación de Pase a Prueba</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
+                                    <!-- TAB CONTENT: PRUEBA -->
+                                    <div id="pv-progres-pru" class="tab-content">
+                                        <!-- 4. INFORMES DE AVANCE (ETAPA DE PRUEBA) -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #8b5cf6;">
+                                            <div class="collapsible-header">
+                                                <h4>Informes de Avance (Etapa de Prueba)</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
+                                                    <div class="form-section-block">
+                                                        <div class="form-field">
+                                                            <label>Desempeño en salidas transitorias / beneficios</label>
+                                                            <textarea name="desempeno_salidas" placeholder="Describa el desempeño del interno durante las salidas transitorias..."></textarea>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Cumplimiento de pautas</label>
+                                                            <textarea name="cumplimiento_pautas" placeholder="Evaluación del cumplimiento de las pautas establecidas..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Informe de Avance Prueba</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="collapsible-content">
-                                            <form class="instrument-form">
-                                                <div class="form-field">
-                                                    <label>Fundamentación del Pase a Prueba</label>
-                                                    <textarea name="fundamentacion" placeholder="Detallar méritos, conducta y evolución que justifican el pase a periodo de prueba..."></textarea>
-                                                </div>
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Dictamen de Prueba</button>
-                                                </div>
-                                            </form>
+
+                                        <!-- 5. ACCESO A MEDIDA -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #3b82f6;">
+                                            <div class="collapsible-header">
+                                                <h4>Instrumento de Acceso a Medida</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
+                                                    <div class="form-field">
+                                                        <label>Tipo de Medida Solicitada</label>
+                                                        <input type="text" name="tipo_medida" placeholder="Ej: Salidas transitorias, semilibertad, etc.">
+                                                    </div>
+                                                    <div class="form-field">
+                                                        <label>Detalle o Justificación de la Medida</label>
+                                                        <textarea name="detalle_medida" placeholder="Fundamento y requisitos de la medida solicitada..."></textarea>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Solicitud de Medida</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <!-- 4. ACCESO A MEDIDA -->
-                                    <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #3b82f6;">
-                                        <div class="collapsible-header">
-                                            <h4>Instrumento de Acceso a Medida</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
+                                    <!-- TAB CONTENT: POST PENITENCIARIO -->
+                                    <div id="pv-progres-post" class="tab-content">
+                                        <!-- 6. INFORMES DE AVANCE (POST PENITENCIARIO) -->
+                                        <div class="collapsible-container collapsed" style="margin-bottom: 1rem; border-left: 4px solid #10b981;">
+                                            <div class="collapsible-header">
+                                                <h4>Informes de Avance (Post Penitenciario)</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
+                                                    <div class="form-section-block">
+                                                        <div class="form-field">
+                                                            <label>Inserción laboral / familiar en medio libre</label>
+                                                            <textarea name="insercion_post" placeholder="Describa el proceso de reinserción laboral y familiar del liberado..."></textarea>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label>Cumplimiento de reglas de conducta</label>
+                                                            <textarea name="reglas_conducta_post" placeholder="Evaluación del cumplimiento de las reglas de conducta fijadas..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Informe Post Penitenciario</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <div class="collapsible-content">
-                                            <form class="instrument-form">
-                                                <div class="form-field">
-                                                    <label>Tipo de Medida Solicitada</label>
-                                                    <input type="text" name="tipo_medida" placeholder="Ej: Salidas transitorias, semilibertad, etc.">
-                                                </div>
-                                                <div class="form-field">
-                                                    <label>Detalle o Justificación de la Medida</label>
-                                                    <textarea name="detalle_medida" placeholder="Fundamento y requisitos de la medida solicitada..."></textarea>
-                                                </div>
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Solicitud de Medida</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
 
-                                    <!-- 5. CIERRE DE INTERVENCIÓN -->
-                                    <div class="collapsible-container collapsed" style="border-left: 4px solid #0f172a;">
-                                        <div class="collapsible-header">
-                                            <h4>Cierre de Intervención / Egreso</h4>
-                                            <span class="collapse-indicator">➕ Abrir</span>
-                                        </div>
-                                        <div class="collapsible-content">
-                                            <form class="instrument-form">
-                                                <div class="form-field">
-                                                    <label>Conclusiones Finales</label>
-                                                    <textarea name="conclusiones_cierre" placeholder="Evaluación final del egreso e inserción social..."></textarea>
-                                                </div>
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Cierre</button>
-                                                </div>
-                                            </form>
+                                        <!-- 7. CIERRE DE INTERVENCIÓN / EGRESO -->
+                                        <div class="collapsible-container collapsed" style="border-left: 4px solid #0f172a;">
+                                            <div class="collapsible-header">
+                                                <h4>Cierre de Intervención / Egreso</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form">
+                                                    <div class="form-field">
+                                                        <label>Conclusiones Finales</label>
+                                                        <textarea name="conclusiones_cierre" placeholder="Evaluación final del egreso e inserción social..."></textarea>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Cierre</button>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -1212,7 +2025,7 @@
                                     <div class="collapsible-container collapsed" style="border-left: 4px solid var(--text-muted);">
                                         <div class="collapsible-header">
                                             <h4>Registrar Nuevo Acuerdo de Mediación / Actividad</h4>
-                                            <span class="collapse-indicator">➕ Abrir Formulario</span>
+                                            <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
                                         </div>
                                         <div class="collapsible-content">
                                             <form class="instrument-form">
@@ -1233,11 +2046,113 @@
                                                     <div class="form-field"><label>Compromisos o Reparaciones Acordadas</label><textarea name="jr_compromisos" placeholder="Detalle las tareas o acuerdos..."></textarea></div>
                                                 </div>
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn-primary">💾 Guardar Registro Restaurativo</button>
+                                                    <button type="submit" class="btn-primary"><svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg> Guardar Registro Restaurativo</button>
                                                 </div>
                                             </form>
                                         </div>
+                            <!-- VISTA: GABINETE CRIMINOLÓGICO -->
+                            <section id="gabinete-criminologico" class="view-section">
+                                <div class="section-header" style="margin-bottom: 1.5rem;">
+                                    <h2 class="view-title">Objetivos</h2>
+                                    <p class="view-subtitle">Módulo de Plan de Vida de la PPL bajo el Servicio Penitenciario y de Reintegración Social (CABA).</p>
+                                </div>
+
+                                <div class="card caba-law-banner" style="margin-bottom: 1.5rem; border-left: 4px solid var(--status-yellow); background: var(--status-yellow-bg);">
+                                    <div style="display: flex; gap: 12px; align-items: flex-start;">
+                                        <span style="font-size: 1.5rem;">⚖️</span>
+                                        <div>
+                                            <h4 style="font-weight: 600; color: var(--status-yellow); margin-bottom: 4px; font-family: var(--font-display);">Cumplimiento Estricto de la Ley N° 6.923 (CABA)</h4>
+                                            <p style="font-size: 0.85rem; color: var(--text-main); line-height: 1.4;">
+                                                En cumplimiento de las garantías de reinserción de los Arts. 18 y 19 de la Constitución Nacional y de la Ley CABA 6.923, 
+                                                <strong>queda prohibido registrar manifestaciones de "culpa" o "arrepentimiento"</strong> sobre los hechos cometidos. 
+                                                Toda evaluación de este Servicio Penitenciario y de Reintegración Social debe centrarse exclusivamente en la definición de objetivos de resocialización futuros.
+                                            </p>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="card ppl-legajo-card" style="margin-bottom: 1.5rem;">
+                                    <div style="display: flex; gap: 1.5rem; align-items: center;">
+                                        <div class="abstract-avatar" style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #8b5cf6); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; font-family: var(--font-display); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);">
+                                            FD
+                                        </div>
+                                        <div>
+                                            <h3 style="margin-bottom: 2px; font-family: var(--font-display);">Florencia Deich</h3>
+                                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">Legajo Criminológico: <strong>EDP-2026-9871</strong> &nbsp;|&nbsp; Pabellón: <strong>Psiquiátrico</strong></p>
+                                            <div style="display: flex; gap: 8px;">
+                                                <span class="badge green">Estable</span>
+                                                <span class="badge yellow">Diagnóstico e Intervención</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="margin-bottom: 1.5rem;">
+                                    <h3 style="margin-bottom: 1rem; font-family: var(--font-display);">Formulario del Plan de Vida de la PPL</h3>
+                                    <form id="gabinete-plan-vida-form" class="instrument-form">
+                                        <!-- Objetivos Educativos -->
+                                        <div class="form-section-block" style="margin-bottom: 1.5rem;">
+                                            <h4 class="form-section-title" style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                                🎓 Objetivos Educativos
+                                            </h4>
+                                            <div id="gabinete-educativos-list" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px;">
+                                                <!-- Dyn items go here -->
+                                            </div>
+                                            <div style="display: flex; gap: 8px;">
+                                                <input type="text" id="input-nuevo-objetivo-edu" placeholder="Describir nuevo objetivo educativo..." style="flex: 1; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                                                <button type="button" id="btn-agregar-objetivo-edu" class="btn-secondary" style="padding: 0.5rem 1rem;">+ Agregar</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Objetivos Laborales -->
+                                        <div class="form-section-block" style="margin-bottom: 1.5rem;">
+                                            <h4 class="form-section-title" style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                                🛠️ Objetivos Laborales
+                                            </h4>
+                                            <div id="gabinete-laborales-list" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px;">
+                                                <!-- Dyn items go here -->
+                                            </div>
+                                            <div style="display: flex; gap: 8px;">
+                                                <input type="text" id="input-nuevo-objetivo-trab" placeholder="Describir nuevo objetivo laboral..." style="flex: 1; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                                                <button type="button" id="btn-agregar-objetivo-trab" class="btn-secondary" style="padding: 0.5rem 1rem;">+ Agregar</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Objetivos de Salud -->
+                                        <div class="form-section-block" style="margin-bottom: 2rem;">
+                                            <h4 class="form-section-title" style="margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px;">
+                                                🩺 Objetivos de Salud
+                                            </h4>
+                                            <div id="gabinete-salud-list" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px;">
+                                                <!-- Dyn items go here -->
+                                            </div>
+                                            <div style="display: flex; gap: 8px;">
+                                                <input type="text" id="input-nuevo-objetivo-sal" placeholder="Describir nuevo objetivo de salud..." style="flex: 1; padding: 0.5rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                                                <button type="button" id="btn-agregar-objetivo-sal" class="btn-secondary" style="padding: 0.5rem 1rem;">+ Agregar</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Panel de Firma Digital -->
+                                        <div class="firma-digital-container" style="background: var(--bg-body); border: 1px solid var(--border-color); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                                            <h4 style="margin: 0 0 0.5rem 0; font-family: var(--font-display); font-size: 1rem; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                                                🔑 Firma Digital del Profesional
+                                            </h4>
+                                            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">
+                                                Ingrese su token de validación institucional para firmar y asentar digitalmente este Plan de Vida. Al guardar con firma, los datos se bloquearán para evitar modificaciones ulteriores.
+                                            </p>
+                                            <div id="firma-caba-fields" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                                                <div style="flex: 1; min-width: 200px;">
+                                                    <input type="text" id="gabinete-firma-token" placeholder="Token de Firma Profesional (Ej: GAB-12345)" style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 6px;">
+                                                </div>
+                                                <button type="button" id="btn-guardar-firma-gabinete" class="btn-primary" style="padding: 0.6rem 1.25rem;">
+                                                    Firmar y Guardar
+                                                </button>
+                                            </div>
+                                            <div id="firma-caba-resultado" style="margin-top: 1rem; display: none; padding: 0.75rem 1rem; background: var(--status-green-bg); border: 1px solid var(--status-green-border); border-radius: 8px; color: var(--status-green); font-size: 0.85rem;">
+                                                <!-- Info signature here -->
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </section>
 
