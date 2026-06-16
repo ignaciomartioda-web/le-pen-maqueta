@@ -18,9 +18,23 @@
             </div>
             
             <div class="nav-menu">
-                <div class="nav-item active" data-target="resumen">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    Inicio / Resumen
+                <div class="nav-item has-submenu active" id="nav-item-resumen-container">
+                    <div class="nav-item-header" id="nav-item-resumen-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        <span>Inicio / Resumen</span>
+                        <svg class="submenu-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto; transition: transform 0.2s; transform: rotate(180deg);"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="nav-submenu open" id="resumen-submenu">
+                        <div class="nav-item sub-item active" data-target="resumen" id="nav-item-resumen-general">
+                            📋 Resumen General
+                        </div>
+                        <div class="nav-item sub-item" data-target="registrar-novedad" id="nav-item-registrar-novedad" style="display: none;">
+                            📝 Registrar Novedad (Celador)
+                        </div>
+                        <div class="nav-item sub-item" data-target="tableros-monitoreo" id="nav-item-tableros-monitoreo" style="display: none;">
+                            📊 Tableros de Monitoreo
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-item" data-target="ingreso">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
@@ -30,17 +44,45 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     Situación Judicial
                 </div>
-                <div class="nav-item" data-target="plan-vida">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
-                    Plan de Vida
+                <div class="nav-item has-submenu" id="nav-item-plan-vida-container">
+                    <div class="nav-item-header" id="nav-item-plan-vida-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+                        <span>Plan de Vida</span>
+                        <svg class="submenu-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto; transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="nav-submenu" id="plan-vida-submenu">
+                        <div class="nav-item sub-item" data-target="plan-vida" id="nav-item-plan-vida-general">
+                            🎯 Progreso Plan de Vida
+                        </div>
+                        <div class="nav-item sub-item" data-target="gabinete-criminologico" id="nav-item-gabinete" style="display: none;">
+                            ⚖️ Gabinete Criminológico
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-item" data-target="justicia-restaurativa">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
                     Justicia Restaurativa
                 </div>
-                <div class="nav-item" data-target="gabinete-criminologico" id="nav-item-gabinete" style="display: none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                    Gabinete Criminológico
+                <div class="nav-item has-submenu" id="nav-item-vinculacion-container">
+                    <div class="nav-item-header" id="nav-item-vinculacion-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Vínculos / Visitas</span>
+                        <svg class="submenu-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto; transition: transform 0.2s;"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="nav-submenu" id="vinculacion-submenu">
+                        <div class="nav-item sub-item" data-target="familiares" id="nav-item-familiares">
+                            👥 Familiares
+                        </div>
+                        <div class="nav-item sub-item" data-target="allegados" id="nav-item-allegados">
+                            🤝 Allegados
+                        </div>
+                        <div class="nav-item sub-item" data-target="abogados" id="nav-item-abogados">
+                            ⚖️ Abogados / Defensa
+                        </div>
+                        <div class="nav-item sub-item" data-target="solicitudes-ingreso" id="nav-item-solicitudes">
+                            📅 Solicitudes de Ingreso
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-item" data-target="configuracion">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.54 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
@@ -76,6 +118,7 @@
                             <div class="role-dropdown-header">Rol de Simulación</div>
                             <button class="role-dropdown-item active" data-role="auditora">Auditora</button>
                             <button class="role-dropdown-item" data-role="gabinete">Gabinete Criminológico</button>
+                            <button class="role-dropdown-item" data-role="celador">Celador (Seguridad)</button>
                         </div>
                     </div>
                 </div>
@@ -87,10 +130,18 @@
                 
                 <div class="header-title-row">
                     <h1 class="page-title">Ficha Individual - FLORENCIA DEICH</h1>
-                    <button class="btn-action-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                        Añadir registro
-                    </button>
+                    <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;">Interno:</span>
+                            <select id="inmate-selector" style="padding: 0.5rem 1rem; border-radius: 8px; background: #1e293b; border: 1px solid var(--border-color); color: #fff; font-weight: 600; outline: none; cursor: pointer; font-size: 0.85rem; min-width: 260px;">
+                                <!-- Cargado dinámicamente -->
+                            </select>
+                        </div>
+                        <button class="btn-action-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                            Añadir registro
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Pena Progresiva Card (Global/Persistent - Spans Full Width) -->
@@ -184,6 +235,10 @@
                                             <span class="badge red">Alto Riesgo</span>
                                             <span class="badge yellow">Evaluación Pendiente</span>
                                             <span class="badge green">Caso Activo</span>
+                                        </div>
+                                        <!-- Alertas / Tags de Novedades del Interno (Módulo B) -->
+                                        <div class="lepen-alerts-tags-container" id="lepen-alerts-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;">
+                                            <!-- Rendered dynamically by app.js -->
                                         </div>
                                     </div>
                                     <button class="detainee-card-menu-btn">
@@ -2050,6 +2105,10 @@
                                                 </div>
                                             </form>
                                         </div>
+                                    </div>
+                                </div>
+                            </section>
+
                             <!-- VISTA: GABINETE CRIMINOLÓGICO -->
                             <section id="gabinete-criminologico" class="view-section">
                                 <div class="section-header" style="margin-bottom: 1.5rem;">
@@ -2062,11 +2121,20 @@
                                         <span style="font-size: 1.5rem;">⚖️</span>
                                         <div>
                                             <h4 style="font-weight: 600; color: var(--status-yellow); margin-bottom: 4px; font-family: var(--font-display);">Cumplimiento Estricto de la Ley N° 6.923 (CABA)</h4>
-                                            <p style="font-size: 0.85rem; color: var(--text-main); line-height: 1.4;">
+                                            <p style="font-size: 0.85rem; color: var(--text-main); line-height: 1.4; margin-bottom: 0.75rem;">
                                                 En cumplimiento de las garantías de reinserción de los Arts. 18 y 19 de la Constitución Nacional y de la Ley CABA 6.923, 
                                                 <strong>queda prohibido registrar manifestaciones de "culpa" o "arrepentimiento"</strong> sobre los hechos cometidos. 
                                                 Toda evaluación de este Servicio Penitenciario y de Reintegración Social debe centrarse exclusivamente en la definición de objetivos de resocialización futuros.
                                             </p>
+                                            <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 0.5rem;">
+                                                <a href="Decreto_Ley_6923.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--status-yellow); text-decoration: underline; font-weight: 600;">
+                                                    📄 Ver/Descargar Decreto N° 28-26 (Ley 6.923)
+                                                </a>
+                                                <span style="color: var(--status-yellow); opacity: 0.5; font-size: 0.8rem;">•</span>
+                                                <a href="DOCUMENTO%20DE%20ESPECIFICACIONES%20FUNCIONALES%20(FRD).md" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--status-yellow); text-decoration: underline; font-weight: 600;">
+                                                    📄 Ver Especificaciones Funcionales (FRD)
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2156,6 +2224,321 @@
                                 </div>
                             </section>
 
+                            <!-- VISTA: VÍNCULOS / VISITAS (MÓDULO DE VINCULACIÓN) -->
+                            <section id="vinculacion" class="view-section">
+                                <div class="section-header" style="margin-bottom: 1.5rem;">
+                                    <h2 class="view-title">Vínculos y Habilitaciones de Visitas</h2>
+                                    <p class="view-subtitle">Gestione la red de contención familiar, autorizaciones de ingresos presenciales, videollamadas y defensa técnica.</p>
+                                </div>
+
+                                <div class="tabs-header" style="margin-bottom: 1.5rem;">
+                                    <button class="tab-btn active" data-tab="tab-familiares">Familiares <span class="badge gray" id="total-familiares-badge">0 Vinculados</span></button>
+                                    <button class="tab-btn" data-tab="tab-allegados">Allegados <span class="badge gray" id="total-allegados-badge">0 Vinculados</span></button>
+                                    <button class="tab-btn" data-tab="tab-defensa">Defensa Técnica</button>
+                                    <button class="tab-btn" data-tab="tab-solicitudes">Solicitudes de Ingreso</button>
+                                </div>
+
+                                <!-- Sub-tab 1: Familiares -->
+                                <div id="tab-familiares" class="tab-content active">
+                                    <div class="card">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                            <h3>Familiares Directos del Interno</h3>
+                                            <div class="switch-container-wrapper" style="display: flex; align-items: center; gap: 8px;">
+                                                <span style="font-size: 0.8rem; color: var(--text-muted);">Videollamadas Globales</span>
+                                                <label class="switch-container">
+                                                    <input type="checkbox" id="toggle-global-videocalls" checked>
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="visitantes-grid" id="familiares-list-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Formulario de Nuevo Vínculo -->
+                                    <div class="card" style="margin-top: 1.5rem;">
+                                        <div class="collapsible-container collapsed">
+                                            <div class="collapsible-header">
+                                                <h4>Registrar Nuevo Vínculo / Visitante</h4>
+                                                <span class="collapse-indicator"><svg class="collapse-chevron" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                                            </div>
+                                            <div class="collapsible-content">
+                                                <form class="instrument-form" id="form-nuevo-vinculo">
+                                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                                                        <div class="form-field">
+                                                            <label for="vinculo-nombre">Nombre Completo (APELLIDO, Nombre)</label>
+                                                            <input type="text" id="vinculo-nombre" placeholder="Ej: PEREZ, Juan Arturo" required>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label for="vinculo-dni">DNI / Pasaporte</label>
+                                                            <input type="text" id="vinculo-dni" placeholder="Ej: 32145678" required>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label for="vinculo-relacion">Relación / Vínculo</label>
+                                                            <select id="vinculo-relacion">
+                                                                <option value="Madre">Madre</option>
+                                                                <option value="Padre">Padre</option>
+                                                                <option value="Hermano/a">Hermano/a</option>
+                                                                <option value="Hijo/a">Hijo/a</option>
+                                                                <option value="Pareja">Pareja</option>
+                                                                <option value="Allegado">Allegado / Amigo</option>
+                                                                <option value="Letrado Defensor">Abogado Defensor</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                                                        <div class="form-field">
+                                                            <label for="vinculo-hab-visita">Habilitación Inicial Visita Presencial</label>
+                                                            <select id="vinculo-hab-visita">
+                                                                <option value="aprobado">Aprobado</option>
+                                                                <option value="pendiente" selected>Pendiente</option>
+                                                                <option value="rechazado">Rechazado</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-field">
+                                                            <label for="vinculo-hab-video">Habilitación Inicial Videollamada</label>
+                                                            <select id="vinculo-hab-video">
+                                                                <option value="aprobado">Aprobado</option>
+                                                                <option value="pendiente" selected>Pendiente</option>
+                                                                <option value="rechazado">Rechazado</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-actions" style="margin-top: 1.5rem;">
+                                                        <button type="submit" class="btn-primary">Registrar Vínculo</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sub-tab 2: Allegados -->
+                                <div id="tab-allegados" class="tab-content">
+                                    <div class="card">
+                                        <h3>Allegados, Referentes y Amigos Habilitados</h3>
+                                        <p class="section-description">Otros contactos validados por el equipo social y criminológico que no son familia directa.</p>
+                                        <div class="visitantes-grid" id="allegados-list-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sub-tab 3: Defensa Técnica -->
+                                <div id="tab-defensa" class="tab-content">
+                                    <div class="card">
+                                        <h3>Defensa Técnica y Letrados</h3>
+                                        <p class="section-description">Habilitación del Defensor Oficial de la Ciudad o abogados particulares registrados.</p>
+                                        <div class="visitantes-grid" id="abogados-list-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card" style="margin-top: 1.5rem;">
+                                        <h3>Oficios y Pedidos de la Defensa Oficial</h3>
+                                        <p class="section-description">Pedidos de informes, traslados, entrevistas reservadas presentados por el letrado defensor.</p>
+                                        <div class="sanctions-table-container" id="pedidos-defensa-container" style="margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Sub-tab 4: Solicitudes de Ingreso -->
+                                <div id="tab-solicitudes" class="tab-content">
+                                    <div class="card">
+                                        <h3>Bandeja de Turnos de Visitas Presenciales (VisitApp)</h3>
+                                        <div class="sanctions-table-container" id="solicitudes-visitas-container" style="margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card" style="margin-top: 1.5rem;">
+                                        <h3>Solicitudes de Videollamadas Familiares</h3>
+                                        <div class="sanctions-table-container" id="videollamadas-solicitadas-container" style="margin-top: 1rem;">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- VISTA: REGISTRAR NOVEDAD (CELADOR) -->
+                            <section id="registrar-novedad" class="view-section">
+                                <div class="section-header" style="margin-bottom: 1.5rem;">
+                                    <h2 class="view-title">Terminal del Celador - Registro de Novedades</h2>
+                                    <p class="view-subtitle">Registros objetivos de los sucesos del pabellón para enrutamiento inteligente.</p>
+                                </div>
+                                <div class="card">
+                                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                         <h3 style="margin: 0; font-family: var(--font-display); font-size: 1.15rem; color: var(--text-main);">Formulario de Registro de Novedad</h3>
+                                         <a href="DOCUMENTO%20DE%20ESPECIFICACIONES%20FUNCIONALES%20(FRD).md" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #38bdf8; text-decoration: underline; font-weight: 600;">
+                                             📄 Especificaciones Funcionales (FRD)
+                                         </a>
+                                     </div>
+                                    <form class="instrument-form" id="form-novedad">
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem;">
+                                            <div class="form-field">
+                                                <label for="nov-fecha-hora">Fecha y Hora del Suceso</label>
+                                                <input type="datetime-local" id="nov-fecha-hora" required>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="nov-lugar-sector">Sector</label>
+                                                <select id="nov-lugar-sector" required>
+                                                    <option value="Módulo I">Módulo I</option>
+                                                    <option value="Módulo II">Módulo II</option>
+                                                    <option value="Módulo III">Módulo III</option>
+                                                    <option value="Sanidad">Sanidad</option>
+                                                    <option value="Talleres">Talleres</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="nov-lugar-pabellon">Pabellón</label>
+                                                <select id="nov-lugar-pabellon" required>
+                                                    <option value="Pabellón A">Pabellón A</option>
+                                                    <option value="Pabellón B">Pabellón B</option>
+                                                    <option value="Pabellón C">Pabellón C</option>
+                                                    <option value="Pabellón Psiquiátrico">Pabellón Psiquiátrico</option>
+                                                    <option value="Común">Área Común</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="nov-lugar-espacio">Espacio Específico</label>
+                                                <input type="text" id="nov-lugar-espacio" placeholder="Ej: Celda 12, Comedor, Patio..." required>
+                                            </div>
+                                        </div>
+
+                                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem;">
+                                            <div class="form-field">
+                                                <label for="nov-categoria">Categoría Operativa</label>
+                                                <select id="nov-categoria" required>
+                                                    <option value="">Seleccione Categoría...</option>
+                                                    <option value="Salud e Integridad Física">Salud e Integridad Física</option>
+                                                    <option value="Infraestructura y Mantenimiento">Infraestructura y Mantenimiento</option>
+                                                    <option value="Solicitudes y Peticiones">Solicitudes y Peticiones</option>
+                                                    <option value="Seguridad y Orden Interno">Seguridad y Orden Interno</option>
+                                                    <option value="Controles y Hallazgos">Controles y Hallazgos</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-field">
+                                                <label for="nov-tipologia">Tipología Operativa</label>
+                                                <select id="nov-tipologia" required>
+                                                    <option value="">Seleccione Categoría Primero...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-field" style="margin-top: 1.25rem;">
+                                            <label>Medidas Adoptadas In Situ</label>
+                                            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem;">Seleccione las acciones tomadas en el momento por el personal de seguridad.</p>
+                                            <div id="nov-medidas-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; background: rgba(0,0,0,0.1); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                                                <!-- Dinámico por JS -->
+                                            </div>
+                                        </div>
+
+                                        <div class="form-field" style="margin-top: 1.25rem;">
+                                            <label for="nov-relato">Relato Fáctico del Hecho</label>
+                                            <textarea id="nov-relato" placeholder="Relato descriptivo y descriptores del suceso..." required style="height: 120px;"></textarea>
+                                        </div>
+
+                                        <div class="form-field" style="margin-top: 1.25rem; display: flex; align-items: center; gap: 10px;">
+                                            <input type="checkbox" id="nov-involucra-ppl" style="width: 20px; height: 20px; cursor: pointer;">
+                                            <label for="nov-involucra-ppl" style="font-size: 0.95rem; font-weight: 600; cursor: pointer;">¿El hecho involucra a personas privadas de libertad (PPL)?</label>
+                                        </div>
+
+                                        <!-- Sección de Vinculación de Internos (Oculta por defecto) -->
+                                        <div id="nov-ppl-link-section" style="display: none; background: rgba(0,0,0,0.1); border: 1px solid var(--border-color); padding: 1.25rem; border-radius: 8px; margin-top: 1.25rem;">
+                                            <h4 style="margin-bottom: 1rem; color: var(--primary-cyan);">Vincular Internos Relacionados</h4>
+                                            
+                                            <div style="display: grid; grid-template-columns: 2fr 1fr auto; gap: 10px; align-items: flex-end;">
+                                                <div class="form-field" style="margin:0;">
+                                                    <label for="nov-ppl-selector">Interno Penitenciario</label>
+                                                    <select id="nov-ppl-selector" style="width: 100%;">
+                                                        <option value="">Seleccione Interno...</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-field" style="margin:0;">
+                                                    <label for="nov-ppl-rol">Rol en el Incidente</label>
+                                                    <select id="nov-ppl-rol">
+                                                        <option value="Solicitante">Solicitante</option>
+                                                        <option value="Damnificado">Víctima / Damnificado</option>
+                                                        <option value="Testigo">Testigo</option>
+                                                        <option value="Presunto Autor">Presunto Autor</option>
+                                                    </select>
+                                                </div>
+                                                <button type="button" id="btn-add-ppl-rel" class="btn-primary" style="padding: 10px 16px;">Vincular</button>
+                                            </div>
+
+                                            <div style="margin-top: 1.25rem;">
+                                                <h5 style="margin-bottom: 0.5rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">Internos Vinculados</h5>
+                                                <div id="nov-added-ppls-list" style="display: flex; flex-direction: column; gap: 8px;">
+                                                    <!-- Dinámico por JS -->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions" style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.25rem;">
+                                            <button type="submit" class="btn-primary" style="padding: 12px 24px; font-size: 0.95rem;">🔒 Registrar y Enrutar Novedad</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+
+                            <!-- VISTA: TABLEROS DE MONITOREO (MÓDULO B) -->
+                            <section id="tableros-monitoreo" class="view-section">
+                                <div class="section-header" style="margin-bottom: 1.5rem;">
+                                    <h2 class="view-title">Tableros de Comando Operativo (24/7)</h2>
+                                    <p class="view-subtitle">Centros de control y bandejas de incidentes por especialidad.</p>
+                                </div>
+                                
+                                <div class="tableros-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+                                    
+                                    <!-- Tablero Salud -->
+                                    <div class="card tablero-card" style="border-top: 4px solid var(--status-red);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                            <h3 style="font-family: var(--font-display); margin: 0; display: flex; align-items: center; gap: 8px;">🩺 Salud</h3>
+                                            <span class="badge red" id="count-salud">0 Activos</span>
+                                        </div>
+                                        <div class="tablero-items-list" id="list-salud">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Tablero Seguridad -->
+                                    <div class="card tablero-card" style="border-top: 4px solid var(--status-yellow);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                            <h3 style="font-family: var(--font-display); margin: 0; display: flex; align-items: center; gap: 8px;">🛡️ Seguridad</h3>
+                                            <span class="badge yellow" id="count-seguridad">0 Activos</span>
+                                        </div>
+                                        <div class="tablero-items-list" id="list-seguridad">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Tablero Judiciales -->
+                                    <div class="card tablero-card" style="border-top: 4px solid var(--accent-blue);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                            <h3 style="font-family: var(--font-display); margin: 0; display: flex; align-items: center; gap: 8px;">⚖️ Judiciales</h3>
+                                            <span class="badge blue" id="count-judiciales">0 Activos</span>
+                                        </div>
+                                        <div class="tablero-items-list" id="list-judiciales">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+
+                                    <!-- Tablero Infraestructura -->
+                                    <div class="card tablero-card" style="border-top: 4px solid var(--border-color);">
+                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                            <h3 style="font-family: var(--font-display); margin: 0; display: flex; align-items: center; gap: 8px;">🔧 Mantenimiento</h3>
+                                            <span class="badge gray" id="count-infraestructura">0 Activos</span>
+                                        </div>
+                                        <div class="tablero-items-list" id="list-infraestructura">
+                                            <!-- Dinámico por JS -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
                             <!-- 4. VISTA: CONFIGURACIÓN -->
                             <section id="configuracion" class="view-section">
                                 <div class="section-header" style="margin-bottom: 1.5rem;">
@@ -2228,6 +2611,12 @@
                                             <div class="info-item"><strong>Pabellón:</strong> <span>Psiquiátrico</span></div>
                                             <div class="info-item"><strong>Fecha Base:</strong> <span>22 de Mayo, 2026</span></div>
                                             <div class="info-item"><strong>Estado General:</strong> <span>Estable bajo tratamiento</span></div>
+                                            <div class="info-item" style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed rgba(255,255,255,0.15); flex-direction: column; align-items: flex-start; gap: 4px; grid-column: 1 / -1;">
+                                                <strong>Documentación Técnica:</strong>
+                                                <a href="DOCUMENTO%20DE%20ESPECIFICACIONES%20FUNCIONALES%20(FRD).md" target="_blank" style="color: #38bdf8; text-decoration: underline; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                                                    📄 Especificaciones Funcionales (FRD)
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2236,6 +2625,52 @@
                         </div>
                     </div>
                 </main>
+            </div>
+
+            <!-- MODAL INTERACTIVO DE ESPECIFICACIONES FUNCIONALES (FRD) -->
+            <div id="frd-spec-modal" class="area-modal-overlay">
+                <div class="area-modal-card" style="max-width: 1300px; height: 90vh;">
+                    <div class="area-modal-header" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.5rem 2rem;">
+                        <div class="area-modal-header-left">
+                            <h3 class="area-modal-header-title" style="color: #ffffff; display: flex; align-items: center; gap: 10px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                Visualizador de Especificaciones Técnicas (FRD)
+                            </h3>
+                            <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 4px;">Integración del Módulo B de Novedades y el Legajo Virtual LEPEn (Decreto N° 28-26 / Ley 6.923)</div>
+                        </div>
+                        <button type="button" class="area-modal-close-btn" id="close-frd-modal" style="color: #94a3b8; background: none; border: none; font-size: 2rem; cursor: pointer; transition: color 0.2s;">&times;</button>
+                    </div>
+                    <div class="area-modal-body" style="display: flex; height: 100%; overflow: hidden; background-color: #f8fafc;">
+                        <!-- Sidebar de Navegación del FRD -->
+                        <aside class="area-modal-sidebar" style="width: 280px; background-color: #ffffff; border-right: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.5rem; padding: 1.5rem 1rem;">
+                            <button type="button" class="sidebar-area-btn active" data-frd-tab="comando" style="--area-color: #38bdf8; display: flex; align-items: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; color: #475569;">
+                                <span>🛡️</span>
+                                <span>4 Tableros de Comando</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-frd-tab="enrutamiento" style="--area-color: #10b981; display: flex; align-items: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; color: #475569;">
+                                <span>🔀</span>
+                                <span>Matriz de Enrutamiento</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-frd-tab="catalogo" style="--area-color: #8b5cf6; display: flex; align-items: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; color: #475569;">
+                                <span>📋</span>
+                                <span>Catálogo de Novedades</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-frd-tab="carga" style="--area-color: #f59e0b; display: flex; align-items: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; color: #475569;">
+                                <span>📝</span>
+                                <span>Lógica de Formulario</span>
+                            </button>
+                            <button type="button" class="sidebar-area-btn" data-frd-tab="leyes" style="--area-color: #ef4444; display: flex; align-items: center; gap: 10px; width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: none; background: none; text-align: left; cursor: pointer; font-weight: 600; color: #475569;">
+                                <span>⚖️</span>
+                                <span>Ley CABA 6.923 y Reglas</span>
+                            </button>
+                        </aside>
+                        
+                        <!-- Panel de Contenido Dinámico de FRD -->
+                        <main class="area-modal-content-panel" id="frd-dynamic-content" style="flex: 1; padding: 2rem; overflow-y: auto; color: #1e293b;">
+                            <!-- Dinámico por JS -->
+                        </main>
+                    </div>
+                </div>
             </div>
 
             <!-- SUB-DASHBOARD MODAL POR ÁREA -->
@@ -2302,6 +2737,12 @@
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="database.js"></script>
+            <script src="stitch_functions.js"></script>
+            <script src="gabinete_module.js"></script>
+            <script src="vinculacion_module.js"></script>
+            <script src="novedades_module.js"></script>
+            <script src="charts_module.js"></script>
             <script src="app.js"></script>
         </body>
         </html>

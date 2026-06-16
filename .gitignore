@@ -5,3 +5,7 @@ node_modules/
 le-pen-maqueta/
 diff.txt
 *_diff.txt
+
+.vercel
+.agents/
+scratch/
